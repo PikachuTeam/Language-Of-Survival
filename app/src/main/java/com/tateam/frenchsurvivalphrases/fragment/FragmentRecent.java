@@ -48,10 +48,11 @@ public class FragmentRecent extends BaseFragment {
             }
         });
         */
+
         lv = (ListView) view.findViewById(R.id.lvMeeting);
         LoadDataRecent();
         meetingAdapter= new ListGuideAdapter(getActivity(), englishGuideArrayList);
-
+        meetingAdapter.notifyDataSetChanged();
         lv.setAdapter(meetingAdapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

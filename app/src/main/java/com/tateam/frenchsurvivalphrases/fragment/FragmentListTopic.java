@@ -3,6 +3,7 @@ package com.tateam.frenchsurvivalphrases.fragment;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import com.tateam.frenchsurvivalphrases.R;
 import com.tateam.frenchsurvivalphrases.app.BaseFragment;
 import com.tateam.frenchsurvivalphrases.database.DataSource;
 import com.tateam.frenchsurvivalphrases.entity.ListTopic;
+import com.tateam.frenchsurvivalphrases.utility.FragmentWebView;
 
 import java.util.ArrayList;
 
@@ -23,7 +25,7 @@ import java.util.ArrayList;
 public class FragmentListTopic extends BaseFragment {
     private ListView lv;
     private ListGuideAdapter adapter;
-
+    private FloatingActionButton floatingActionButton;
     private ArrayList<ListTopic> topicArrayList =new ArrayList<>();
 
     public static final String MEETING="Meeting people - Rencontrer d'autres personnes";
@@ -63,6 +65,13 @@ public class FragmentListTopic extends BaseFragment {
                else if(topicArrayList.get(position).getListName().compareTo(DAILYROUTINE)==0){
                    replaceFragment(new FragmentDaily());
                }
+            }
+        });
+        floatingActionButton= (FloatingActionButton) view.findViewById(R.id.fabHistory);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(new FragmentRecent());
             }
         });
         return view;

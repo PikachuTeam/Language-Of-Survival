@@ -65,7 +65,7 @@
                 bundle.putString(KEY_DETAIL, englishGuideArrayList.get(position).getFrenchSentence());
                 FragmentViewdetail fragmentViewdetail = new FragmentViewdetail();
                 fragmentViewdetail.setArguments(bundle);
-
+             //   DataSource.getInstance().updateRecent(englishGuideArrayList.get(position).getEnglishSentence());
                 replaceFragment(getActivity().getSupportFragmentManager(), fragmentViewdetail, englishGuideArrayList.get(position).getFrenchSentence(), englishGuideArrayList.get(position).getFrenchSentence());
             }
         });
