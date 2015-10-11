@@ -47,7 +47,7 @@ public class FragmentRestaurant extends BaseFragment {
                 FragmentViewdetail fragmentViewdetail = new FragmentViewdetail();
                 fragmentViewdetail.setArguments(bundle);
 
-                replaceFragment(getActivity().getFragmentManager(), fragmentViewdetail, englishGuideArrayList.get(position).getFrenchSentence(), englishGuideArrayList.get(position).getFrenchSentence());
+                replaceFragment(getActivity().getSupportFragmentManager(), fragmentViewdetail, englishGuideArrayList.get(position).getFrenchSentence(), englishGuideArrayList.get(position).getFrenchSentence());
             }
         });
         return view;

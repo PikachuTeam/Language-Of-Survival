@@ -2,7 +2,7 @@
     <string name="app_name">French Survival Phrases</string>
     <string name="action_settings">Settings</string>
     <string name="action_recent">Recent</string>
-
+    <string name="subject_mail_feedback">[French] Survival Guide feedback</string>
 
     <string name="hello_world">Hello world!</string>
 
@@ -13,4 +13,9 @@
     <string name="title_activity_base">BaseActivity</string>
     <string name="Learn">Learn</string>
     <string name="title_activity_detail">DetailActivity</string>
+    no_recent_idioms
+    <string name="no_recent">No recent list found</string>
+    <string-array name="tabs">
+        <item>All</item>
+        <item>Recent</item>    </string-array>
 </resources>

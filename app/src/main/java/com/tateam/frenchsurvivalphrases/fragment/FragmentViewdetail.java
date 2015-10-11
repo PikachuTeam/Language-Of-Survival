@@ -3,6 +3,7 @@ package com.tateam.frenchsurvivalphrases.fragment;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.tateam.frenchsurvivalphrases.R;
 import com.tateam.frenchsurvivalphrases.app.BaseFragment;
+import com.tateam.frenchsurvivalphrases.utility.FragmentWebView;
 
 import java.util.Locale;
 
@@ -22,6 +24,7 @@ public class FragmentViewdetail extends BaseFragment {
     private CardView btPlay;
     private String InfoDetail;
     private TextToSpeech textToSpeech;
+    private FloatingActionButton floatingActionButton;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +47,14 @@ public class FragmentViewdetail extends BaseFragment {
             }
         });
         getData();
+        floatingActionButton= (FloatingActionButton) v.findViewById(R.id.fabGoogle);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(new FragmentWebView());
+            }
+        });
+
         return v;
 
     }

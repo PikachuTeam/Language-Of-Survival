@@ -36,7 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                BaseFragment currentFragment = (BaseFragment) getFragmentManager().findFragmentById(R.id.container);
+                BaseFragment currentFragment = (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.container);
            /*
                 switch (item.getItemId()) {
                     case R.id.doTest:
@@ -63,7 +63,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             if (manager.getBackStackEntryCount() == 0) {
                 super.onBackPressed();
             } else {
-                BaseFragment currentFragment = (BaseFragment) getFragmentManager().findFragmentById(R.id.container);
+                BaseFragment currentFragment = (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.container);
                 currentFragment.onBackPressed();
             }
         }
@@ -86,7 +86,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract BaseFragment getFragmentContent();
 
     private void addFragmentContent() {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         BaseFragment fragment = getFragmentContent();
         transaction.add(R.id.container, fragment, fragment.getClass().getName());
         transaction.commit();

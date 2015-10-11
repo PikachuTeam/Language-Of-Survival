@@ -5,30 +5,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.vulan.survivalguideversion3.fragment.FragmentAllTabMeeting">
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabLayout"
+    <com.tateam.frenchsurvivalphrases.tabs.SlidingTabLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/slidetablayout"
+        >
 
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/toolbar_height"
-        android:background="@color/colorPrimary"
-        android:scrollbars="horizontal"
-        app:tabIndicatorColor="@color/indicatorColor"
-        app:tabIndicatorHeight="@dimen/dp5" />
+    </com.tateam.frenchsurvivalphrases.tabs.SlidingTabLayout>
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager_tab"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/tabLayout"
+        android:layout_height="0dp"
+
+
         >
 
-        <RelativeLayout
-            android:id="@+id/tabcontent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-
-        </RelativeLayout>
     </android.support.v4.view.ViewPager>
 
 </FrameLayout>

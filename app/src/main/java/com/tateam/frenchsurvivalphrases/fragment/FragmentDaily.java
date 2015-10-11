@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class FragmentDaily extends BaseFragment {
     private ListView lv;
-
+    public int position=1;
     private ArrayList<EnglishGuide> englishGuideArrayList =new ArrayList<>();
     private ListGuideAdapter meetingAdapter;
 
@@ -50,7 +50,7 @@ public class FragmentDaily extends BaseFragment {
                 FragmentViewdetail fragmentViewdetail = new FragmentViewdetail();
                 fragmentViewdetail.setArguments(bundle);
 
-                replaceFragment(getActivity().getFragmentManager(), fragmentViewdetail, englishGuideArrayList.get(position).getFrenchSentence(), englishGuideArrayList.get(position).getFrenchSentence());
+                replaceFragment(getActivity().getSupportFragmentManager(), fragmentViewdetail, englishGuideArrayList.get(position).getFrenchSentence(), englishGuideArrayList.get(position).getFrenchSentence());
             }
         });
         return view;
