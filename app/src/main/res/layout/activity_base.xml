@@ -13,6 +13,11 @@
         android:layout_height="match_parent"
         android:id="@+id/container"
         android:layout_below="@id/toolbar"
-        ></FrameLayout>
+        >
 
+    </FrameLayout>
+<include
+    android:id="@+id/floatButton"
+    layout="@layout/fab"
+    ></include>
 </RelativeLayout>
