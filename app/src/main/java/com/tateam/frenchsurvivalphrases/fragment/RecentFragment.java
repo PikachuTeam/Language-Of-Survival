@@ -1,9 +1,6 @@
 package com.tateam.frenchsurvivalphrases.fragment;
 
-import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +15,7 @@ import com.tateam.frenchsurvivalphrases.entity.EnglishGuide;
 import java.util.ArrayList;
 
 
-public class FragmentRecent extends BaseFragment {
+public class RecentFragment extends BaseFragment {
 
     private ListView lv;
     private ListGuideAdapter meetingAdapter;
@@ -60,10 +57,10 @@ public class FragmentRecent extends BaseFragment {
                 //  Intent intent=new Intent(this,getBaseActivity().replace);
                 Bundle bundle = new Bundle();
                 bundle.putString(KEY_DETAIL, englishGuideArrayList.get(position).getFrenchSentence());
-                FragmentViewdetail fragmentViewdetail = new FragmentViewdetail();
-                fragmentViewdetail.setArguments(bundle);
+                ViewdetailFragment viewdetailFragment = new ViewdetailFragment();
+                viewdetailFragment.setArguments(bundle);
 
-                replaceFragment(getActivity().getSupportFragmentManager(), fragmentViewdetail, englishGuideArrayList.get(position).getFrenchSentence(), englishGuideArrayList.get(position).getFrenchSentence());
+                replaceFragment(getActivity().getSupportFragmentManager(), viewdetailFragment, englishGuideArrayList.get(position).getFrenchSentence(), englishGuideArrayList.get(position).getFrenchSentence());
             }
         });
         return view;

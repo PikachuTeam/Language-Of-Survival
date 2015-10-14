@@ -13,8 +13,11 @@
     <string name="title_activity_base">BaseActivity</string>
     <string name="Learn">Learn</string>
     <string name="title_activity_detail">DetailActivity</string>
-    no_recent_idioms
+    <string name="feed_back">Feed back</string>
+    <string name="remove_ad">Remove Ad</string>
+    <string name="recent">recent</string>
     <string name="no_recent">No recent list found</string>
+    feed_back
     <string-array name="tabs">
         <item>All</item>
         <item>Recent</item>    </string-array>

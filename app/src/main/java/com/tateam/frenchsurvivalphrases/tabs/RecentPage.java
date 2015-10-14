@@ -12,7 +12,7 @@ import com.tateam.frenchsurvivalphrases.app.BaseFragment;
 import com.tateam.frenchsurvivalphrases.database.DataSource;
 import com.tateam.frenchsurvivalphrases.entity.EnglishGuide;
 import com.tateam.frenchsurvivalphrases.entity.Page;
-import com.tateam.frenchsurvivalphrases.fragment.FragmentViewdetail;
+import com.tateam.frenchsurvivalphrases.fragment.ViewdetailFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +59,7 @@ public class RecentPage extends Page implements RecentAdapter.ClickListener {
 
     @Override
     public void ItemClicked(int position) {
-        FragmentViewdetail detailIdiomFragment = new FragmentViewdetail();
+        ViewdetailFragment detailIdiomFragment = new ViewdetailFragment();
         Bundle bundle = new Bundle();
         bundle.putString("KEYDETAIL", list.get(position).getEnglishSentence());
         detailIdiomFragment.setArguments(bundle);

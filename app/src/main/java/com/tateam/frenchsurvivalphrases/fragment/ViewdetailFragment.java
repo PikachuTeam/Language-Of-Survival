@@ -18,7 +18,7 @@ import com.tateam.frenchsurvivalphrases.utility.FragmentWebView;
 import java.util.Locale;
 
 
-public class FragmentViewdetail extends BaseFragment {
+public class ViewdetailFragment extends BaseFragment {
 
     private TextView tvfrench;
     private CardView btPlay;

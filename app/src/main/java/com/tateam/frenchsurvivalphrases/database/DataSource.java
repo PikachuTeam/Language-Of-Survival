@@ -6,14 +6,12 @@ import android.database.sqlite.SQLiteDatabase;
 
 
 import com.tateam.frenchsurvivalphrases.entity.EnglishGuide;
-import com.tateam.frenchsurvivalphrases.entity.FrenchGuide;
+
 import com.tateam.frenchsurvivalphrases.entity.ListTopic;
 
 import java.util.ArrayList;
 
-/**
- * Created by VULAN on 9/27/2015.
- */
+
 public class DataSource  {
     private static DataSource instance;
     private Context context;
@@ -55,13 +53,20 @@ public class DataSource  {
     //query from database
     public ArrayList<EnglishGuide> getListLesson(int type){
         ArrayList<EnglishGuide> englishGuideList = new ArrayList<>();
-        Cursor cursor = sqLiteDatabase.rawQuery("select englishsentence, frenchsentence from french where typeno ='"+type+"'",null);
+        Cursor cursor = sqLiteDatabase.rawQuery("select englishsentence, frenchsentence,type,typeno ,recent from french where typeno ='"+type+"'",null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             EnglishGuide englishGuide =new EnglishGuide();
             englishGuide.setEnglishSentence(cursor.getString(0));
             englishGuide.setFrenchSentence(cursor.getString(1));
-            //englishGuide.setType(cursor.getString(2));
+            englishGuide.setType(cursor.getString(2));
+            englishGuide.setTypeno(cursor.getInt(3));
+            englishGuide.setRecent(cursor.getInt(4));
+            /*
+            if (!cursor.isNull(5)){
+                englishGuide.setRecent(cursor.getInt(3));
+        }
+*/            //englishGuide.setType(cursor.getString(2));
             englishGuideList.add(englishGuide);
             cursor.moveToNext();
         }

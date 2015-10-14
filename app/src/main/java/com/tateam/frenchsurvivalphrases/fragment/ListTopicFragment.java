@@ -17,12 +17,11 @@ import com.tateam.frenchsurvivalphrases.R;
 import com.tateam.frenchsurvivalphrases.app.BaseFragment;
 import com.tateam.frenchsurvivalphrases.database.DataSource;
 import com.tateam.frenchsurvivalphrases.entity.ListTopic;
-import com.tateam.frenchsurvivalphrases.utility.FragmentWebView;
 
 import java.util.ArrayList;
 
 
-public class FragmentListTopic extends BaseFragment {
+public class ListTopicFragment extends BaseFragment {
     private ListView lv;
     private ListGuideAdapter adapter;
     private FloatingActionButton floatingActionButton;
@@ -31,14 +30,13 @@ public class FragmentListTopic extends BaseFragment {
     public static final String MEETING="Meeting people - Rencontrer d'autres personnes";
     public static final String RESTAURANT="Restaurant";
     public static final String DAILYROUTINE="Daily routine - La routine quotidienne";
+    public static final String ITEMSTRING="item";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     }
-    protected boolean enableBackButton() {
-        return true;
-    }
+
     @Override
     protected boolean enableToolbar() {
         return true;
@@ -57,23 +55,31 @@ public class FragmentListTopic extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                if(topicArrayList.get(position).getListName().compareTo(MEETING)==0){
-                   replaceFragment(new FragmentMeeting());
+                   Bundle bundle = new Bundle();
+                   bundle.putString(ITEMSTRING, "meeting");
+                   ListFragment listFragment = new ListFragment();
+                   listFragment.setArguments(bundle);
+                   replaceFragment(listFragment);
                }
                 else if(topicArrayList.get(position).getListName().compareTo(RESTAURANT)==0){
-                   replaceFragment(new FragmentRestaurant());
+                  // replaceFragment(new FragmentRestaurant());
+                   Bundle bundle = new Bundle();
+                   bundle.putString(ITEMSTRING, "restaurant");
+                   ListFragment listFragment = new ListFragment();
+                   listFragment.setArguments(bundle);
+                   replaceFragment(listFragment);
                }
                else if(topicArrayList.get(position).getListName().compareTo(DAILYROUTINE)==0){
-                   replaceFragment(new FragmentDaily());
+                   //replaceFragment(new FragmentDaily());
+                   Bundle bundle = new Bundle();
+                   bundle.putString(ITEMSTRING, "daily");
+                   ListFragment listFragment = new ListFragment();
+                   listFragment.setArguments(bundle);
+                   replaceFragment(listFragment);
                }
             }
         });
-        floatingActionButton= (FloatingActionButton) view.findViewById(R.id.fabHistory);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                replaceFragment(new FragmentRecent());
-            }
-        });
+
         return view;
     }
     //load data

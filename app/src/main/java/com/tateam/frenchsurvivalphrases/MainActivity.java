@@ -1,11 +1,14 @@
 package com.tateam.frenchsurvivalphrases;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.tateam.frenchsurvivalphrases.app.BaseActivity;
 import com.tateam.frenchsurvivalphrases.app.BaseFragment;
-import com.tateam.frenchsurvivalphrases.fragment.FragmentMain;
+
+import com.tateam.frenchsurvivalphrases.database.DataSource;
+import com.tateam.frenchsurvivalphrases.fragment.ListTopicFragment;
+import com.tateam.frenchsurvivalphrases.fragment.MainFragment;
 
 public class MainActivity extends BaseActivity {
 
@@ -14,8 +17,28 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
     }
 
+
     @Override
     protected BaseFragment getFragmentContent() {
-        return new FragmentMain();
+        return new ListTopicFragment();
+    }
+
+    @Override
+    protected boolean enableAdMod() {
+        return true;
+    }
+
+    @Override
+    protected void onRemoveAdClick() {
+       // requestBuyItem();
+    }
+
+
+
+    @Override
+    protected void onDestroy() {
+        DataSource.getInstance().destroy();
+
+        super.onDestroy();
     }
 }

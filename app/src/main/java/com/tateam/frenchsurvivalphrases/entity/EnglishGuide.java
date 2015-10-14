@@ -6,12 +6,14 @@ public class EnglishGuide {
     private String englishSentence;
     private String frenchSentence;
     private String type;
-
-    public EnglishGuide(String englishSentence, String frenchSentence, String type){
+    private int typeno;
+    private int recent;
+    public EnglishGuide(String englishSentence, String frenchSentence, String type,int typeno,int recent){
         this.setEnglishSentence(englishSentence);
         this.setFrenchSentence(frenchSentence);
         this.setType(type);
-
+        this.setTypeno(typeno);
+        this.setRecent(recent);
     }
     public EnglishGuide(){
 
@@ -33,6 +35,14 @@ public class EnglishGuide {
         this.frenchSentence = frenchSentence;
     }
 
+    public int getRecent() {
+        return recent;
+    }
+
+    public void setRecent(int recent) {
+        this.recent = recent;
+    }
+
     public String getType() {
         return type;
     }
@@ -41,4 +51,11 @@ public class EnglishGuide {
         this.type = type;
     }
 
+    public int getTypeno() {
+        return typeno;
+    }
+
+    public void setTypeno(int typeno) {
+        this.typeno = typeno;
+    }
 }

@@ -1,21 +1,29 @@
 package com.tateam.frenchsurvivalphrases.app;
 
 import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
+
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-
+import android.widget.RelativeLayout;
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
+import com.google.android.gms.ads.AdView;
 import com.tateam.frenchsurvivalphrases.R;
+
+import com.tateam.frenchsurvivalphrases.fragment.RecentFragment;
+import com.tateam.frenchsurvivalphrases.utility.ShareUtil;
 
 //import com.example.vulan.survivalguideversion3.R;
 
 public abstract class BaseActivity extends AppCompatActivity {
     private Toolbar toolbar;
-
-
+    private FloatingActionsMenu floatingActionsMenu;
+    public FloatingActionButton fbFeeback,fbRemoveAd,fbRecent;
+    protected AdView mAdView;
+    private boolean isAdLoadingFine = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +32,19 @@ public abstract class BaseActivity extends AppCompatActivity {
         addFragmentContent();
 
         findViews();
+        setFabMenu();
+        /*
 
+        floatingActionsMenu = (FloatingActionsMenu) findViewById(R.id.floatButton);
+
+        floatButtonFeedback= (FloatingActionButton) findViewById(R.id.fab_feedback);
+        floatButtonFeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // replac
+            }
+        });
+        */
         toolbar.inflateMenu(R.menu.menu_main);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +118,42 @@ public abstract class BaseActivity extends AppCompatActivity {
         * transaction.commit();
         * */
     }
+    public void setFabMenu() {
+        floatingActionsMenu = (FloatingActionsMenu) findViewById(R.id.floatButton);
 
+
+        fbRecent = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_recent);
+        fbRecent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                floatingActionsMenu.collapse();
+                BaseFragment fragment = (BaseFragment) getSupportFragmentManager().findFragmentByTag("recent");
+
+                if (fragment == null) {
+                    RecentFragment recentFragment = new RecentFragment();
+                    BaseFragment.replaceFragment(getSupportFragmentManager(), recentFragment, "recent", "recent");
+                }
+            }
+        });
+
+        fbFeeback = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_feedback);
+        fbFeeback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                floatingActionsMenu.collapse();
+                ShareUtil.shareToGMail(BaseActivity.this, new String[]{ShareUtil.MAIL_ADDRESS_DEFAULT}, getString(R.string.subject_mail_feedback), "");
+            }
+        });
+
+
+    }
+    protected boolean enableAdMod() {
+        return false;
+    }
+
+    protected void onRemoveAdClick(){
+
+    }
     private void findViews() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
     }

@@ -9,7 +9,7 @@ import com.tateam.frenchsurvivalphrases.R;
 import com.tateam.frenchsurvivalphrases.app.BaseFragment;
 
 
-public class FragmentMain extends BaseFragment {
+public class MainFragment extends BaseFragment {
 
 
 
@@ -32,7 +32,7 @@ public class FragmentMain extends BaseFragment {
         rootview.findViewById(R.id.buttonLearn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new FragmentListTopic());
+                replaceFragment(new ListTopicFragment());
             }
         });
     }
