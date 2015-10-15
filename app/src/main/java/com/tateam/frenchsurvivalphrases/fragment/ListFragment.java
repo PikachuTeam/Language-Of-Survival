@@ -22,6 +22,7 @@ public class ListFragment extends BaseFragment {
     public static final String KEY_DETAIL="KEYDETAIL";
     public View view;
     public String inforDetail;
+    public String[] inforTransfer;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +47,12 @@ public class ListFragment extends BaseFragment {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                inforTransfer=new String[]{englishGuideArrayList.get(position).getEnglishSentence(),
+                        englishGuideArrayList.get(position).getFrenchSentence()
+                };
                 Bundle bundle = new Bundle();
-                bundle.putString(KEY_DETAIL, englishGuideArrayList.get(position).getFrenchSentence());
+               // bundle.putString(KEY_DETAIL, englishGuideArrayList.get(position).getFrenchSentence());
+                bundle.putStringArray(KEY_DETAIL,inforTransfer);
                 DataSource.getInstance().updateRecent(englishGuideArrayList.get(position).getEnglishSentence(),englishGuideArrayList.get(position).getRecent());
                 ViewdetailFragment viewdetailFragment = new ViewdetailFragment();
                 viewdetailFragment.setArguments(bundle);
@@ -66,6 +71,7 @@ public class ListFragment extends BaseFragment {
         inforDetail = bundle.getString("item");
         if(inforDetail.compareTo("meeting")==0){
             englishGuideArrayList = DataSource.getInstance().getListLesson(1);
+
         }
         else if (inforDetail.compareTo("restaurant")==0){
             englishGuideArrayList= DataSource.getInstance().getListLesson(2);
