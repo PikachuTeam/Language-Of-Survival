@@ -54,29 +54,20 @@ public class ListTopicFragment extends BaseFragment {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               if(topicArrayList.get(position).getListName().compareTo(MEETING)==0){
-                   Bundle bundle = new Bundle();
-                   bundle.putString(ITEMSTRING, "meeting");
-                   ListFragment listFragment = new ListFragment();
-                   listFragment.setArguments(bundle);
-                   replaceFragment(listFragment);
-               }
-                else if(topicArrayList.get(position).getListName().compareTo(RESTAURANT)==0){
-                  // replaceFragment(new FragmentRestaurant());
-                   Bundle bundle = new Bundle();
-                   bundle.putString(ITEMSTRING, "restaurant");
-                   ListFragment listFragment = new ListFragment();
-                   listFragment.setArguments(bundle);
-                   replaceFragment(listFragment);
-               }
-               else if(topicArrayList.get(position).getListName().compareTo(DAILYROUTINE)==0){
-                   //replaceFragment(new FragmentDaily());
-                   Bundle bundle = new Bundle();
-                   bundle.putString(ITEMSTRING, "daily");
-                   ListFragment listFragment = new ListFragment();
-                   listFragment.setArguments(bundle);
-                   replaceFragment(listFragment);
-               }
+                Bundle bundle = new Bundle();
+                switch (topicArrayList.get(position).getListName()) {
+                    case MEETING:
+                        bundle.putString(ITEMSTRING, "meeting");
+                    case RESTAURANT:
+                        bundle.putString(ITEMSTRING, "restaurant");
+                    case DAILYROUTINE:
+                        bundle.putString(ITEMSTRING, "daily");
+                }
+
+
+                ListFragment listFragment = new ListFragment();
+                listFragment.setArguments(bundle);
+                replaceFragment(listFragment);
             }
         });
 
@@ -153,5 +144,7 @@ public class ListTopicFragment extends BaseFragment {
 
         }
     }
-
+    public boolean enablefloatButton() {
+        return true;
+    }
 }

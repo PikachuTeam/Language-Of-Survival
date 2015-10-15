@@ -30,6 +30,9 @@ public class ListFragment extends BaseFragment {
     protected boolean enableBackButton() {
         return true;
     }
+    public boolean enablefloatButton() {
+        return true;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -45,6 +48,7 @@ public class ListFragment extends BaseFragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Bundle bundle = new Bundle();
                 bundle.putString(KEY_DETAIL, englishGuideArrayList.get(position).getFrenchSentence());
+                DataSource.getInstance().updateRecent(englishGuideArrayList.get(position).getEnglishSentence(),englishGuideArrayList.get(position).getRecent());
                 ViewdetailFragment viewdetailFragment = new ViewdetailFragment();
                 viewdetailFragment.setArguments(bundle);
                 //   DataSource.getInstance().updateRecent(englishGuideArrayList.get(position).getEnglishSentence());

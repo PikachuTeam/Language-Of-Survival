@@ -3,13 +3,13 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:layout_gravity="center"
     >
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="@dimen/margin_12"
-        android:background="@drawable/survival_image"
-        android:textSize="@dimen/text_size_18"
+
+        android:src="@drawable/survival_image"
+
         android:layout_centerInParent="true"
         />
 

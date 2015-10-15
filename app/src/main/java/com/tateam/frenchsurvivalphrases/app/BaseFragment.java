@@ -19,6 +19,7 @@ import android.widget.TextView;
 //import com.example.vulan.survivalguideversion3.R;
 //import com.example.vulan.survivalguideversion3.entity.EnglishGuide;
 
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.tateam.frenchsurvivalphrases.R;
 import com.tateam.frenchsurvivalphrases.entity.EnglishGuide;
 
@@ -44,7 +45,7 @@ public class BaseFragment extends Fragment {
             getBaseActivity().getToolbar().setTitle(setTitle());
 
             if (enableBackButton()) {
-                getBaseActivity().getToolbar().setNavigationIcon(R.drawable.ic_chevron_left);
+                getBaseActivity().getToolbar().setNavigationIcon(R.drawable.ic_action_white);
             } else {
                 getBaseActivity().getToolbar().setNavigationIcon(null);
             }
@@ -57,7 +58,20 @@ public class BaseFragment extends Fragment {
         } else {
             getBaseActivity().getToolbar().setVisibility(View.GONE);
         }
+        if (enablefloatButton()) {
+            getBaseActivity().getMenu().setVisibility(View.VISIBLE);
 
+
+
+          /*
+            getBaseActivity().getToolbar().getMenu().findItem(R.id.doTest).setVisible(enableButtonDoTest());
+            getBaseActivity().getToolbar().getMenu().findItem(R.id.selectAll).setVisible(enableButtonSelectAll());
+            getBaseActivity().getToolbar().getMenu().findItem(R.id.cancelAll).setVisible(enableButtonCancelAll());
+            */
+
+        } else {
+            getBaseActivity().getMenu().setVisibility(View.GONE);
+        }
         super.onActivityCreated(savedInstanceState);
     }
 
@@ -80,7 +94,11 @@ public class BaseFragment extends Fragment {
         return true;
     }
 
- 
+
+    public boolean enablefloatButton() {
+        return false;
+    }
+
 
     public BaseActivity getBaseActivity() {
         return (BaseActivity) getActivity();

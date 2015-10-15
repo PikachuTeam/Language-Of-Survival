@@ -123,27 +123,27 @@ public ArrayList<FrenchGuide> getListFrench(int type){
     return englishGuideList;
 }
 */
-    /*
-public void updateRecent(String englishSentence) {
 
-    int newRecent = getMaxRecent(englishSentence) + 1;
+public void updateRecent(String englishSentence,int recent) {
+
+    int newRecent = recent + 1;
     //String value = newRecent + "";
-    Cursor cursor = sqLiteDatabase.rawQuery("UPDATE french SET recent= "+newRecent+" WHERE englishsentence ='"+englishSentence+"' ",null);
+    Cursor cursor = sqLiteDatabase.rawQuery("UPDATE french SET recent= "+newRecent+" WHERE englishsentence = ? ",new String[]{englishSentence});
     cursor.moveToFirst();
     cursor.close();
 
 }
     public int getMaxRecent(String englishSentence) {
-        int max;
+        int max=0;
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT recent FROM french where englishsentence='"+englishSentence+"'", null);
 
         cursor.moveToFirst();
 
-        //max = cursor.getInt();
+//        max = cursor.getInt();
 
         cursor.close();
         return max;
 
     }
-    */
+
 }

@@ -74,6 +74,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
     @Override
@@ -157,8 +158,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     private void findViews() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
     }
-
     public Toolbar getToolbar() {
         return toolbar;
+    }
+    public FloatingActionsMenu getMenu() {
+        return floatingActionsMenu;
     }
 }

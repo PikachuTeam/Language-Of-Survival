@@ -3,7 +3,7 @@ package com.tateam.frenchsurvivalphrases.fragment;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 
-import android.support.design.widget.FloatingActionButton;
+//import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.tateam.frenchsurvivalphrases.R;
 import com.tateam.frenchsurvivalphrases.app.BaseFragment;
 import com.tateam.frenchsurvivalphrases.utility.FragmentWebView;
@@ -89,5 +90,8 @@ public void getData(){
     }
     protected boolean enableBackButton() {
         return true;
+    }
+    public boolean enablefloatButton() {
+        return false;
     }
 }
