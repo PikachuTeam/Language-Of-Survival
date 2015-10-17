@@ -50,10 +50,13 @@ public class ListFragment extends BaseFragment {
                 inforTransfer=new String[]{englishGuideArrayList.get(position).getEnglishSentence(),
                         englishGuideArrayList.get(position).getFrenchSentence()
                 };
+                //DataSource.getInstance().updateRecent(englishGuideArrayList.get(position).getEnglishSentence(),englishGuideArrayList.get(position).getRecent());
+                int i=DataSource.getInstance().updateRecenthere(englishGuideArrayList.get(position).getEnglishSentence(),englishGuideArrayList.get(position).getRecent());
+
                 Bundle bundle = new Bundle();
                // bundle.putString(KEY_DETAIL, englishGuideArrayList.get(position).getFrenchSentence());
-                bundle.putStringArray(KEY_DETAIL,inforTransfer);
-                DataSource.getInstance().updateRecent(englishGuideArrayList.get(position).getEnglishSentence(),englishGuideArrayList.get(position).getRecent());
+                bundle.putStringArray(KEY_DETAIL, inforTransfer);
+
                 ViewdetailFragment viewdetailFragment = new ViewdetailFragment();
                 viewdetailFragment.setArguments(bundle);
                 //   DataSource.getInstance().updateRecent(englishGuideArrayList.get(position).getEnglishSentence());

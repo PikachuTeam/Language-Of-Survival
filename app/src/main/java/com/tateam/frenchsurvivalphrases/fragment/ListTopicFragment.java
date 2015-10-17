@@ -122,8 +122,8 @@ public class ListTopicFragment extends BaseFragment {
                 mViewHolder = (MyViewHolder) v.getTag();
             }
             mViewHolder.textTopic= (TextView) v.findViewById(R.id.TextTopic);
-            Typeface myTypeFace = Typeface.createFromAsset(getActivity().getAssets(), "the_conjuring.ttf");
-            mViewHolder.textTopic.setTypeface(myTypeFace);
+           // Typeface myTypeFace = Typeface.createFromAsset(getActivity().getAssets(), "the_conjuring.ttf");
+           // mViewHolder.textTopic.setTypeface(myTypeFace);
             mViewHolder.textTopic.setTag(guideList.get(position));
 
 

@@ -46,7 +46,7 @@ public class RecentPage extends Page implements RecentAdapter.ClickListener {
 
     public void refreshData() {
         list = new ArrayList<>();
-        list = DataSource.getInstance().getListRecent(1);
+        list = DataSource.getInstance().getListRecent();
         if (list.isEmpty()) {
             noRecent.setVisibility(View.VISIBLE);
         } else {

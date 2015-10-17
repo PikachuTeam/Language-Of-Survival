@@ -1,5 +1,7 @@
 package com.tateam.frenchsurvivalphrases.fragment;
 
+import android.app.FragmentTransaction;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 
@@ -54,7 +56,11 @@ public class ViewdetailFragment extends BaseFragment {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new FragmentWebView());
+                FragmentWebView webView =new FragmentWebView();
+                Bundle bundle = new Bundle();
+                bundle.putString("inforWeb", InfoDetail);
+                webView.setArguments(bundle);
+                replaceFragment(webView);
             }
         });
 
@@ -67,7 +73,13 @@ public void getData(){
      //InfoDetail = bundle.getString("KEYDETAIL");
     inforTransfer=bundle.getStringArray("KEYDETAIL");
     tvenglish.setText(inforTransfer[0]);
-     tvfrench.setText(inforTransfer[1]);
+    tvfrench.setText(inforTransfer[1]);
+    InfoDetail=inforTransfer[1];
+   // Typeface myTypeFace = Typeface.createFromAsset(getActivity().getAssets(), "the_conjuring.ttf");
+
+   // tvenglish.setTypeface(myTypeFace);
+    //tvfrench.setTypeface(myTypeFace);
+
 
 
 }  @Override

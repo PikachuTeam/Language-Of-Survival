@@ -23,6 +23,7 @@ public class RecentFragment extends BaseFragment {
     public static final String KEY_DETAIL="KEYDETAIL";
     public View view;
     public int position=2;
+    public String[] inforTransfer;
     protected boolean enableBackButton() {
         return true;
     }
@@ -31,7 +32,9 @@ public class RecentFragment extends BaseFragment {
         super.onCreate(savedInstanceState);
 
     }
-
+    public boolean enablefloatButton() {
+        return true;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -56,7 +59,11 @@ public class RecentFragment extends BaseFragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //  Intent intent=new Intent(this,getBaseActivity().replace);
                 Bundle bundle = new Bundle();
-                bundle.putString(KEY_DETAIL, englishGuideArrayList.get(position).getFrenchSentence());
+               // bundle.putString(KEY_DETAIL, englishGuideArrayList.get(position).getFrenchSentence());
+                inforTransfer=new String[]{englishGuideArrayList.get(position).getEnglishSentence(),
+                        englishGuideArrayList.get(position).getFrenchSentence()
+                };
+                bundle.putStringArray(KEY_DETAIL, inforTransfer);
                 ViewdetailFragment viewdetailFragment = new ViewdetailFragment();
                 viewdetailFragment.setArguments(bundle);
 
@@ -68,7 +75,7 @@ public class RecentFragment extends BaseFragment {
     private void LoadDataRecent(){
         DataSource.getInstance().init(getActivity().getApplicationContext());
         DataSource.getInstance().createDatabaseIfNeed();
-        englishGuideArrayList = DataSource.getInstance().getListRecent(1);
+        englishGuideArrayList = DataSource.getInstance().getListRecent();
     }
 
 }

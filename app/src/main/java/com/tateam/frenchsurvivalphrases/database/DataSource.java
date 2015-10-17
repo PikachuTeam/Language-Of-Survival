@@ -1,5 +1,6 @@
 package com.tateam.frenchsurvivalphrases.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -74,16 +75,18 @@ public class DataSource  {
         return englishGuideList;
     }
 
-    public ArrayList<EnglishGuide> getListRecent(int type){
+    public ArrayList<EnglishGuide> getListRecent(){
         ArrayList<EnglishGuide> englishGuideList = new ArrayList<>();
-        Cursor cursor = sqLiteDatabase.rawQuery("select englishsentence, frenchsentence from french" +
-                " where typeno ='"+type+"' and recent >0 ",null);
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from french" +
+                " where  recent >0 ",null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             EnglishGuide englishGuide =new EnglishGuide();
             englishGuide.setEnglishSentence(cursor.getString(0));
             englishGuide.setFrenchSentence(cursor.getString(1));
-            //englishGuide.setType(cursor.getString(2));
+            englishGuide.setType(cursor.getString(2));
+            englishGuide.setTypeno(cursor.getInt(3));
+            englishGuide.setRecent(cursor.getInt(4));
             englishGuideList.add(englishGuide);
             cursor.moveToNext();
         }
@@ -126,13 +129,41 @@ public ArrayList<FrenchGuide> getListFrench(int type){
 
 public void updateRecent(String englishSentence,int recent) {
 
-    int newRecent = recent + 1;
-    //String value = newRecent + "";
-    Cursor cursor = sqLiteDatabase.rawQuery("UPDATE french SET recent= "+newRecent+" WHERE englishsentence = ? ",new String[]{englishSentence});
+    int newRecent = getMaxRecent()+1;
+    String value = newRecent + "";
+  //  Cursor cursor = sqLiteDatabase.rawQuery("UPDATE french SET recent= "+newRecent+" WHERE englishsentence = '"+englishSentence+"' ",null);
+    Cursor cursor = sqLiteDatabase.rawQuery("UPDATE french SET recent= ? WHERE englishsentence = ? ",new String[]{value,englishSentence});
+   // Cursor cursor = sqLiteDatabase.rawQuery("UPDATE "+table+" SET isRecent= ? WHERE phrase =?", new String[]{value, phrase});
     cursor.moveToFirst();
     cursor.close();
 
+
 }
+    //
+
+    public int updateRecenthere(String englishSentence,int recent) {
+
+        int newRecent = getMaxRecent()+1;
+        String value = newRecent + "";
+        //  Cursor cursor = sqLiteDatabase.rawQuery("UPDATE french SET recent= "+newRecent+" WHERE englishsentence = '"+englishSentence+"' ",null);
+        //Cursor cursor = sqLiteDatabase.rawQuery("UPDATE french SET recent= ? WHERE englishsentence = ? ",new String[]{value,englishSentence});
+
+       // cursor.moveToFirst();
+        //cursor.close();
+
+        ContentValues newValues = new ContentValues();
+        newValues.put("recent",value);
+
+        String[] args = new String[]{englishSentence};
+        long i= sqLiteDatabase.update("french", newValues, "englishsentence = ?", args);
+        // long i = sqLiteDatabase.update("french", cv, KEY_ROWID + "=?", new String[]{rowid});
+
+        if(i>0)
+            return 1;  // 1 for successful
+        else
+            return 0;  // 0 for unsuccessful
+    }
+    //
     public int getMaxRecent(String englishSentence) {
         int max=0;
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT recent FROM french where englishsentence='"+englishSentence+"'", null);
@@ -145,5 +176,16 @@ public void updateRecent(String englishSentence,int recent) {
         return max;
 
     }
+    public int getMaxRecent() {
+        int max;
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM french where recent > 0 order by recent desc limit 1", null);
+        if (cursor.getCount() == 0) return 0;
+        cursor.moveToFirst();
 
+        max = cursor.getInt(4);
+
+        cursor.close();
+        return max;
+
+    }
 }

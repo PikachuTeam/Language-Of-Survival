@@ -18,23 +18,12 @@
 
 
     <com.getbase.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_removead"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        fab:fab_colorNormal="@color/red"
-        fab:fab_colorPressed="@color/red"
-        fab:fab_icon="@drawable/star_icon_purple"
-        fab:fab_size="mini"
-
-        fab:fab_title="@string/remove_ad" />
-    <com.getbase.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_feedback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         fab:fab_colorNormal="@color/red"
         fab:fab_colorPressed="@color/red"
         fab:fab_icon="@drawable/star_icon_purple"
-
         fab:fab_size="mini"
         fab:fab_title="@string/feed_back" />
 
