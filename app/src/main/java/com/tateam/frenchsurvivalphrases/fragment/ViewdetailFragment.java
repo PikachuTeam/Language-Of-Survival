@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,7 +61,14 @@ public class ViewdetailFragment extends BaseFragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("inforWeb", InfoDetail);
                 webView.setArguments(bundle);
-                replaceFragment(webView);
+              //  replaceFragment(webView);
+
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.setCustomAnimations(R.anim.fragment_silde_bot_enter, R.anim.fragment_silde_bot_exit,
+                        R.anim.fragment_silde_bot_enter, R.anim.fragment_silde_bot_exit);
+                transaction.add(R.id.container, webView, "WebView");
+                transaction.addToBackStack("WebView");
+                transaction.commit();
             }
         });
 

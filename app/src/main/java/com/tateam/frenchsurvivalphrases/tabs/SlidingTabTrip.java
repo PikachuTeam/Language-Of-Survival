@@ -23,7 +23,10 @@ class SlidingTabStrip extends LinearLayout {
 
     private final int mSelectedIndicatorThickness;
     private final Paint mSelectedIndicatorPaint;
+// class nay la j the
+    // cai nay la code cua bon google dung de chuyen tab tab nao ? a dot truoc toi dinh xai tab y =)) , gio bo roi ma quen chua xoa
 
+    //uh thoi co j mai noi. doi t ti
     private final int mDefaultBottomBorderColor;
 
     private int mSelectedPosition;

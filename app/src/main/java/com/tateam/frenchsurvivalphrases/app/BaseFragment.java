@@ -2,13 +2,14 @@ package com.tateam.frenchsurvivalphrases.app;
 
 
 
-//import android.app.FragmentManager;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -114,10 +115,12 @@ public class BaseFragment extends Fragment {
 
 
 
-    public static void replaceFragment(FragmentManager manager, BaseFragment newFragment, String fragmentTag,
+    public static void replaceFragment(FragmentManager fragmentManager, BaseFragment newFragment, String fragmentTag,
                                        String transactionName) {
-        android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
-       // transaction.setCustomAnimations(R.anim.fragment_slide_right_enter, R.anim.fragment_slide_left_exit, R.anim.fragment_slide_left_enter, R.anim.fragment_slide_right_exit);
+
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.setCustomAnimations(R.anim.fragment_slide_right_enter, R.anim.fragment_slide_left_exit,
+                R.anim.fragment_slide_left_enter, R.anim.fragment_slide_right_exit);
         transaction.replace(R.id.container, newFragment, fragmentTag);
         transaction.addToBackStack(transactionName);
         transaction.commit();
@@ -135,6 +138,7 @@ public class BaseFragment extends Fragment {
     //Adapter
     public class ListGuideAdapter extends BaseAdapter {
         Context mContext;
+        //adapter ném ra thành class ngoài
         ArrayList<EnglishGuide> englishGuideList;
         LayoutInflater inflater;
 

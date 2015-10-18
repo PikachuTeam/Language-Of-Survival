@@ -3,6 +3,8 @@ package com.tateam.frenchsurvivalphrases.app;
 import android.app.FragmentManager;
 import android.os.Bundle;
 
+
+import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -10,7 +12,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
-import com.google.android.gms.ads.AdView;
+
 import com.tateam.frenchsurvivalphrases.R;
 
 import com.tateam.frenchsurvivalphrases.fragment.RecentFragment;
@@ -22,7 +24,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private FloatingActionsMenu floatingActionsMenu;
     public FloatingActionButton fbFeeback,fbRemoveAd,fbRecent;
-    protected AdView mAdView;
+
     private boolean isAdLoadingFine = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                BaseFragment currentFragment = (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.container);
+                BaseFragment currentFragment = (BaseFragment) getFragmentManager().findFragmentById(R.id.container);
            /*
                 switch (item.getItemId()) {
                     case R.id.doTest:
@@ -84,7 +86,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             if (manager.getBackStackEntryCount() == 0) {
                 super.onBackPressed();
             } else {
-                BaseFragment currentFragment = (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.container);
+                BaseFragment currentFragment = (BaseFragment) getFragmentManager().findFragmentById(R.id.container);
                 currentFragment.onBackPressed();
             }
         }
@@ -107,7 +109,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract BaseFragment getFragmentContent();
 
     private void addFragmentContent() {
-        android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
         BaseFragment fragment = getFragmentContent();
         transaction.add(R.id.container, fragment, fragment.getClass().getName());
         transaction.commit();
@@ -128,11 +130,11 @@ public abstract class BaseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 floatingActionsMenu.collapse();
-                BaseFragment fragment = (BaseFragment) getSupportFragmentManager().findFragmentByTag("recent");
+                BaseFragment fragment = (BaseFragment) getFragmentManager().findFragmentByTag("recent");
 
                 if (fragment == null) {
                     RecentFragment recentFragment = new RecentFragment();
-                    BaseFragment.replaceFragment(getSupportFragmentManager(), recentFragment, "recent", "recent");
+                    BaseFragment.replaceFragment(getFragmentManager(), recentFragment, "recent", "recent");
                 }
             }
         });

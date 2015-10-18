@@ -63,7 +63,7 @@ public class RecentPage extends Page implements RecentAdapter.ClickListener {
         Bundle bundle = new Bundle();
         bundle.putString("KEYDETAIL", list.get(position).getEnglishSentence());
         detailIdiomFragment.setArguments(bundle);
-        BaseFragment.replaceFragment(activity.getSupportFragmentManager(), detailIdiomFragment, list.get(position).getEnglishSentence(),
+        BaseFragment.replaceFragment(activity.getFragmentManager(), detailIdiomFragment, list.get(position).getEnglishSentence(),
                 list.get(position).getEnglishSentence());
     }
 

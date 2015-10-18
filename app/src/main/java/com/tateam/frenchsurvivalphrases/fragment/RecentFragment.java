@@ -67,7 +67,7 @@ public class RecentFragment extends BaseFragment {
                 ViewdetailFragment viewdetailFragment = new ViewdetailFragment();
                 viewdetailFragment.setArguments(bundle);
 
-                replaceFragment(getActivity().getSupportFragmentManager(), viewdetailFragment, englishGuideArrayList.get(position).getFrenchSentence(), englishGuideArrayList.get(position).getFrenchSentence());
+                replaceFragment(getActivity().getFragmentManager(), viewdetailFragment, englishGuideArrayList.get(position).getFrenchSentence(), englishGuideArrayList.get(position).getFrenchSentence());
             }
         });
         return view;

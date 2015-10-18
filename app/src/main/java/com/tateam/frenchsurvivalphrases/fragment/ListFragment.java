@@ -60,7 +60,7 @@ public class ListFragment extends BaseFragment {
                 ViewdetailFragment viewdetailFragment = new ViewdetailFragment();
                 viewdetailFragment.setArguments(bundle);
                 //   DataSource.getInstance().updateRecent(englishGuideArrayList.get(position).getEnglishSentence());
-                replaceFragment(getActivity().getSupportFragmentManager(), viewdetailFragment, englishGuideArrayList.get(position).getFrenchSentence(), englishGuideArrayList.get(position).getFrenchSentence());
+                replaceFragment(getActivity().getFragmentManager(), viewdetailFragment, englishGuideArrayList.get(position).getFrenchSentence(), englishGuideArrayList.get(position).getFrenchSentence());
             }
         });
         return v;
