@@ -57,9 +57,12 @@
     <dimen name="margin_10">14dp</dimen>
     <dimen name="margin_11">80dp</dimen>
     <dimen name="margin_12">30dp</dimen>
+    <dimen name="margin_13">30dp</dimen>
+    <dimen name="margin_14">40dp</dimen>
+ <dimen name="margin_15">15dp</dimen>
 
-    <dimen name="home_screen_button_width">200dp</dimen>
-    <dimen name="home_screen_button_height">80dp</dimen>
+ <dimen name="home_screen_button_width">138dp</dimen>
+    <dimen name="home_screen_button_height">120dp</dimen>
     <dimen name="home_screen_button_margin_bottom">50dp</dimen>
 
     <dimen name="toolbar_button_width">50dp</dimen>
@@ -85,7 +88,11 @@
     <dimen name="dp65">58.5dp</dimen>
     <dimen name="non_favorite_recent_text_size">23.4sp</dimen>
     <dimen name="float_button_margin_bottom">32.4dp</dimen>
-    <dimen name="float_button_margin_right">5.4dp</dimen>
+    <dimen name="float_button_margin_right">18dp</dimen>
     <dimen name="toolbar_height">36dp</dimen>
     <dimen name="dp5">4.5dp</dimen>
+
+
+
+
 </resources>

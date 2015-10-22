@@ -15,7 +15,17 @@
     <string name="title_activity_detail">DetailActivity</string>
     <string name="feed_back">Feed back</string>
     <string name="remove_ad">Remove Ad</string>
-    <string name="recent">recent</string>
+
+    <string name="recent">Recent</string>
+    <string name="meeting">Meeting</string>
+    <string name="restaurant">Restaurant</string>
+    <string name="direction">Direction</string>
+    <string name="shopping">Shopping</string>
+    <string name="weather">Weather</string>
+    <string name="socializing">Socializing</string>
+    <string name="hotel">Hotel  </string>
+    <string name="daily">Daily</string>
+
     <string name="no_recent">No recent list found</string>
     feed_back
     <string-array name="tabs">

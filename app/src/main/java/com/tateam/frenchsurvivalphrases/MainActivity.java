@@ -8,7 +8,7 @@ import com.tateam.frenchsurvivalphrases.app.BaseFragment;
 
 import com.tateam.frenchsurvivalphrases.database.DataSource;
 import com.tateam.frenchsurvivalphrases.fragment.ListTopicFragment;
-import com.tateam.frenchsurvivalphrases.fragment.MainFragment;
+//import com.tateam.frenchsurvivalphrases.fragment.MainFragment;
 
 public class MainActivity extends BaseActivity {
 
@@ -23,15 +23,6 @@ public class MainActivity extends BaseActivity {
         return new ListTopicFragment();
     }
 
-    @Override
-    protected boolean enableAdMod() {
-        return true;
-    }
-
-    @Override
-    protected void onRemoveAdClick() {
-       // requestBuyItem();
-    }
 
 
 
