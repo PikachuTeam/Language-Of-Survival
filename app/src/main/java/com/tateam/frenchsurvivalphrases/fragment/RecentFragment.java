@@ -49,8 +49,9 @@ public class RecentFragment extends BaseFragment implements GuideAdapter.clickLi
         layoutManager = new LinearLayoutManager(getBaseActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-        guideAdapter=new GuideAdapter(getBaseActivity(),englishGuideArrayList,1);
         LoadDataGuide();
+
+        guideAdapter=new GuideAdapter(getBaseActivity(),englishGuideArrayList);
         recyclerView.setAdapter(guideAdapter);
         guideAdapter.setmListener(this);
 
@@ -90,8 +91,8 @@ public class RecentFragment extends BaseFragment implements GuideAdapter.clickLi
     private void LoadDataGuide() {
         DataSource.getInstance().init(getActivity().getApplicationContext());
         DataSource.getInstance().createDatabaseIfNeed();
-        Bundle bundle = this.getArguments();
-
+       // Bundle bundle = this.getArguments();
+        englishGuideArrayList = DataSource.getInstance().getListRecent();
 
 
         // englishGuideArrayList = DataSource.getInstance().getListRecent(1);

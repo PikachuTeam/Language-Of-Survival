@@ -1,4 +1,4 @@
-package com.tateam.frenchsurvivalphrases;
+package com.tatteam.languageofsurvial;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

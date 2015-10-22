@@ -30,7 +30,14 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
         this.listEnglishguide = new ArrayList<>();
         this.listEnglishguide = listEnglishguide;
     }
+    public GuideAdapter(BaseActivity activity, List<EnglishGuide> listEnglishguide) {
 
+        super();
+        this.activity = activity;
+
+        this.listEnglishguide = new ArrayList<>();
+        this.listEnglishguide = listEnglishguide;
+    }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
@@ -42,7 +49,9 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         viewHolder.tvEnglish.setText(listEnglishguide.get(i).getEnglishSentence());
+        viewHolder.bgEnglish.setCardBackgroundColor(activity.getResources().getColor(R.color.colorPrimary));
 
+/*
         switch (type) {
             case 1:
                 viewHolder.bgEnglish.setCardBackgroundColor(activity.getResources().getColor(R.color.slang_Primary));
@@ -69,6 +78,7 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
                 viewHolder.bgEnglish.setCardBackgroundColor(activity.getResources().getColor(R.color.proverb_Primary));
                 break;
         }
+        */
     }
 
     @Override

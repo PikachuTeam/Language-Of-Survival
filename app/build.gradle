@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.tateam.frenchsurvivalphrases"
+        applicationId "com.tatteam.languageofsurvial"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
@@ -18,13 +18,18 @@ android {
         }
     }
     productFlavors {
-         french {
-            applicationId "com.tateam.frenchsurvivalphrases.french"
+        french {
+            applicationId "com.tatteam.languageofsurvial.french"
             versionCode 1
             versionName "1.0"
         }
         spanish {
-            applicationId "com.tateam.frenchsurvivalphrases.spanish"
+            applicationId "com.tatteam.languageofsurvial.spanish"
+            versionCode 1
+            versionName "1.0"
+        }
+        italian {
+            applicationId "com.tatteam.languageofsurvial.italian"
             versionCode 1
             versionName "1.0"
         }
