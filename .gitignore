@@ -40,8 +40,9 @@ proguard/
 *.log
 
 # Assets
+
 /*/assets/
 app/assets/
-
 /app/app.iml
 /*/app.iml
+
