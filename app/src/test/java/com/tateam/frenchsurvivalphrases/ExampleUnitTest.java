@@ -1,4 +1,4 @@
-package com.tateam.frenchsurvivalphrases;
+package com.tateam.languageofsurvival;
 
 import org.junit.Test;
 

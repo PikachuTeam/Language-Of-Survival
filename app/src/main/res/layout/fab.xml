@@ -11,7 +11,7 @@
     android:layout_marginBottom="@dimen/float_button_margin_bottom"
     android:layout_marginRight="@dimen/float_button_margin_right"
     app:fab_addButtonSize="normal"
-    fab:fab_addButtonColorNormal="@color/red"
+    fab:fab_addButtonColorNormal="@color/colorAccent"
     fab:fab_addButtonColorPressed="@color/colorPrimaryDark"
 
    >
@@ -21,9 +21,9 @@
         android:id="@+id/fab_feedback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        fab:fab_colorNormal="@color/red"
-        fab:fab_colorPressed="@color/red"
-        fab:fab_icon="@drawable/star_icon_purple"
+        fab:fab_colorNormal="@color/colorAccent"
+        fab:fab_colorPressed="@color/colorAccent"
+        fab:fab_icon="@drawable/mail_version2_mini"
         fab:fab_size="mini"
         fab:fab_title="@string/feed_back" />
 
@@ -32,9 +32,9 @@
         android:id="@+id/fab_recent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        fab:fab_colorNormal="@color/red"
-        fab:fab_colorPressed="@color/red"
-        fab:fab_icon="@drawable/star_icon_purple"
+        fab:fab_colorNormal="@color/colorAccent"
+        fab:fab_colorPressed="@color/colorAccent"
+        fab:fab_icon="@drawable/recentlist_mini"
 
         fab:fab_size="mini"
         fab:fab_title="@string/recent" />
