@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tateam.languageofsurvival.app.FractionFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    >
+
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonMeeting"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+
+
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            >
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/height_row"
+                                android:src="@drawable/meeting_icon_mini_version1"
+                                android:layout_gravity="center"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="56dp"
+                                android:text="Meeting"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/text_size"
+
+                                />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonRestaurant"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+
+
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        android:layout_toRightOf="@id/buttonMeeting"
+                        android:layout_marginLeft="@dimen/margin_15"
+
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/height_row"
+                                android:src="@drawable/restaurant_blue_icon_mini"
+                                android:layout_gravity="center"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/restaurant"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/text_size"
+                                />
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin_top_row"
+                    >
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonDaily"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+
+
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        android:layout_below="@+id/buttonMeeting"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+
+                            >
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_row"
+                                android:src="@drawable/daily_icon_mini"
+                                android:layout_gravity="center"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/daily"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/text_size"
+                                />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonSocializing"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+
+
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        android:layout_below="@+id/buttonMeeting"
+                        android:layout_toRightOf="@+id/buttonDaily"
+                        android:layout_marginLeft="@dimen/margin_15">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/height_row"
+                                android:src="@drawable/socializing_icon_mini"
+                                android:layout_gravity="center"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/socializing"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/text_size" />
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin_top_row"
+                    >
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonShopping"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+
+
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        android:layout_below="@+id/buttonDaily">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/height_row"
+                                android:src="@drawable/ic_action_mini"
+                                android:layout_gravity="center"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/shopping"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/text_size"
+                                />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonHotel"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        android:layout_below="@+id/buttonDaily"
+                        android:layout_toRightOf="@+id/buttonShopping"
+                        android:layout_marginLeft="@dimen/margin_15">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/height_row"
+                                android:src="@drawable/hotel_icon_mini"
+                                android:layout_gravity="center"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hotel"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/text_size"
+                                />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin_top_row"
+                    >
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonDirection"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+
+
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        android:layout_below="@+id/buttonShopping"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/height_row"
+                                android:src="@drawable/map_icon_mini"
+                                android:layout_gravity="center"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/direction"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/text_size"
+                                />
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonWeather"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+
+
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        android:layout_below="@+id/buttonShopping"
+                        android:layout_toRightOf="@id/buttonDirection"
+                        android:layout_marginLeft="@dimen/margin_15">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/height_row"
+                                android:src="@drawable/icon_high_def_weather_mini"
+                                android:layout_gravity="center"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/weather"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/text_size"
+                                />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</com.tateam.languageofsurvival.app.FractionFrameLayout>

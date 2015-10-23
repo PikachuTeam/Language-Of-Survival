@@ -1,8 +1,8 @@
 <com.tateam.languageofsurvival.app.FractionFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -10,212 +10,170 @@
         android:orientation="vertical">
 
 
-
-        <android.support.v7.widget.CardView
-
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="match_parent">
 
-            card_view:cardCornerRadius="@dimen/margin_2"
-            card_view:cardElevation="@dimen/margin_3"
-            >
-
-            <LinearLayout
+            <android.support.design.widget.CoordinatorLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
 
-                <android.support.design.widget.CoordinatorLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:fitsSystemWindows="true">
+                    android:orientation="vertical"
+
+
+                    android:weightSum="100"
+
+                    >
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:paddingBottom="@dimen/margin_2"
-                        android:paddingLeft="@dimen/margin_4"
-
-                        android:paddingRight="@dimen/margin_4"
-                        android:paddingTop="@dimen/margin_2"
-
-                        android:weightSum="100"
+                        android:layout_height="0dp"
+                        android:layout_weight="30"
+                        android:orientation="horizontal"
 
                         >
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="30"
-                            android:orientation="horizontal"
-
-                            >
-
-
-                            <LinearLayout
-                                android:id="@+id/tittle"
-
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <android.support.v7.widget.CardView
-
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:padding="@dimen/margin_6"
-                                    card_view:cardBackgroundColor="?attr/colorPrimary"
-                                    card_view:cardCornerRadius="@dimen/margin_2"
-                                    card_view:cardElevation="@dimen/margin_3"
-
-                                    card_view:cardUseCompatPadding="true">
-
-                                    <RelativeLayout
-
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
-
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:gravity="center"
-                                            android:paddingBottom="@dimen/margin_6">
-
-                                            <ScrollView
-                                                android:layout_width="match_parent"
-                                                android:layout_height="match_parent"
-
-                                                >
-
-                                                <LinearLayout
-
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="match_parent"
-                                                    android:layout_gravity="center">
-
-                                                    <TextView
-                                                        android:id="@+id/tvEnglish"
-                                                        android:layout_width="0dp"
-                                                        android:layout_height="match_parent"
-                                                        android:layout_marginBottom="@dimen/margin_6"
-
-                                                        android:layout_marginRight="@dimen/margin_6"
-                                                        android:layout_marginTop="@dimen/margin_6"
-                                                        android:layout_weight="89"
-                                                        android:gravity="center"
-                                                        android:text="English sentence"
-                                                        android:textColor="@color/white"
-                                                        android:textIsSelectable="true"
-                                                        android:textSize="@dimen/text_size_13"
-                                                        android:textStyle="italic" />
-                                                </LinearLayout>
-                                            </ScrollView>
-                                        </LinearLayout>
-
-
-                                    </RelativeLayout>
-
-
-                                </android.support.v7.widget.CardView>
-                            </LinearLayout>
-
-                        </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/tittle"
+
                             android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="70"
-
-                            >
-
+                            android:layout_height="match_parent">
 
                             <android.support.v7.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:padding="@dimen/margin_3"
-                                card_view:cardBackgroundColor="?attr/colorPrimary"
-                                card_view:cardCornerRadius="@dimen/margin_2"
-                                card_view:cardElevation="@dimen/margin_3"
+                                android:layout_marginBottom="@dimen/margin_1"
+                                android:layout_marginLeft="@dimen/margin_6"
+                                android:layout_marginRight="@dimen/margin_6"
+                                android:layout_marginTop="@dimen/margin_6"
+
+
+                                android:padding="@dimen/margin_6"
+                                card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                                card_view:cardElevation="@dimen/card_view_elevation"
                                 card_view:cardUseCompatPadding="true">
 
                                 <RelativeLayout
+
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent">
 
-                                    <ScrollView
-                                        android:id="@+id/scrollView"
+                                    <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:paddingBottom="@dimen/margin_6"
-                                        android:paddingRight="@dimen/margin_6">
+                                        android:background="#b7bfbf"
+                                        android:gravity="center"
+                                        android:paddingBottom="@dimen/margin_6">
 
-                                        <LinearLayout
+                                        <ScrollView
                                             android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:orientation="vertical"
+                                            android:layout_height="match_parent"
 
-                                            android:paddingRight="@dimen/margin_6">
+                                            >
 
+                                            <LinearLayout
 
-
-                                            <TextView
-                                                android:id="@+id/tvFrench"
                                                 android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"
-                                                android:layout_marginLeft="@dimen/margin_8"
-                                                android:layout_marginRight="@dimen/margin_6"
-                                                android:layout_marginTop="@dimen/margin_7"
-                                                android:text="French Sentence"
-                                                android:textColor="@color/white"
-                                                android:textIsSelectable="true"
-                                                android:textSize="@dimen/text_size_23"
+                                                android:layout_height="match_parent"
+                                                android:layout_gravity="center">
 
+                                                <TextView
+                                                    android:id="@+id/tvEnglish"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_marginBottom="@dimen/margin_6"
 
-                                                />
+                                                    android:layout_marginRight="@dimen/margin_6"
+                                                    android:layout_marginTop="@dimen/margin_6"
+                                                    android:layout_weight="89"
+                                                    android:gravity="center"
+                                                    android:text="English sentence"
 
-
-                                        </LinearLayout>
-                                    </ScrollView>
+                                                    android:textIsSelectable="true"
+                                                    android:textSize="@dimen/text_size_20"
+                                                    android:textStyle="italic" />
+                                            </LinearLayout>
+                                        </ScrollView>
+                                    </LinearLayout>
 
 
                                 </RelativeLayout>
+
+
                             </android.support.v7.widget.CardView>
                         </LinearLayout>
+
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="70">
 
-                    <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/fab_speak"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                         android:layout_marginRight="8dp"
-                        android:src="@drawable/ic_volume_up_white_18dp"
-                        app:layout_anchor="@id/tittle"
-                        app:layout_anchorGravity="bottom|end" />
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/margin_6"
+                            android:layout_marginLeft="@dimen/margin_6"
+                            android:layout_marginRight="@dimen/margin_6"
+                            android:layout_marginTop="@dimen/margin_0"
+
+                            card_view:cardBackgroundColor="#719bad"
+                            android:padding="@dimen/margin_3"
+                            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                            card_view:cardElevation="@dimen/card_view_elevation"
+                            card_view:cardUseCompatPadding="true">
+
+                            <RelativeLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
 
 
+                                    <TextView
+                                        android:id="@+id/tvFrench"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/margin_8"
+                                        android:layout_marginRight="@dimen/margin_6"
+                                        android:layout_marginTop="@dimen/margin_7"
+                                        android:gravity="center"
+                                        android:text="French Sentence"
+                                        android:textIsSelectable="true"
+                                        android:textSize="@dimen/text_size_23"
+                                        />
 
-                </android.support.design.widget.CoordinatorLayout>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
+                            </RelativeLayout>
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.design.widget.CoordinatorLayout>
+        </LinearLayout>
 
 
     </LinearLayout>
 
 
-
-    <android.support.design.widget.FloatingActionButton android:id="@+id/fabGoogle"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_speak"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_alignParentBottom="true"
+
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_gravity="bottom|right"
+        android:layout_gravity="center|right"
         android:layout_marginBottom="@dimen/float_button_margin_bottom"
-       android:layout_marginRight="@dimen/float_button_margin_right"
+        android:layout_marginRight="@dimen/float_button_margin_right"
+        android:src="@drawable/ic_volume_up_white_18dp"
 
-        android:src="@android:drawable/ic_dialog_info" />
+        />
 
 </com.tateam.languageofsurvival.app.FractionFrameLayout>
 
