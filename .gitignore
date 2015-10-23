@@ -2,6 +2,11 @@
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
+/.idea/vcs.xml
+/.idea/misc.xml
+/.idea/mcompiler.xml
+/.idea/encodings.xml
+
 .DS_Store
 /build
 
@@ -35,4 +40,9 @@ proguard/
 *.log
 
 # Assets
-app/assets
+
+/*/assets/
+app/assets/
+/app/app.iml
+/*/app.iml
+
