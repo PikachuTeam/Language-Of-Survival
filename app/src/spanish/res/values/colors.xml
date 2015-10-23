@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff162c</color>
+    <color name="colorPrimaryDark">#D50000</color>
+    <color name="colorAccent">#FDD835</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="grey">#464646</color>
+    <color name="red">#ff162c</color>
+
+    <color name="correct_answer">#3DAF41</color>
+    <color name="wrong_answer">#AF132E</color>
+
+    <color name="question_number_stroke">#42af69</color>
+    <color name="choose_test_activated_button">#9EA198</color>
+
+    <color name="number_1">#87FB52</color>
+    <color name="number_2">#31FBE7</color>
+    <color name="number_3">#38fb9a</color>
+    <color name="number_4">#fb584f</color>
+    <color name="number_5">#9773fb</color>
+    <color name="number_6">#fb9e4f</color>
+    <color name="number_7">#fbf656</color>
+    <color name="number_8">#452ffb</color>
+    <color name="number_9">#84fb64</color>
+    <color name="number_10">#fb3ee7</color>
+    <color name="number_11">#54fb3f</color>
+    <color name="number_12">#9c09fb</color>
+
+    <color name="fab_label">#df343468</color>
+    <color name="fab_press">#44448e</color>
+    <color name= "fab_deactive">#d6363636</color>
+    <color name= "fab_deactive_press">#797979</color>
+    <color name="indicatorColor">#ff8a80</color>
+    <color name="orange">#ff8a80</color>
+
+    <color name="window_background">#f1f1f1</color>
+    <color name="window_background1">#d9d9d9</color>
+    <color name="window_background2">#e8e8e8</color>
+
+
+</resources>

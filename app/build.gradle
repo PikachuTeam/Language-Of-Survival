@@ -17,10 +17,37 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        french {
+            applicationId "com.tatteam.languageofsurvial.french"
+            versionCode 1
+            versionName "1.0"
+        }
+        spanish {
+            applicationId "com.tatteam.languageofsurvial.spanish"
+            versionCode 1
+            versionName "1.0"
+        }
+        italian {
+            applicationId "com.tatteam.languageofsurvial.italian"
+            versionCode 1
+            versionName "1.0"
+        }
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:design:23.0.1'
+    compile 'com.android.support:cardview-v7:23.0.1'
+    compile 'com.android.support:recyclerview-v7:23.0.1'
+    compile 'com.getbase:floatingactionbutton:1.10.0'
+
+
+    compile 'com.github.hotchemi:android-rate:0.5.3'
+    compile 'com.android.support:support-v4:23.0.1'
+
+
 }
