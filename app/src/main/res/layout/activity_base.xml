@@ -19,5 +19,6 @@
 <include
     android:id="@+id/floatButton"
     layout="@layout/fab"
+
     ></include>
 </RelativeLayout>

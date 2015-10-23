@@ -40,6 +40,7 @@ public class ViewdetailFragment extends BaseFragment {
         View v=inflater.inflate(R.layout.view_detail, container, false);
         tvfrench= (TextView) v.findViewById(R.id.tvFrench);
         tvenglish= (TextView) v.findViewById(R.id.tvEnglish);
+
         btPlay= (FloatingActionButton) v.findViewById(R.id.fab_speak);
         btPlay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +50,7 @@ public class ViewdetailFragment extends BaseFragment {
                 }
             }
         });
-        getData();
+        getData();/*
         floatingActionButton= (FloatingActionButton) v.findViewById(R.id.fabGoogle);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +69,7 @@ public class ViewdetailFragment extends BaseFragment {
                 transaction.commit();
             }
         });
-
+*/
         return v;
 
     }
