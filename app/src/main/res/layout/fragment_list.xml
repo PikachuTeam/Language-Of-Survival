@@ -48,7 +48,7 @@
 
 
                         android:scrollbarAlwaysDrawVerticalTrack="true"
-                        android:scrollbarSize="@dimen/margin_3"
+
                         android:scrollbarThumbVertical="?attr/colorPrimaryDark"
                         android:scrollbars="vertical" />
 

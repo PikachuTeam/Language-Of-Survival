@@ -7,6 +7,8 @@ import com.tateam.languageofsurvival.app.BaseFragment;
 
 import com.tateam.languageofsurvival.database.DataSource;
 import com.tateam.languageofsurvival.fragment.ListTopicFragment;
+
+import tatteam.com.app_common.AppCommon;
 //import com.tateam.frenchsurvivalphrases.fragment.MainFragment;
 
 public class MainActivity extends BaseActivity {
@@ -20,6 +22,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected BaseFragment getFragmentContent() {
         return new ListTopicFragment();
+
     }
 
 

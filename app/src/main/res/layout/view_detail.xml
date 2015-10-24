@@ -68,7 +68,7 @@
                                         android:layout_height="match_parent"
                                         android:background="#b7bfbf"
                                         android:gravity="center"
-                                        android:paddingBottom="@dimen/margin_6">
+                                        android:padding="@dimen/margin_6">
 
                                         <ScrollView
                                             android:layout_width="match_parent"
@@ -80,7 +80,9 @@
 
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
-                                                android:layout_gravity="center">
+                                                android:layout_gravity="center"
+                                                android:padding="@dimen/margin_6"
+                                                >
 
                                                 <TextView
                                                     android:id="@+id/tvEnglish"
@@ -133,7 +135,9 @@
 
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:gravity="center">
+                                android:gravity="center"
+                                android:padding="@dimen/margin_6"
+                                >
 
 
                                     <TextView
@@ -171,7 +175,7 @@
         android:layout_gravity="center|right"
         android:layout_marginBottom="@dimen/float_button_margin_bottom"
         android:layout_marginRight="@dimen/float_button_margin_right"
-        android:src="@drawable/ic_volume_up_white_18dp"
+        android:src="@drawable/speaker_icon_mini"
 
         />
 
