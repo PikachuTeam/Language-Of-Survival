@@ -66,7 +66,7 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:background="#b7bfbf"
+                                        android:background="@color/colorViewDetail_1"
                                         android:gravity="center"
                                         android:padding="@dimen/margin_6">
 
@@ -125,7 +125,7 @@
                             android:layout_marginRight="@dimen/margin_6"
                             android:layout_marginTop="@dimen/margin_0"
 
-                            card_view:cardBackgroundColor="#719bad"
+                            card_view:cardBackgroundColor="@color/colorViewDetail_2"
                             android:padding="@dimen/margin_3"
                             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
                             card_view:cardElevation="@dimen/card_view_elevation"

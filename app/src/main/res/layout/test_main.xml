@@ -9,7 +9,8 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbarSize="@dimen/margin_3"
+            android:scrollbarSize="@dimen/margin_0_1"
+            android:scrollbarThumbVertical="@drawable/scrollbar"
             >
             <LinearLayout
                 android:layout_width="match_parent"
@@ -50,11 +51,12 @@
                                     />
                                 <TextView
                                     android:layout_width="wrap_content"
-                                    android:layout_height="56dp"
+                                    android:layout_height="wrap_content"
                                     android:text="Meeting"
                                     android:layout_gravity="center"
                                     android:textSize="@dimen/text_size"
-
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorAccent"
                                     />
                             </LinearLayout>
                         </android.support.v7.widget.CardView>
@@ -64,7 +66,8 @@
                     <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
-                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        <android.support.v7.widget.CardView
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/buttonRestaurant"
                             android:layout_width="@dimen/home_screen_button_width"
                             android:layout_height="@dimen/home_screen_button_height"
@@ -96,6 +99,8 @@
                                     android:text="@string/restaurant"
                                     android:layout_gravity="center"
                                     android:textSize="@dimen/text_size"
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorAccent"
                                     />
                             </LinearLayout>
 
@@ -148,6 +153,8 @@
                                     android:text="@string/daily"
                                     android:layout_gravity="center"
                                     android:textSize="@dimen/text_size"
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorAccent"
                                     />
                             </LinearLayout>
                         </android.support.v7.widget.CardView>
@@ -186,7 +193,10 @@
                                     android:layout_height="wrap_content"
                                     android:text="@string/socializing"
                                     android:layout_gravity="center"
-                                    android:textSize="@dimen/text_size" />
+                                    android:textSize="@dimen/text_size"
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorAccent"
+                                    />
                             </LinearLayout>
 
                         </android.support.v7.widget.CardView>
@@ -235,6 +245,8 @@
                                     android:text="@string/shopping"
                                     android:layout_gravity="center"
                                     android:textSize="@dimen/text_size"
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorAccent"
                                     />
                             </LinearLayout>
                         </android.support.v7.widget.CardView>
@@ -274,6 +286,8 @@
                                     android:text="@string/hotel"
                                     android:layout_gravity="center"
                                     android:textSize="@dimen/text_size"
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorAccent"
                                     />
                             </LinearLayout>
                         </android.support.v7.widget.CardView>
@@ -326,6 +340,8 @@
                                     android:text="@string/direction"
                                     android:layout_gravity="center"
                                     android:textSize="@dimen/text_size"
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorAccent"
                                     />
                             </LinearLayout>
 
@@ -366,6 +382,8 @@
                                     android:text="@string/weather"
                                     android:layout_gravity="center"
                                     android:textSize="@dimen/text_size"
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorAccent"
                                     />
                             </LinearLayout>
                         </android.support.v7.widget.CardView>

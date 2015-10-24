@@ -40,9 +40,13 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
     public boolean enablefloatButton() {
         return true;
     }
+    public boolean enableTitle(){
+        return false;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View v=inflater.inflate(R.layout.fragment_list, container, false);
        // lv = (ListView) v.findViewById(R.id.lvItem);
@@ -89,6 +93,7 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
 
             switch (inforDetail){
                 case "meeting":
+                   // getBaseActivity().getToolbar().setTitle("Meeting");
                     getBaseActivity().getToolbar().setSubtitle(R.string.meeting);
                     englishGuideArrayList = DataSource.getInstance().getListLesson(1);
                     guideAdapter=new GuideAdapter(getBaseActivity(),englishGuideArrayList,1);

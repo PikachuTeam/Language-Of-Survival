@@ -13,13 +13,14 @@ import android.widget.TextView;
 
 //import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.tateam.languageofsurvival.R;
+import com.tateam.languageofsurvival.app.BaseActivity;
 import com.tateam.languageofsurvival.app.BaseFragment;
 import com.tateam.languageofsurvival.utility.FragmentWebView;
 
 import java.util.Locale;
 
 
-public class ViewdetailFragment extends BaseFragment {
+public class ViewdetailFragment extends BaseFragment implements BaseActivity.clickSpeakerListener {
 
     private TextView tvfrench,tvenglish;
     private FloatingActionButton btPlay;
@@ -27,6 +28,7 @@ public class ViewdetailFragment extends BaseFragment {
     public String[] inforTransfer;
     private TextToSpeech textToSpeech;
     private FloatingActionButton floatingActionButton;
+    private BaseActivity baseActivity;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,7 @@ public class ViewdetailFragment extends BaseFragment {
         View v=inflater.inflate(R.layout.view_detail, container, false);
         tvfrench= (TextView) v.findViewById(R.id.tvFrench);
         tvenglish= (TextView) v.findViewById(R.id.tvEnglish);
+       getBaseActivity().setmListener(this);
 
         btPlay= (FloatingActionButton) v.findViewById(R.id.fab_speak);
         btPlay.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +53,10 @@ public class ViewdetailFragment extends BaseFragment {
                 }
             }
         });
-        getData();/*
+        getData();
+        getBaseActivity().setmListener(this);
+        //baseActivity.setmListener(this);
+        /*
         floatingActionButton= (FloatingActionButton) v.findViewById(R.id.fabGoogle);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,6 +120,15 @@ public void getData(){
         return true;
     }
     public boolean enablefloatButton() {
+        return false;
+    }
+
+    @Override
+    public void onSpeakerClick() {
+        textToSpeech.speak(inforTransfer[1], TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    public boolean enableTitle(){
         return false;
     }
 }
