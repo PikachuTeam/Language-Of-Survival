@@ -3,11 +3,18 @@ package com.tateam.languageofsurvival;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 
-
 import com.tateam.languageofsurvival.database.DataSource;
+
+import java.util.Locale;
+
+import tatteam.com.app_common.AppCommon;
+import tatteam.com.app_common.util.AppSpeaker;
+
+//import java.util.logging.Handler;
 
 
 public class SplashActivity extends AppCompatActivity {
@@ -21,10 +28,12 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-
-       // LocalSharedPreferManager.getInstance().init(getApplicationContext());
+        initAppCommon();
+        initAppSpeaker();
+        // LocalSharedPreferManager.getInstance().init(getApplicationContext());
         DataSource.getInstance().init(getApplicationContext());
         importDatabase();
+
         handler = new android.os.Handler(new android.os.Handler.Callback() {
             @Override
             public boolean handleMessage(Message msg) {
@@ -39,6 +48,15 @@ public class SplashActivity extends AppCompatActivity {
         });
         handler.sendEmptyMessageDelayed(0, SPLASH_DURATION);
 
+    }
+
+    private void initAppCommon() {
+        AppCommon.getInstance().initIfNeeded(getApplicationContext());
+        AppCommon.getInstance().increaseLaunchTime();
+    }
+
+    private void initAppSpeaker() {
+        AppSpeaker.getInstance().initIfNeeded(getApplicationContext(), Locale.FRANCE);
     }
 
     @Override
@@ -66,9 +84,15 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void switchToMainActivity() {
-        startActivity(new Intent(SplashActivity.this, MainActivity.class));
-
-        this.finish();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }, 2000);
     }
 
     @Override

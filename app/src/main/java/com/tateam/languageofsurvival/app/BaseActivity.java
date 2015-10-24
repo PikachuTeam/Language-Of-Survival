@@ -1,31 +1,33 @@
 package com.tateam.languageofsurvival.app;
 
+import android.app.Application;
 import android.app.FragmentManager;
-import android.os.Bundle;
-
-
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
-
 import com.tateam.languageofsurvival.R;
-
-import com.tateam.languageofsurvival.fragment.RecentFragment;
 import com.tateam.languageofsurvival.utility.ShareUtil;
+
+import tatteam.com.app_common.AppCommon;
+import tatteam.com.app_common.util.AppSpeaker;
 
 //import com.example.vulan.survivalguideversion3.R;
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
     private Toolbar toolbar;
     private FloatingActionsMenu floatingActionsMenu;
-    public FloatingActionButton fbFeeback,fbRemoveAd,fbRecent;
+    public FloatingActionButton fbFeeback, fbRecent;
 
     private boolean isAdLoadingFine = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,19 +61,6 @@ public abstract class BaseActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 BaseFragment currentFragment = (BaseFragment) getFragmentManager().findFragmentById(R.id.container);
-           /*
-                switch (item.getItemId()) {
-                    case R.id.doTest:
-                        currentFragment.onToolbarItemClick(DO_TEST);
-                        break;
-                    case R.id.selectAll:
-                        currentFragment.onToolbarItemClick(SELECT_ALL);
-                        break;
-                    case R.id.cancelAll:
-                        currentFragment.onToolbarItemClick(CANCEL_ALL);
-                        break;
-                }
-*/
                 return true;
             }
         });
@@ -91,21 +80,9 @@ public abstract class BaseActivity extends AppCompatActivity {
             }
         }
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        //if (id == R.id.action_recent) {
 
-           // DataSource.getInstance().
-        //}
 
-        return super.onOptionsItemSelected(item);
-    }
     protected abstract BaseFragment getFragmentContent();
 
     private void addFragmentContent() {
@@ -121,14 +98,18 @@ public abstract class BaseActivity extends AppCompatActivity {
         * transaction.commit();
         * */
     }
+
     public void setFabMenu() {
         floatingActionsMenu = (FloatingActionsMenu) findViewById(R.id.floatButton);
-
-
         fbRecent = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_recent);
+        fbFeeback = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_feedback);
+
         fbRecent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AppCommon.getInstance().openMoreAppDialog(BaseActivity.this);
+            }
+                /*
                 floatingActionsMenu.collapse();
                 BaseFragment fragment = (BaseFragment) getFragmentManager().findFragmentByTag("recent");
 
@@ -137,9 +118,9 @@ public abstract class BaseActivity extends AppCompatActivity {
                     BaseFragment.replaceFragment(getFragmentManager(), recentFragment, "recent", "recent");
                 }
             }
+*/
         });
 
-        fbFeeback = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_feedback);
         fbFeeback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,20 +131,37 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
     }
+
     protected boolean enableAdMod() {
         return false;
     }
 
-    protected void onRemoveAdClick(){
+    protected void onRemoveAdClick() {
 
     }
+
     private void findViews() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
     }
+
     public Toolbar getToolbar() {
         return toolbar;
     }
+
     public FloatingActionsMenu getMenu() {
         return floatingActionsMenu;
     }
+
+    @Override
+    public void onClick(View view) {
+        if (view.getId() ==R.id.fab_recent) {
+            AppCommon.getInstance().openMoreAppDialog(this);
+        } else if (view.getId() ==R.id.fab_feedback) {
+            floatingActionsMenu.collapse();
+            ShareUtil.shareToGMail(BaseActivity.this, new String[]{ShareUtil.MAIL_ADDRESS_DEFAULT}, getString(R.string.subject_mail_feedback), "");
+
+        }
+
+    }
+
 }
