@@ -46,7 +46,7 @@
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="@dimen/height_row"
-                                    android:src="@drawable/meeting_icon_mini_version1"
+                                    android:src="@drawable/meeting_icon_version2_mini"
                                     android:layout_gravity="center"
                                     />
                                 <TextView
@@ -185,7 +185,7 @@
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="@dimen/height_row"
-                                    android:src="@drawable/socializing_icon_mini"
+                                    android:src="@drawable/socializing_icon_version2_mini"
                                     android:layout_gravity="center"
                                     />
                                 <TextView
@@ -236,7 +236,7 @@
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="@dimen/height_row"
-                                    android:src="@drawable/ic_action_mini"
+                                    android:src="@drawable/shoppingcart_icon_mini"
                                     android:layout_gravity="center"
                                     />
                                 <TextView
@@ -373,7 +373,7 @@
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="@dimen/height_row"
-                                    android:src="@drawable/icon_high_def_weather_mini"
+                                    android:src="@drawable/weather_icon_version2_mini"
                                     android:layout_gravity="center"
                                     />
                                 <TextView
