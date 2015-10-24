@@ -41,32 +41,27 @@ public class BaseFragment extends Fragment {
 
         if (enableToolbar()) {
             getBaseActivity().getToolbar().setVisibility(View.VISIBLE);
-            getBaseActivity().getToolbar().setTitle(setTitle());
-
+            if(enableTitle()){
+               getBaseActivity().getToolbar().setTitle(setTitle());
+           }else{
+               getBaseActivity().getToolbar().setTitle("");
+           }
             if (enableBackButton()) {
                 getBaseActivity().getToolbar().setNavigationIcon(R.drawable.ic_action_white);
+                //getBaseActivity().getToolbar().set
+                  if(enableSpeak()){
+                     // getBaseActivity().getToolbar().setVisibility(R.drawable.ic_action_whit);
+                  }
+
             } else {
                 getBaseActivity().getToolbar().setNavigationIcon(null);
             }
-          /*
-            getBaseActivity().getToolbar().getMenu().findItem(R.id.doTest).setVisible(enableButtonDoTest());
-            getBaseActivity().getToolbar().getMenu().findItem(R.id.selectAll).setVisible(enableButtonSelectAll());
-            getBaseActivity().getToolbar().getMenu().findItem(R.id.cancelAll).setVisible(enableButtonCancelAll());
-            */
 
         } else {
             getBaseActivity().getToolbar().setVisibility(View.GONE);
         }
         if (enablefloatButton()) {
             getBaseActivity().getMenu().setVisibility(View.VISIBLE);
-
-
-
-          /*
-            getBaseActivity().getToolbar().getMenu().findItem(R.id.doTest).setVisible(enableButtonDoTest());
-            getBaseActivity().getToolbar().getMenu().findItem(R.id.selectAll).setVisible(enableButtonSelectAll());
-            getBaseActivity().getToolbar().getMenu().findItem(R.id.cancelAll).setVisible(enableButtonCancelAll());
-            */
 
         } else {
             getBaseActivity().getMenu().setVisibility(View.GONE);
@@ -89,10 +84,15 @@ public class BaseFragment extends Fragment {
         return false;
     }
 
+    protected boolean enableSpeak() {
+        return false;
+    }
     protected boolean enableToolbar() {
         return true;
     }
-
+protected boolean enableTitle(){
+    return true;
+}
 
     public boolean enablefloatButton() {
         return false;

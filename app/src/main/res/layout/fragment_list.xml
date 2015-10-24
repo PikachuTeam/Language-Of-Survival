@@ -46,7 +46,7 @@
                         android:layoutMode="opticalBounds"
                         android:paddingBottom="@dimen/margin_5"
 
-
+                        android:scrollbarSize="@dimen/margin_0_1"
                         android:scrollbarAlwaysDrawVerticalTrack="true"
 
                         android:scrollbarThumbVertical="?attr/colorPrimaryDark"
