@@ -34,36 +34,11 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
-
         addFragmentContent();
-
         findViews();
         setFabMenu();
-        /*
-
-        floatingActionsMenu = (FloatingActionsMenu) findViewById(R.id.floatButton);
-
-        floatButtonFeedback= (FloatingActionButton) findViewById(R.id.fab_feedback);
-        floatButtonFeedback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               // replac
-            }
-        });
-        */
         toolbar.inflateMenu(R.menu.menu_main);
-        /*
-        final int abTitleId = getResources().getIdentifier("menu_main", "menu", getPackageName());
-        findViewById(abTitleId).setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if(v.getId()==R.id.action_speak){
-                    mlisListener.onSpeakerClick();
-                }
-            }
-        });
-        */
+        setSupportActionBar(toolbar);
         toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -24,15 +24,12 @@
                     android:orientation="horizontal"
                     android:gravity="center_horizontal"
                     >
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+
                         <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/buttonMeeting"
                             android:layout_width="@dimen/home_screen_button_width"
                             android:layout_height="@dimen/home_screen_button_height"
-
-
+                            android:foreground="?android:attr/selectableItemBackground"
                             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
                             card_view:cardElevation="@dimen/card_view_elevation"
 
@@ -60,19 +57,16 @@
                                     />
                             </LinearLayout>
                         </android.support.v7.widget.CardView>
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
 
 
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+
+
                         <android.support.v7.widget.CardView
                             xmlns:card_view="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/buttonRestaurant"
                             android:layout_width="@dimen/home_screen_button_width"
                             android:layout_height="@dimen/home_screen_button_height"
-
-
+                            android:foreground="?android:attr/selectableItemBackground"
                             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
                             card_view:cardElevation="@dimen/card_view_elevation"
                             android:layout_toRightOf="@id/buttonMeeting"
@@ -105,7 +99,7 @@
                             </LinearLayout>
 
                         </android.support.v7.widget.CardView>
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
+
 
 
 
@@ -120,15 +114,12 @@
                     android:gravity="center_horizontal"
                     android:layout_marginTop="@dimen/margin_top_row"
                     >
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+
                         <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/buttonDaily"
                             android:layout_width="@dimen/home_screen_button_width"
                             android:layout_height="@dimen/home_screen_button_height"
-
-
+                            android:foreground="?android:attr/selectableItemBackground"
                             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
                             card_view:cardElevation="@dimen/card_view_elevation"
                             android:layout_below="@+id/buttonMeeting"
@@ -158,17 +149,12 @@
                                     />
                             </LinearLayout>
                         </android.support.v7.widget.CardView>
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
 
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
                         <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/buttonSocializing"
                             android:layout_width="@dimen/home_screen_button_width"
                             android:layout_height="@dimen/home_screen_button_height"
-
-
+                            android:foreground="?android:attr/selectableItemBackground"
                             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
                             card_view:cardElevation="@dimen/card_view_elevation"
                             android:layout_below="@+id/buttonMeeting"
@@ -200,9 +186,6 @@
                             </LinearLayout>
 
                         </android.support.v7.widget.CardView>
-
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
-
                 </LinearLayout>
 
 
@@ -213,15 +196,12 @@
                     android:gravity="center_horizontal"
                     android:layout_marginTop="@dimen/margin_top_row"
                     >
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+
                         <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/buttonShopping"
                             android:layout_width="@dimen/home_screen_button_width"
                             android:layout_height="@dimen/home_screen_button_height"
-
-
+                            android:foreground="?android:attr/selectableItemBackground"
                             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
                             card_view:cardElevation="@dimen/card_view_elevation"
                             android:layout_below="@+id/buttonDaily">
@@ -250,17 +230,12 @@
                                     />
                             </LinearLayout>
                         </android.support.v7.widget.CardView>
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
 
-
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
                         <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/buttonHotel"
                             android:layout_width="@dimen/home_screen_button_width"
                             android:layout_height="@dimen/home_screen_button_height"
-
+                            android:foreground="?android:attr/selectableItemBackground"
                             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
                             card_view:cardElevation="@dimen/card_view_elevation"
                             android:layout_below="@+id/buttonDaily"
@@ -291,10 +266,6 @@
                                     />
                             </LinearLayout>
                         </android.support.v7.widget.CardView>
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
-
-
-
                 </LinearLayout>
 
 
@@ -306,15 +277,11 @@
                     android:gravity="center_horizontal"
                     android:layout_marginTop="@dimen/margin_top_row"
                     >
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
                         <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/buttonDirection"
                             android:layout_width="@dimen/home_screen_button_width"
                             android:layout_height="@dimen/home_screen_button_height"
-
-
+                            android:foreground="?android:attr/selectableItemBackground"
                             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
                             card_view:cardElevation="@dimen/card_view_elevation"
                             android:layout_below="@+id/buttonShopping"
@@ -346,17 +313,12 @@
                             </LinearLayout>
 
                         </android.support.v7.widget.CardView>
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
 
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
                         <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/buttonWeather"
                             android:layout_width="@dimen/home_screen_button_width"
                             android:layout_height="@dimen/home_screen_button_height"
-
-
+                            android:foreground="?android:attr/selectableItemBackground"
                             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
                             card_view:cardElevation="@dimen/card_view_elevation"
                             android:layout_below="@+id/buttonShopping"
@@ -387,7 +349,6 @@
                                     />
                             </LinearLayout>
                         </android.support.v7.widget.CardView>
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
 
 
                 </LinearLayout>
