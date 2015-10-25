@@ -8,12 +8,12 @@
     android:layout_alignParentEnd="true"
     android:layout_alignParentRight="true"
     android:layout_gravity="bottom|right"
-    android:layout_marginBottom="@dimen/float_button_margin_bottom_version1"
+    android:layout_marginBottom="@dimen/float_button_margin_bottom_version2"
     android:layout_marginRight="@dimen/float_button_margin_right"
     app:fab_addButtonSize="normal"
     fab:fab_addButtonColorNormal="@color/colorAccent"
     fab:fab_addButtonColorPressed="@color/colorPrimaryDark"
-
+    fab:fab_labelStyle="@style/menu_labels_style"
    >
 
 
@@ -23,9 +23,11 @@
         android:layout_height="wrap_content"
         fab:fab_colorNormal="@color/colorAccent"
         fab:fab_colorPressed="@color/colorAccent"
-        fab:fab_icon="@drawable/mail_version2_mini"
+        fab:fab_icon="@drawable/ic_mail_white_24dp"
         fab:fab_size="mini"
-        fab:fab_title="@string/feed_back" />
+        fab:fab_title="@string/feed_back"
+
+        />
 
 
     <com.getbase.floatingactionbutton.FloatingActionButton
@@ -34,8 +36,7 @@
         android:layout_height="wrap_content"
         fab:fab_colorNormal="@color/colorAccent"
         fab:fab_colorPressed="@color/colorAccent"
-        fab:fab_icon="@drawable/recentlist_mini"
-
+        fab:fab_icon="@drawable/ic_shop_white_24dp"
         fab:fab_size="mini"
         fab:fab_title="@string/recent" />
 

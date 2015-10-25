@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/action_speak"
-        android:icon="@drawable/speaker_icon_mini"
+        android:icon="@drawable/ic_volume_up_white_24dp"
         android:title="@string/speaker"
         app:showAsAction="ifRoom"
         android:orderInCategory="1"

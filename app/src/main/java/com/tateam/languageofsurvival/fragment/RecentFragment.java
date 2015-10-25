@@ -54,52 +54,18 @@ public class RecentFragment extends BaseFragment implements GuideAdapter.clickLi
         recyclerView.setAdapter(guideAdapter);
         guideAdapter.setmListener(this);
 
-        /*
-       // floatingActionButton= (FloatingActionButton) view.findViewById(R.id.fab);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                LoadDataRecent();
-            }
-        });
 
-
-        lv = (ListView) view.findViewById(R.id.lvMeeting);
-        LoadDataRecent();
-        meetingAdapter= new ListGuideAdapter(getActivity(), englishGuideArrayList);
-        meetingAdapter.notifyDataSetChanged();
-        lv.setAdapter(meetingAdapter);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //  Intent intent=new Intent(this,getBaseActivity().replace);
-
-            }
-        });
-        */
         return view;
     }
-    /*
-    private void LoadDataRecent(){
-        DataSource.getInstance().init(getActivity().getApplicationContext());
-        DataSource.getInstance().createDatabaseIfNeed();
-        englishGuideArrayList = DataSource.getInstance().getListRecent();
 
-    }
-    */
     private void LoadDataGuide() {
         DataSource.getInstance().init(getActivity().getApplicationContext());
         DataSource.getInstance().createDatabaseIfNeed();
-       // Bundle bundle = this.getArguments();
         englishGuideArrayList = DataSource.getInstance().getListRecent();
-
-
-        // englishGuideArrayList = DataSource.getInstance().getListRecent(1);
     }
     @Override
     public void onPhraseClick(int position) {
         Bundle bundle = new Bundle();
-        // bundle.putString(KEY_DETAIL, englishGuideArrayList.get(position).getFrenchSentence());
         inforTransfer=new String[]{englishGuideArrayList.get(position).getEnglishSentence(),
                 englishGuideArrayList.get(position).getFrenchSentence()
         };

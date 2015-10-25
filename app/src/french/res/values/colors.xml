@@ -10,7 +10,7 @@
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="grey">#464646</color>
+    <color name="grey">#6d464646</color>
     <color name="red">#ff162c</color>
 
     <color name="correct_answer">#3DAF41</color>

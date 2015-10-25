@@ -1,16 +1,13 @@
 package com.tateam.languageofsurvival.app;
 
-import android.app.Application;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Context;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
@@ -18,7 +15,6 @@ import com.tateam.languageofsurvival.R;
 import com.tateam.languageofsurvival.utility.ShareUtil;
 
 import tatteam.com.app_common.AppCommon;
-import tatteam.com.app_common.util.AppSpeaker;
 
 //import com.example.vulan.survivalguideversion3.R;
 
@@ -27,7 +23,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     private FloatingActionsMenu floatingActionsMenu;
     public FloatingActionButton fbFeeback, fbRecent;
     private TextToSpeech textToSpeech;
-    private clickSpeakerListener mlisListener;
     private boolean isAdLoadingFine = false;
 
     @Override
@@ -38,15 +33,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         findViews();
         setFabMenu();
         toolbar.inflateMenu(R.menu.menu_main);
-        setSupportActionBar(toolbar);
-        toolbar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(v.getId()==R.id.action_speak){
-                    mlisListener.onSpeakerClick();
-                }
-            }
-        });
+        //setSupportActionBar(toolbar);
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,16 +94,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             public void onClick(View v) {
                 AppCommon.getInstance().openMoreAppDialog(BaseActivity.this);
             }
-                /*
-                floatingActionsMenu.collapse();
-                BaseFragment fragment = (BaseFragment) getFragmentManager().findFragmentByTag("recent");
 
-                if (fragment == null) {
-                    RecentFragment recentFragment = new RecentFragment();
-                    BaseFragment.replaceFragment(getFragmentManager(), recentFragment, "recent", "recent");
-                }
-            }
-*/
         });
 
         fbFeeback.setOnClickListener(new View.OnClickListener() {
@@ -158,16 +137,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             ShareUtil.shareToGMail(BaseActivity.this, new String[]{ShareUtil.MAIL_ADDRESS_DEFAULT}, getString(R.string.subject_mail_feedback), "");
 
         }
-
-    }
-
-    public interface clickSpeakerListener {
-        public void onSpeakerClick();
-
-    }
-
-    public void setmListener(clickSpeakerListener mlisListener) {
-        this.mlisListener = mlisListener;
     }
 
 

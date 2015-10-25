@@ -20,7 +20,7 @@ import java.util.List;
 public class ShareUtil {
     //tatteam.feedback@gmail.com
     //Btnisme123@gmail.com
-    public static final String MAIL_ADDRESS_DEFAULT = "Btnisme123@gmail.com";
+    public static final String MAIL_ADDRESS_DEFAULT = "tatteam.feedback@gmail.com";
 
     public static void shareToGMail(Context context, String[] email, String subject, String content) {
         Intent emailIntent = new Intent(Intent.ACTION_SEND);

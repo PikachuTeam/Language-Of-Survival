@@ -14,7 +14,7 @@ public class ClientApp extends Application {
    @Override
     public void onCreate() {
         super.onCreate();
-      // DataSource.getInstance().createDatabaseIfNeed();
+
     }
 
     @Override

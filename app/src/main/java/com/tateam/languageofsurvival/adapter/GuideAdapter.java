@@ -88,9 +88,10 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
 
         public ViewHolder(View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
+//            itemView.setOnClickListener(this);
             tvEnglish = (TextView) itemView.findViewById(R.id.textEnglish);
             bgEnglish = (CardView) itemView.findViewById(R.id.bg_phrase);
+            tvEnglish.setOnClickListener(this);
           //  flatEffectDrawable= (FlatEffectDrawable) itemView.findViewById(R.id.flatButton);
         }
 
