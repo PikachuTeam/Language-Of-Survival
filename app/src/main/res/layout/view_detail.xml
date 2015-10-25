@@ -22,12 +22,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/grey"
                     android:orientation="vertical"
-
-
-                    android:weightSum="100"
-
-                    >
+                    android:weightSum="100">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -51,9 +48,8 @@
                                 android:layout_marginLeft="@dimen/margin_6"
                                 android:layout_marginRight="@dimen/margin_6"
                                 android:layout_marginTop="@dimen/margin_6"
-
-
                                 android:padding="@dimen/margin_6"
+                                card_view:cardBackgroundColor="@color/white"
                                 card_view:cardCornerRadius="@dimen/card_view_corner_radius"
                                 card_view:cardElevation="@dimen/card_view_elevation"
                                 card_view:cardUseCompatPadding="true">
@@ -66,41 +62,35 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:background="@color/colorViewDetail_1"
+                                        android:background="@color/white"
                                         android:gravity="center"
                                         android:padding="@dimen/margin_6">
 
-                                        <ScrollView
+
+                                        <LinearLayout
+
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:padding="@dimen/margin_6">
 
-                                            >
-
-                                            <LinearLayout
-
-                                                android:layout_width="match_parent"
+                                            <TextView
+                                                android:id="@+id/tvEnglish"
+                                                android:layout_width="0dp"
                                                 android:layout_height="match_parent"
-                                                android:layout_gravity="center"
-                                                android:padding="@dimen/margin_6"
-                                                >
+                                                android:layout_marginBottom="@dimen/margin_6"
+                                                android:layout_marginRight="@dimen/margin_6"
+                                                android:layout_marginTop="@dimen/margin_6"
+                                                android:layout_weight="89"
+                                                android:gravity="center"
+                                                android:text="English sentence"
+                                                android:textColor="@color/colorPrimaryDark"
 
-                                                <TextView
-                                                    android:id="@+id/tvEnglish"
-                                                    android:layout_width="0dp"
-                                                    android:layout_height="match_parent"
-                                                    android:layout_marginBottom="@dimen/margin_6"
+                                                android:textIsSelectable="true"
+                                                android:textSize="@dimen/text_size_10"
+                                                android:textStyle="italic" />
+                                        </LinearLayout>
 
-                                                    android:layout_marginRight="@dimen/margin_6"
-                                                    android:layout_marginTop="@dimen/margin_6"
-                                                    android:layout_weight="89"
-                                                    android:gravity="center"
-                                                    android:text="English sentence"
-
-                                                    android:textIsSelectable="true"
-                                                    android:textSize="@dimen/text_size_20"
-                                                    android:textStyle="italic" />
-                                            </LinearLayout>
-                                        </ScrollView>
                                     </LinearLayout>
 
 
@@ -125,34 +115,30 @@
                             android:layout_marginRight="@dimen/margin_6"
                             android:layout_marginTop="@dimen/margin_0"
 
-                            card_view:cardBackgroundColor="@color/colorViewDetail_2"
                             android:padding="@dimen/margin_3"
+                            card_view:cardBackgroundColor="@color/white"
                             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
                             card_view:cardElevation="@dimen/card_view_elevation"
                             card_view:cardUseCompatPadding="true">
 
                             <RelativeLayout
-
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:padding="@dimen/margin_6"
-                                >
+                                android:padding="@dimen/margin_6">
 
-
-                                    <TextView
-                                        android:id="@+id/tvFrench"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="@dimen/margin_8"
-                                        android:layout_marginRight="@dimen/margin_6"
-                                        android:layout_marginTop="@dimen/margin_7"
-                                        android:gravity="center"
-                                        android:text="French Sentence"
-                                        android:textIsSelectable="true"
-                                        android:textSize="@dimen/text_size_23"
-                                        />
-
+                                <TextView
+                                    android:id="@+id/tvFrench"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_8"
+                                    android:layout_marginRight="@dimen/margin_6"
+                                    android:layout_marginTop="@dimen/margin_7"
+                                    android:gravity="center"
+                                    android:text="French Sentence"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textIsSelectable="true"
+                                    android:textSize="@dimen/text_size_23" />
                             </RelativeLayout>
                         </android.support.v7.widget.CardView>
                     </LinearLayout>
@@ -169,13 +155,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_gravity="center|right"
         android:layout_marginBottom="@dimen/float_button_margin_bottom"
         android:layout_marginRight="@dimen/float_button_margin_right"
         android:src="@drawable/speaker_icon_mini"
+        android:visibility="gone"
 
         />
 

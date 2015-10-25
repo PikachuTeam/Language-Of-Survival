@@ -11,7 +11,6 @@ import android.widget.ListView;
 
 import com.tateam.languageofsurvival.R;
 import com.tateam.languageofsurvival.app.BaseFragment;
-import com.tateam.languageofsurvival.database.DataSource;
 import com.tateam.languageofsurvival.entity.ListTopic;
 
 import java.util.ArrayList;
@@ -43,13 +42,8 @@ public class ListTopicFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        //View view = inflater.inflate(R.layout.content_main, container, false);
-        View view = inflater.inflate(R.layout.test_main, container, false);
-
-        //enableBackButton()
-          //bundle=new Bundle();
-       // lv = (ListView) view.findViewById(R.id.lvMain);
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        getBaseActivity().getToolbar().findViewById(R.id.action_speak).setVisibility(View.INVISIBLE);
         getBaseActivity().getToolbar().setSubtitle("");
         btnMeeting= (CardView) view.findViewById(R.id.buttonMeeting);
         btnDaily=(CardView) view.findViewById(R.id.buttonDaily);
@@ -66,7 +60,6 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "meeting");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-              //  replaceFragment(listFragment);
                 replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
             }
         });
@@ -78,7 +71,6 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "daily");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-               // replaceFragment(listFragment);
                 replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
             }
         });
@@ -90,7 +82,6 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "restaurant");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-               // replaceFragment(listFragment);
                 replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
             }
         });
@@ -102,7 +93,6 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "direction");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-               // replaceFragment(listFragment);
                 replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
             }
         });
@@ -114,7 +104,6 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "shopping");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-               // replaceFragment(listFragment);
                 replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
             }
         });
@@ -126,7 +115,6 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "hotel");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-                //replaceFragment(listFragment);
                 replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
             }
         });
@@ -150,43 +138,11 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "weather");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-               // replaceFragment(listFragment);
                 replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
             }
         });
-        //bundle.putString(ITEMSTRING, "weather");
 
-        /*
-        LoadDataTopic();
-        adapter = new ListGuideAdapter(getActivity(), topicArrayList);
-        lv.setAdapter(adapter);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                switch (topicArrayList.get(position).getListName()) {
-                    case MEETING:
-                        bundle.putString(ITEMSTRING, "meeting");
-                    case RESTAURANT:
-                        bundle.putString(ITEMSTRING, "restaurant");
-                    case DAILYROUTINE:
-                        bundle.putString(ITEMSTRING, "daily");
-                }
-
-
-                ListFragment listFragment = new ListFragment();
-                listFragment.setArguments(bundle);
-                replaceFragment(listFragment);
-            }
-        });
-*/
         return view;
-    }
-    //load data
-    private void LoadDataTopic() {
-        DataSource.getInstance().init(getActivity().getApplicationContext());
-        DataSource.getInstance().createDatabaseIfNeed();
-        topicArrayList = DataSource.getInstance().getList();
     }
 
     public boolean enablefloatButton() {

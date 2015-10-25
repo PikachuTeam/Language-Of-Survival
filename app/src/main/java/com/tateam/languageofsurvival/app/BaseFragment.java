@@ -39,15 +39,13 @@ public class BaseFragment extends Fragment {
         if (enableToolbar()) {
             getBaseActivity().getToolbar().setVisibility(View.VISIBLE);
 
-            if (enableTitle()) {
+
                 getBaseActivity().getToolbar().setTitle(setTitle());
-            } else {
-                getBaseActivity().getToolbar().setTitle("");
-            }
+
 
 
             if (enableBackButton()) {
-                getBaseActivity().getToolbar().setNavigationIcon(R.drawable.arrow_new_mini);
+                getBaseActivity().getToolbar().setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
                 if (enableSpeak()) {
                     // getBaseActivity().getToolbar().setVisibility(R.drawable.ic_action_whit);
                 }

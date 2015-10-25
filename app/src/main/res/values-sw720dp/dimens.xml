@@ -1,0 +1,113 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    >
+    <dimen name="activity_vertical_margin">30.08dp</dimen>
+    <dimen name="fab_margin">30.08dp</dimen>
+
+    <dimen name="activity_horizontal_margin">120.32dp</dimen>
+    <dimen name="text_size_0">22.56sp</dimen>
+    <dimen name="text_size_1">24.44sp</dimen>
+    <dimen name="text_size_2">26.32sp</dimen>
+    <dimen name="text_size_3">28.2sp</dimen>
+    <dimen name="text_size_4">30.08sp</dimen>
+    <dimen name="text_size_5">31.96sp</dimen>
+    <dimen name="text_size_6">33.84sp</dimen>
+    <dimen name="text_size_7">35.72sp</dimen>
+    <dimen name="text_size_8">37.6sp</dimen>
+    <dimen name="text_size_9">39.48sp</dimen>
+    <dimen name="text_size_10">41.36sp</dimen>
+    <dimen name="text_size_11">43.24sp</dimen>
+    <dimen name="text_size_12">45.12sp</dimen>
+    <dimen name="text_size_13">47sp</dimen>
+    <dimen name="text_size_14">48.88sp</dimen>
+    <dimen name="text_size_15">50.76sp</dimen>
+    <dimen name="text_size_16">52.64sp</dimen>
+    <dimen name="text_size_17">54.52sp</dimen>
+    <dimen name="text_size_18">56.4sp</dimen>
+    <dimen name="text_size_19">58.28sp</dimen>
+    <dimen name="text_size_20">60.16sp</dimen>
+    <dimen name="text_size_21">62.04sp</dimen>
+    <dimen name="text_size_22">63.92sp</dimen>
+    <dimen name="text_size_23">65.8sp</dimen>
+    <dimen name="text_size_24">67.68sp</dimen>
+    <dimen name="text_size_25">69.56sp</dimen>
+    <dimen name="text_size_26">71.44sp</dimen>
+    <dimen name="text_size_27">73.32sp</dimen>
+    <dimen name="text_size_28">75.2sp</dimen>
+    <dimen name="text_size_29">77.08sp</dimen>
+    <dimen name="text_size_30">78.96sp</dimen>
+    <dimen name="text_size_31">80.84sp</dimen>
+    <dimen name="text_size_32">82.72sp</dimen>
+    <dimen name="text_size_33">84.6sp</dimen>
+    <dimen name="text_size_34">86.48sp</dimen>
+    <dimen name="text_size_35">88.36sp</dimen>
+    <dimen name="text_size_36">90.24sp</dimen>
+    <dimen name="text_size_37">92.12sp</dimen>
+    <dimen name="text_size_38">94sp</dimen>
+    <dimen name="margin_0">0dp</dimen>
+    <dimen name="margin_0_1">5.64dp</dimen>
+    <dimen name="margin_1">9.4dp</dimen>
+    <dimen name="margin_2">11.28dp</dimen>
+    <dimen name="margin_3">13.16dp</dimen>
+    <dimen name="margin_4">15.04dp</dimen>
+    <dimen name="margin_5">16.92dp</dimen>
+    <dimen name="margin_6">18.8dp</dimen>
+    <dimen name="margin_7">20.68dp</dimen>
+    <dimen name="margin_8">22.56dp</dimen>
+    <dimen name="margin_9">24.44dp</dimen>
+    <dimen name="margin_10">26.32dp</dimen>
+    <dimen name="margin_11">150.4dp</dimen>
+    <dimen name="margin_12">56.4dp</dimen>
+    <dimen name="margin_13">56.4dp</dimen>
+    <dimen name="margin_14">75.2dp</dimen>
+    <dimen name="margin_15">9.4dp</dimen>
+
+    <dimen name="home_screen_button_width">338.4dp</dimen>
+    <dimen name="home_screen_button_height">282dp</dimen>
+    <dimen name="home_screen_button_margin_bottom">94dp</dimen>
+
+
+    <dimen name="height_row">94dp</dimen>
+    <dimen name="text_size">56.4sp</dimen>
+    <dimen name="text_size_mini">37.6sp</dimen>
+    <dimen name="margin_top_row">0dp</dimen>
+    <dimen name="image_height">94dp</dimen>
+<dimen name="float_button_margin_bottom_version1">47dp</dimen>
+    <dimen name="float_button_margin_bottom_version2">94dp</dimen>
+    <dimen name="toolbar_button_width">94dp</dimen>
+    <dimen name="toolbar_elevation">9.4dp</dimen>
+
+    <dimen name="card_view_corner_radius">9.4dp</dimen>
+    <dimen name="card_view_corner_radius_main">5.64dp</dimen>
+    <dimen name="card_view_elevation">5.64dp</dimen>
+
+    <dimen name="do_test_layout_choice_height">357.2dp</dimen>
+    <dimen name="do_test_view_pager_height">413.6dp</dimen>
+    <dimen name="item_choice_width">291.4dp</dimen>
+    <dimen name="item_choice_height">141dp</dimen>
+
+    <dimen name="item_choose_test_height">188dp</dimen>
+    <dimen name="item_choose_test_width">188dp</dimen>
+
+    <dimen name="question_number_default_stroke">0.94dp</dimen>
+    <dimen name="question_number_bottom_stroke">5.64dp</dimen>
+    <dimen name="question_number_height">94dp</dimen>
+    <dimen name="question_number_width">94dp</dimen>
+
+    <dimen name="fab_size1">109.98dp</dimen>
+    <dimen name="dp65">109.98dp</dimen>
+    <dimen name="non_favorite_recent_text_size">43.99sp</dimen>
+    <dimen name="float_button_margin_bottom">60.91dp</dimen>
+    <dimen name="float_button_margin_right">33.84dp</dimen>
+    <dimen name="toolbar_height">67.68dp</dimen>
+    <dimen name="dp5">8.46dp</dimen>
+
+  <dimen name="Size_40">75.2dp</dimen>
+    <dimen name="Size_50">94dp</dimen>
+    <dimen name="Size_60">112.8dp</dimen>
+    <dimen name="Size_70">131.6dp</dimen>
+    <dimen name="Size_80">150.4dp</dimen>
+    <dimen name="Size_90">169.2dp</dimen>
+
+
+</resources>
