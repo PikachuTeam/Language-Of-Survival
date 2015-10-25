@@ -15,6 +15,8 @@ import java.util.List;
 import com.tateam.languageofsurvival.R;
 import com.tateam.languageofsurvival.entity.EnglishGuide;
 
+import tatteam.com.app_common.ui.drawable.FlatEffectDrawable;
+
 public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> {
 
     private clickListener mlisListener;
@@ -82,13 +84,14 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView tvEnglish;
         public CardView bgEnglish;
-
+        public FlatEffectDrawable flatEffectDrawable;
 
         public ViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             tvEnglish = (TextView) itemView.findViewById(R.id.textEnglish);
             bgEnglish = (CardView) itemView.findViewById(R.id.bg_phrase);
+          //  flatEffectDrawable= (FlatEffectDrawable) itemView.findViewById(R.id.flatButton);
         }
 
 

@@ -1,33 +1,30 @@
 package com.tateam.languageofsurvival.app;
 
 
-
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
-
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-//import com.example.vulan.survivalguideversion3.R;
-//import com.example.vulan.survivalguideversion3.entity.EnglishGuide;
-
 import com.tateam.languageofsurvival.R;
 import com.tateam.languageofsurvival.entity.EnglishGuide;
 
 import java.util.ArrayList;
 
+//import com.example.vulan.survivalguideversion3.R;
+//import com.example.vulan.survivalguideversion3.entity.EnglishGuide;
+
 public class BaseFragment extends Fragment {
 
 
-    public int position=0;
+    public int position = 0;
 
 
     @Override
@@ -41,17 +38,19 @@ public class BaseFragment extends Fragment {
 
         if (enableToolbar()) {
             getBaseActivity().getToolbar().setVisibility(View.VISIBLE);
-            if(enableTitle()){
-               getBaseActivity().getToolbar().setTitle(setTitle());
-           }else{
-               getBaseActivity().getToolbar().setTitle("");
-           }
+
+            if (enableTitle()) {
+                getBaseActivity().getToolbar().setTitle(setTitle());
+            } else {
+                getBaseActivity().getToolbar().setTitle("");
+            }
+
+
             if (enableBackButton()) {
-                getBaseActivity().getToolbar().setNavigationIcon(R.drawable.ic_action_white);
-                //getBaseActivity().getToolbar().set
-                  if(enableSpeak()){
-                     // getBaseActivity().getToolbar().setVisibility(R.drawable.ic_action_whit);
-                  }
+                getBaseActivity().getToolbar().setNavigationIcon(R.drawable.arrow_new_mini);
+                if (enableSpeak()) {
+                    // getBaseActivity().getToolbar().setVisibility(R.drawable.ic_action_whit);
+                }
 
             } else {
                 getBaseActivity().getToolbar().setNavigationIcon(null);
@@ -87,12 +86,14 @@ public class BaseFragment extends Fragment {
     protected boolean enableSpeak() {
         return false;
     }
+
     protected boolean enableToolbar() {
         return true;
     }
-protected boolean enableTitle(){
-    return true;
-}
+
+    protected boolean enableTitle() {
+        return true;
+    }
 
     public boolean enablefloatButton() {
         return false;
@@ -112,7 +113,6 @@ protected boolean enableTitle(){
     }
 
 
-
     public static void replaceFragment(FragmentManager fragmentManager, BaseFragment newFragment, String fragmentTag,
                                        String transactionName) {
 
@@ -125,10 +125,10 @@ protected boolean enableTitle(){
     }
 
     //get instance
-    public static BaseFragment getInstance(int position){
-        BaseFragment baseFragment=new BaseFragment();
-        Bundle arg=new Bundle();
-        arg.putInt("position",position);
+    public static BaseFragment getInstance(int position) {
+        BaseFragment baseFragment = new BaseFragment();
+        Bundle arg = new Bundle();
+        arg.putInt("position", position);
         baseFragment.setArguments(arg);
         return baseFragment;
     }
@@ -175,18 +175,18 @@ protected boolean enableTitle(){
             } else {
                 mViewHolder = (MyViewHolder) v.getTag();
             }
-          //  mViewHolder.frenchText = (TextView) v.findViewById(R.id.textFrench);
+            //  mViewHolder.frenchText = (TextView) v.findViewById(R.id.textFrench);
 
-          //  mViewHolder.idText = (TextView) v.findViewById(R.id.Textid);
-          //  mViewHolder.idText.setTag(englishGuideList.get(position));
+            //  mViewHolder.idText = (TextView) v.findViewById(R.id.Textid);
+            //  mViewHolder.idText.setTag(englishGuideList.get(position));
             mViewHolder.englishText = (TextView) v.findViewById(R.id.textEnglish);
             mViewHolder.englishText.setTag(englishGuideList.get(position));
             Typeface myTypeFace = Typeface.createFromAsset(getActivity().getAssets(), "the_conjuring.ttf");
-           // mViewHolder.frenchText.setTypeface(myTypeFace);
+            // mViewHolder.frenchText.setTypeface(myTypeFace);
             mViewHolder.englishText.setTypeface(myTypeFace);
 
             //mViewHolder.idText.setText(englishGuideList.get(position).getType());
-           // mViewHolder.frenchText.setText(englishGuideList.get(position).getFrenchSentence());
+            // mViewHolder.frenchText.setText(englishGuideList.get(position).getFrenchSentence());
             mViewHolder.englishText.setText(englishGuideList.get(position).getEnglishSentence());
 
 
@@ -196,8 +196,8 @@ protected boolean enableTitle(){
 
 
         private class MyViewHolder {
-           // TextView idText;
-          //  TextView frenchText;
+            // TextView idText;
+            //  TextView frenchText;
             TextView englishText;
 
         }

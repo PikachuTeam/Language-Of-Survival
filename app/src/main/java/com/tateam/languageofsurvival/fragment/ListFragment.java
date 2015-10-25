@@ -3,6 +3,7 @@ package com.tateam.languageofsurvival.fragment;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,6 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
     public View view;
     public String inforDetail;
     public String[] inforTransfer;
-
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView recyclerView;
     private GuideAdapter guideAdapter;
@@ -58,32 +58,7 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
        LoadDataGuide();
         recyclerView.setAdapter(guideAdapter);
         guideAdapter.setmListener(this);
-
-/*
-        lv.setAdapter(meetingAdapter);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                inforTransfer=new String[]{englishGuideArrayList.get(position).getEnglishSentence(),
-                        englishGuideArrayList.get(position).getFrenchSentence()
-                };
-                //DataSource.getInstance().updateRecent(englishGuideArrayList.get(position).getEnglishSentence(),englishGuideArrayList.get(position).getRecent());
-                int i=DataSource.getInstance().updateRecenthere(englishGuideArrayList.get(position).getEnglishSentence(),englishGuideArrayList.get(position).getRecent());
-
-                Bundle bundle = new Bundle();
-               // bundle.putString(KEY_DETAIL, englishGuideArrayList.get(position).getFrenchSentence());
-                bundle.putStringArray(KEY_DETAIL, inforTransfer);
-
-                ViewdetailFragment viewdetailFragment = new ViewdetailFragment();
-                viewdetailFragment.setArguments(bundle);
-                //   DataSource.getInstance().updateRecent(englishGuideArrayList.get(position).getEnglishSentence());
-                replaceFragment(getActivity().getFragmentManager(), viewdetailFragment, englishGuideArrayList.get(position).getFrenchSentence(), englishGuideArrayList.get(position).getFrenchSentence());
-            }
-        });
-        */
         return v;
-
-        //lvItem
     }
     private void LoadDataGuide() {
         DataSource.getInstance().init(getActivity().getApplicationContext());
@@ -93,7 +68,8 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
 
             switch (inforDetail){
                 case "meeting":
-                   // getBaseActivity().getToolbar().setTitle("Meeting");
+                    //getBaseActivity().getSupportActionBar().setTitle("Meeting");
+                    getBaseActivity().getToolbar().setTitle("Meeting");
                     getBaseActivity().getToolbar().setSubtitle(R.string.meeting);
                     englishGuideArrayList = DataSource.getInstance().getListLesson(1);
                     guideAdapter=new GuideAdapter(getBaseActivity(),englishGuideArrayList,1);
