@@ -7,7 +7,7 @@
     <color name="secondary_text">#727272</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
-
+    <color name="back_ground">#6dd1d1d1</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="grey">#6d464646</color>
@@ -34,8 +34,8 @@
 
     <color name="fab_label">#df343468</color>
     <color name="fab_press">#44448e</color>
-    <color name= "fab_deactive">#d6363636</color>
-    <color name= "fab_deactive_press">#797979</color>
+    <color name="fab_deactive">#d6363636</color>
+    <color name="fab_deactive_press">#797979</color>
     <color name="indicatorColor">#ff8a80</color>
     <color name="orange">#ff8a80</color>
 
