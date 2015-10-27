@@ -72,7 +72,7 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
 
         switch (inforDetail) {
             case "meeting":
-               // getBaseActivity().getSupportActionBar().setTitle(R.string.meeting);
+             //   getBaseActivity().getSupportActionBar().setTitle(R.string.meeting);
                 getBaseActivity().getToolbar().setSubtitle(R.string.meeting);
                 englishGuideArrayList = DataSource.getInstance().getListLesson(1);
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 1);
