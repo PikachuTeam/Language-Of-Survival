@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RelativeLayout;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
@@ -24,7 +25,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     public FloatingActionButton fbFeeback, fbRecent;
     private TextToSpeech textToSpeech;
     private boolean isAdLoadingFine = false;
-
+    private RelativeLayout fabListen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,13 +76,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         BaseFragment fragment = getFragmentContent();
         transaction.add(R.id.container, fragment, fragment.getClass().getName());
         transaction.commit();
-
-        /*
-        * FragmentTransaction transaction=getFragmentManager.beginTransaction();
-        * BaseFragment fragment=getFragmentContent;
-        * transaction.add(R.id.container,fragment,fragment.getClass().getName());
-        * transaction.commit();
-        * */
     }
 
     public void setFabMenu() {
@@ -92,6 +86,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         fbRecent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                floatingActionsMenu.collapse();
                 AppCommon.getInstance().openMoreAppDialog(BaseActivity.this);
             }
 
@@ -104,18 +99,25 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
                 ShareUtil.shareToGMail(BaseActivity.this, new String[]{ShareUtil.MAIL_ADDRESS_DEFAULT}, getString(R.string.subject_mail_feedback), "");
             }
         });
+        fabListen = (RelativeLayout) findViewById(R.id.fablisten);
+        floatingActionsMenu.setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
+            @Override
+            public void onMenuExpanded() {
+                fabListen.setVisibility(View.VISIBLE);
+            }
 
-
+            @Override
+            public void onMenuCollapsed() {
+                fabListen.setVisibility(View.INVISIBLE);
+            }
+        });
+        fabListen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                floatingActionsMenu.collapse();
+            }
+        });
     }
-
-    protected boolean enableAdMod() {
-        return false;
-    }
-
-    protected void onRemoveAdClick() {
-
-    }
-
     private void findViews() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
     }

@@ -15,10 +15,9 @@
 
     <color name="correct_answer">#3DAF41</color>
     <color name="wrong_answer">#AF132E</color>
-
     <color name="question_number_stroke">#42af69</color>
     <color name="choose_test_activated_button">#9EA198</color>
-
+    <color name="back_ground">#18ebe5e5</color>
     <color name="number_1">#87FB52</color>
     <color name="number_2">#31FBE7</color>
     <color name="number_3">#38fb9a</color>
@@ -26,7 +25,6 @@
     <color name="number_5">#9773fb</color>
     <color name="number_6">#fb9e4f</color>
     <color name="number_7">#fbf656</color>
-    <color name="number_8">#452ffb</color>
     <color name="number_9">#84fb64</color>
     <color name="number_10">#fb3ee7</color>
     <color name="number_11">#54fb3f</color>

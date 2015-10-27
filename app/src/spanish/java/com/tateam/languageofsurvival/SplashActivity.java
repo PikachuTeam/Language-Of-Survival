@@ -56,7 +56,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void initAppSpeaker() {
-        AppSpeaker.getInstance().initIfNeeded(getApplicationContext(), Locale.FRANCE);
+        AppSpeaker.getInstance().initIfNeeded(getApplicationContext(), new Locale("spa", "ESP"));
     }
 
     @Override
