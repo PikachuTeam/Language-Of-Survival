@@ -16,6 +16,7 @@ import com.tateam.languageofsurvival.R;
 import com.tateam.languageofsurvival.utility.ShareUtil;
 
 import tatteam.com.app_common.AppCommon;
+import tatteam.com.app_common.util.CloseAppHandler;
 
 //import com.example.vulan.survivalguideversion3.R;
 
@@ -26,6 +27,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     private TextToSpeech textToSpeech;
     private boolean isAdLoadingFine = false;
     private RelativeLayout fabListen;
+    private CloseAppHandler closeAppHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
