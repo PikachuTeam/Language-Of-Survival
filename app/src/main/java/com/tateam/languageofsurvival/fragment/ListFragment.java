@@ -28,6 +28,7 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView recyclerView;
     private GuideAdapter guideAdapter;
+    private String title;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,12 +49,17 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
     }
 
     @Override
+    protected boolean enableSpeak() {
+        return false;
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_list, container, false);
-        getBaseActivity().getToolbar().setTitle("");
-        getBaseActivity().getToolbar().findViewById(R.id.action_speak).setVisibility(View.INVISIBLE);
+        // getBaseActivity().getToolbar().setTitle("");
+//        getBaseActivity().getToolbar().findViewById(R.id.action_speak).setVisibility(View.INVISIBLE);
         meetingAdapter = new ListGuideAdapter(getActivity(), englishGuideArrayList);
         recyclerView = (RecyclerView) v.findViewById(R.id.recycler_english);
         layoutManager = new LinearLayoutManager(getBaseActivity());
@@ -72,43 +78,34 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
 
         switch (inforDetail) {
             case "meeting":
-             //   getBaseActivity().getSupportActionBar().setTitle(R.string.meeting);
-                getBaseActivity().getToolbar().setSubtitle(R.string.meeting);
                 englishGuideArrayList = DataSource.getInstance().getListLesson(1);
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 1);
                 break;
             case "restaurant":
-                getBaseActivity().getToolbar().setSubtitle(R.string.restaurant);
                 englishGuideArrayList = DataSource.getInstance().getListLesson(2);
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 2);
                 break;
             case "daily":
-                getBaseActivity().getToolbar().setSubtitle(R.string.daily);
                 englishGuideArrayList = DataSource.getInstance().getListLesson(3);
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 3);
                 break;
             case "socializing":
-                getBaseActivity().getToolbar().setSubtitle(R.string.socializing);
                 englishGuideArrayList = DataSource.getInstance().getListLesson(4);
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 4);
                 break;
             case "shopping":
-                getBaseActivity().getToolbar().setSubtitle(R.string.shopping);
                 englishGuideArrayList = DataSource.getInstance().getListLesson(5);
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 5);
                 break;
             case "hotel":
-                getBaseActivity().getToolbar().setSubtitle(R.string.hotel);
                 englishGuideArrayList = DataSource.getInstance().getListLesson(6);
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 6);
                 break;
             case "direction":
-                getBaseActivity().getToolbar().setSubtitle(R.string.direction);
                 englishGuideArrayList = DataSource.getInstance().getListLesson(7);
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 7);
                 break;
             case "weather":
-                getBaseActivity().getToolbar().setSubtitle(R.string.weather);
                 englishGuideArrayList = DataSource.getInstance().getListLesson(8);
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 8);
                 break;
@@ -117,13 +114,45 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
     }
 
     @Override
+    protected String setTitle() {
+        switch (inforDetail) {
+            case "meeting":
+                title = "Meeting";
+                break;
+            case "restaurant":
+                title = "Restaurant";
+                break;
+            case "daily":
+                title = "Daily";
+                break;
+            case "socializing":
+                title = "Socializing";
+                break;
+            case "shopping":
+                title = "Shopping";
+                break;
+            case "hotel":
+                title = "Hotel";
+                break;
+            case "direction":
+                title = "Direction";
+                break;
+            case "weather":
+                title = "Weather";
+                break;
+        }
+        return title;
+    }
+
+    @Override
     public void onPhraseClick(int position) {
         inforTransfer = new String[]{englishGuideArrayList.get(position).getEnglishSentence(),
-                englishGuideArrayList.get(position).getFrenchSentence()
+                englishGuideArrayList.get(position).getFrenchSentence(),
         };
         int i = DataSource.getInstance().updateRecenthere(englishGuideArrayList.get(position).getEnglishSentence(), englishGuideArrayList.get(position).getRecent());
         Bundle bundle = new Bundle();
         bundle.putStringArray(KEY_DETAIL, inforTransfer);
+        bundle.putString("Title", title);
 
         ViewdetailFragment viewdetailFragment = new ViewdetailFragment();
         viewdetailFragment.setArguments(bundle);

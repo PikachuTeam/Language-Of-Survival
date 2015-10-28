@@ -36,6 +36,11 @@ public class ListTopicFragment extends BaseFragment {
     }
 
     @Override
+    protected boolean enableSpeak() {
+        return false;
+    }
+
+    @Override
     protected boolean enableToolbar() {
         return true;
     }
@@ -43,8 +48,6 @@ public class ListTopicFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-        getBaseActivity().getToolbar().findViewById(R.id.action_speak).setVisibility(View.INVISIBLE);
-        getBaseActivity().getToolbar().setSubtitle("");
         btnMeeting= (CardView) view.findViewById(R.id.buttonMeeting);
         btnDaily=(CardView) view.findViewById(R.id.buttonDaily);
         btnRestaurant=(CardView) view.findViewById(R.id.buttonRestaurant);

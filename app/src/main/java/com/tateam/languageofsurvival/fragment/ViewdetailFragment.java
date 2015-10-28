@@ -28,6 +28,8 @@ public class ViewdetailFragment extends BaseFragment implements
     private String InfoDetail;
     public String[] inforTransfer;
     private TextToSpeech textToSpeech;
+    private String title;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,24 +55,46 @@ public class ViewdetailFragment extends BaseFragment implements
             }
         });
         getData();
-        getBaseActivity().getToolbar().findViewById(R.id.action_speak).setVisibility(View.VISIBLE);
-        getBaseActivity().getToolbar().findViewById(R.id.action_speak).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AppSpeaker.getInstance().speak(InfoDetail);
-            }
-        });
+//        getBaseActivity().getToolbar().findViewById(R.id.action_speak).setVisibility(View.VISIBLE);
+//        getBaseActivity().getToolbar().findViewById(R.id.action_speak).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                AppSpeaker.getInstance().speak(InfoDetail);
+//            }
+//        });
 
         return v;
 
     }
 
+    @Override
+    protected void onSpeakPressed() {
+        AppSpeaker.getInstance().speak(InfoDetail);
+    }
+
+    @Override
+    protected boolean enableSpeak() {
+        return true;
+    }
+
     public void getData() {
         Bundle bundle = this.getArguments();
+        title=bundle.getString("Title");
         inforTransfer = bundle.getStringArray("KEYDETAIL");
         tvenglish.setText(inforTransfer[0]);
         tvfrench.setText(inforTransfer[1]);
         InfoDetail = inforTransfer[1];
+    }
+
+    @Override
+    protected void onBackPressed() {
+        AppSpeaker.getInstance().stop();
+        super.onBackPressed();
+    }
+
+    @Override
+    protected String setTitle() {
+        return title;
     }
 
     @Override
@@ -105,7 +129,7 @@ public class ViewdetailFragment extends BaseFragment implements
     }
 
     public boolean enableTitle() {
-        return false;
+        return true;
     }
 
     @Override

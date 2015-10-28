@@ -36,23 +36,22 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         addFragmentContent();
         findViews();
         setFabMenu();
-        toolbar.inflateMenu(R.menu.menu_main);
-        //setSupportActionBar(toolbar);
-
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                BaseFragment currentFragment = (BaseFragment) getFragmentManager().findFragmentById(R.id.container);
-                return true;
-            }
-        });
+//        toolbar.inflateMenu(R.menu.menu_main);
+        setSupportActionBar(toolbar);
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onBackPressed();
+//            }
+//        });
+//
+//        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                BaseFragment currentFragment = (BaseFragment) getFragmentManager().findFragmentById(R.id.container);
+//                return true;
+//            }
+//        });
 
 
     }
@@ -69,8 +68,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             }
         }
     }
-
-
 
     protected abstract BaseFragment getFragmentContent();
 
