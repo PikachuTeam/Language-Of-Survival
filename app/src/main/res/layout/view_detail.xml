@@ -68,7 +68,7 @@
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:layout_gravity="center"
-                                            android:padding="@dimen/margin_6"
+                                            android:padding="@dimen/magin_fix"
                                             android:scrollbars="vertical"
                                             >
 
