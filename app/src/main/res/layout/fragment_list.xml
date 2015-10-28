@@ -20,8 +20,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="@dimen/margin_4"
-
             >
 
             <LinearLayout
@@ -44,8 +42,6 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layoutMode="opticalBounds"
-                        android:paddingBottom="@dimen/margin_5"
-
                         android:scrollbarSize="@dimen/margin_0_1"
                         android:scrollbarAlwaysDrawVerticalTrack="true"
 

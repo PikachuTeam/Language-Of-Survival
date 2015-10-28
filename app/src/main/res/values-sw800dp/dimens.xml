@@ -52,6 +52,9 @@
     <dimen name="margin_4">18dp</dimen>
     <dimen name="margin_5">20.25dp</dimen>
     <dimen name="margin_6">22.5dp</dimen>
+    <dimen name="magin_fix">11.3dp</dimen>
+
+
     <dimen name="margin_7">24.75dp</dimen>
     <dimen name="margin_8">27dp</dimen>
     <dimen name="margin_9">29.25dp</dimen>

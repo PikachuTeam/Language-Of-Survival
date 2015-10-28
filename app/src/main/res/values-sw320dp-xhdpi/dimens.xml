@@ -52,6 +52,8 @@
     <dimen name="margin_4">8dp</dimen>
     <dimen name="margin_5">9dp</dimen>
     <dimen name="margin_6">10dp</dimen>
+    <dimen name="magin_fix">5dp</dimen>
+
     <dimen name="margin_7">11dp</dimen>
     <dimen name="margin_8">12dp</dimen>
     <dimen name="margin_9">13dp</dimen>
