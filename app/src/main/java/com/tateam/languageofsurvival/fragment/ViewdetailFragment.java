@@ -125,7 +125,7 @@ public class ViewdetailFragment extends BaseFragment implements
     }
 
     public boolean enablefloatButton() {
-        return false;
+        return true;
     }
 
     public boolean enableTitle() {
@@ -149,4 +149,5 @@ public class ViewdetailFragment extends BaseFragment implements
         }
 
     }
+
 }
