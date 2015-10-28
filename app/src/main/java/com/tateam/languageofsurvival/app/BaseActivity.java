@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
@@ -20,7 +20,7 @@ import tatteam.com.app_common.util.CloseAppHandler;
 
 //import com.example.vulan.survivalguideversion3.R;
 
-public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener, CloseAppHandler.OnCloseAppListener {
     private Toolbar toolbar;
     private FloatingActionsMenu floatingActionsMenu;
     public FloatingActionButton fbFeeback, fbRecent;
@@ -36,32 +36,19 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         addFragmentContent();
         findViews();
         setFabMenu();
-//        toolbar.inflateMenu(R.menu.menu_main);
         setSupportActionBar(toolbar);
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onBackPressed();
-//            }
-//        });
-//
-//        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-//            @Override
-//            public boolean onMenuItemClick(MenuItem item) {
-//                BaseFragment currentFragment = (BaseFragment) getFragmentManager().findFragmentById(R.id.container);
-//                return true;
-//            }
-//        });
-
-
+        closeAppHandler = new CloseAppHandler(this);
+        closeAppHandler.setListener(this);
     }
 
     @Override
     public void onBackPressed() {
         FragmentManager manager = getFragmentManager();
-        if (manager != null) {
-            if (manager.getBackStackEntryCount() == 0) {
-                super.onBackPressed();
+        if (getFragmentManager() != null) {
+            if (getFragmentManager().getBackStackEntryCount() <= 0) {
+              //  super.onBackPressed();
+                closeAppHandler.handlerKeyBack(this);
+
             } else {
                 BaseFragment currentFragment = (BaseFragment) getFragmentManager().findFragmentById(R.id.container);
                 currentFragment.onBackPressed();
@@ -118,6 +105,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             }
         });
     }
+
     private void findViews() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
     }
@@ -132,13 +120,28 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View view) {
-        if (view.getId() ==R.id.fab_recent) {
+        if (view.getId() == R.id.fab_recent) {
             AppCommon.getInstance().openMoreAppDialog(this);
-        } else if (view.getId() ==R.id.fab_feedback) {
+        } else if (view.getId() == R.id.fab_feedback) {
             floatingActionsMenu.collapse();
             ShareUtil.shareToGMail(BaseActivity.this, new String[]{ShareUtil.MAIL_ADDRESS_DEFAULT}, getString(R.string.subject_mail_feedback), "");
 
         }
+    }
+
+
+    @Override
+    public void onRateAppDialogClose() {
+        finish();
+    }
+    @Override
+    public void onTryToCloseApp() {
+        Toast.makeText(this, R.string.please_click_back_again_to_exit, Toast.LENGTH_SHORT).show();
+
+    }
+    @Override
+    public void onReallyWantToCloseApp() {
+        finish();
     }
 
 

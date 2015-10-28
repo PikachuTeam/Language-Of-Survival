@@ -4,24 +4,26 @@
 
     tools:context="com.example.vulan.survivalguideversion2.app.BaseActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"
-        />
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/container"
-        android:layout_below="@id/toolbar"
-        >
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/container"
+            android:layout_below="@id/toolbar"
+            >
 
-    </FrameLayout>
-    <include
-        android:id="@+id/fablisten"
-        layout="@layout/fablisten" />
-<include
-    android:id="@+id/floatButton"
-    layout="@layout/fab"
+        </FrameLayout>
+        <include
+            android:id="@+id/fablisten"
+            layout="@layout/fablisten" />
+        <include
+            android:id="@+id/floatButton"
+            layout="@layout/fab"
 
-    ></include>
+            ></include>
+
+
 </RelativeLayout>
