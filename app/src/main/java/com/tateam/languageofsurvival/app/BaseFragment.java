@@ -8,6 +8,9 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -30,7 +33,7 @@ public class BaseFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -40,20 +43,9 @@ public class BaseFragment extends Fragment {
             getBaseActivity().getToolbar().setVisibility(View.VISIBLE);
 
 
-                getBaseActivity().getToolbar().setTitle(setTitle());
-
-
-
-            if (enableBackButton()) {
-                getBaseActivity().getToolbar().setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
-                if (enableSpeak()) {
-                    // getBaseActivity().getToolbar().setVisibility(R.drawable.ic_action_whit);
-                }
-
-            } else {
-                getBaseActivity().getToolbar().setNavigationIcon(null);
-            }
-
+            getBaseActivity().getSupportActionBar().setTitle(setTitle());
+            getBaseActivity().getSupportActionBar().setDisplayHomeAsUpEnabled(enableBackButton());
+            getBaseActivity().getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
         } else {
             getBaseActivity().getToolbar().setVisibility(View.GONE);
         }
@@ -129,6 +121,30 @@ public class BaseFragment extends Fragment {
         arg.putInt("position", position);
         baseFragment.setArguments(arg);
         return baseFragment;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_main, menu);
+        menu.findItem(R.id.action_speak).setVisible(enableSpeak());
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_speak:
+                onSpeakPressed();
+                break;
+            case android.R.id.home:
+                onBackPressed();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    protected void onSpeakPressed() {
+        // Do smth
     }
 
     //Adapter
