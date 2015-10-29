@@ -62,7 +62,7 @@ public class DataSource {
     //query from database
     public ArrayList<EnglishGuide> getListLesson(int type) {
         ArrayList<EnglishGuide> englishGuideList = new ArrayList<>();
-        Cursor cursor = sqLiteDatabase.rawQuery("select englishsentence, othersentence,type,typeno ,recent from french where typeno ='" + type + "'", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("select englishsentence, othersentence,type,typeno ,recent from language where typeno ='" + type + "'", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             EnglishGuide englishGuide = new EnglishGuide();
@@ -80,7 +80,7 @@ public class DataSource {
 
     public ArrayList<EnglishGuide> getListRecent() {
         ArrayList<EnglishGuide> englishGuideList = new ArrayList<>();
-        Cursor cursor = sqLiteDatabase.rawQuery("select * from french" +
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from language" +
                 " where  recent >0 ", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -100,7 +100,7 @@ public class DataSource {
 
     public ArrayList<ListTopic> getList() {
         ArrayList<ListTopic> guideList = new ArrayList<>();
-        Cursor cursor = sqLiteDatabase.rawQuery("select distinct type from french", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("select distinct type from language", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             ListTopic listTopic = new ListTopic();
@@ -116,7 +116,7 @@ public class DataSource {
 
         int newRecent = getMaxRecent() + 1;
         String value = newRecent + "";
-        Cursor cursor = sqLiteDatabase.rawQuery("UPDATE french SET recent= ? WHERE englishsentence = ? ", new String[]{value, englishSentence});
+        Cursor cursor = sqLiteDatabase.rawQuery("UPDATE language SET recent= ? WHERE englishsentence = ? ", new String[]{value, englishSentence});
         cursor.moveToFirst();
         cursor.close();
     }
@@ -129,7 +129,7 @@ public class DataSource {
         ContentValues newValues = new ContentValues();
         newValues.put("recent", value);
         String[] args = new String[]{englishSentence};
-        long i = sqLiteDatabase.update("french", newValues, "englishsentence = ?", args);
+        long i = sqLiteDatabase.update("language", newValues, "englishsentence = ?", args);
 
 
         if (i > 0)
@@ -141,7 +141,7 @@ public class DataSource {
     //
     public int getMaxRecent(String englishSentence) {
         int max = 0;
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT recent FROM french where englishsentence='" + englishSentence + "'", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT recent FROM language where englishsentence='" + englishSentence + "'", null);
 
         cursor.moveToFirst();
 
@@ -154,7 +154,7 @@ public class DataSource {
 
     public int getMaxRecent() {
         int max;
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM french where recent > 0 order by recent desc limit 1", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM language where recent > 0 order by recent desc limit 1", null);
         if (cursor.getCount() == 0) return 0;
         cursor.moveToFirst();
 

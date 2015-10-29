@@ -79,34 +79,66 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
         switch (inforDetail) {
             case "meeting":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(1);
+                for (EnglishGuide e:englishGuideArrayList) {
+                    e.setEnglishSentence(e.getEnglishSentence().trim());
+                    e.setFrenchSentence(e.getFrenchSentence().trim());
+                }
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 1);
                 break;
             case "restaurant":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(2);
+                for (EnglishGuide e:englishGuideArrayList) {
+                    e.setEnglishSentence(e.getEnglishSentence().trim());
+                    e.setFrenchSentence(e.getFrenchSentence().trim());
+                }
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 2);
                 break;
             case "daily":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(3);
+                for (EnglishGuide e:englishGuideArrayList) {
+                    e.setEnglishSentence(e.getEnglishSentence().trim());
+                    e.setFrenchSentence(e.getFrenchSentence().trim());
+                }
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 3);
                 break;
             case "socializing":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(4);
+                for (EnglishGuide e:englishGuideArrayList) {
+                    e.setEnglishSentence(e.getEnglishSentence().trim());
+                    e.setFrenchSentence(e.getFrenchSentence().trim());
+                }
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 4);
                 break;
             case "shopping":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(5);
+                for (EnglishGuide e:englishGuideArrayList) {
+                    e.setEnglishSentence(e.getEnglishSentence().trim());
+                    e.setFrenchSentence(e.getFrenchSentence().trim());
+                }
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 5);
                 break;
             case "hotel":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(6);
+                for (EnglishGuide e:englishGuideArrayList) {
+                    e.setEnglishSentence(e.getEnglishSentence().trim());
+                    e.setFrenchSentence(e.getFrenchSentence().trim());
+                }
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 6);
                 break;
             case "direction":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(7);
+                for (EnglishGuide e:englishGuideArrayList) {
+                    e.setEnglishSentence(e.getEnglishSentence().trim());
+                    e.setFrenchSentence(e.getFrenchSentence().trim());
+                }
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 7);
                 break;
             case "weather":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(8);
+                for (EnglishGuide e:englishGuideArrayList) {
+                    e.setEnglishSentence(e.getEnglishSentence().trim());
+                    e.setFrenchSentence(e.getFrenchSentence().trim());
+                }
                 guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList, 8);
                 break;
         }
