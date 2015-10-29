@@ -62,7 +62,7 @@ public class DataSource {
     //query from database
     public ArrayList<EnglishGuide> getListLesson(int type) {
         ArrayList<EnglishGuide> englishGuideList = new ArrayList<>();
-        Cursor cursor = sqLiteDatabase.rawQuery("select englishsentence, frenchsentence,type,typeno ,recent from french where typeno ='" + type + "'", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("select englishsentence, othersentence,type,typeno ,recent from french where typeno ='" + type + "'", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             EnglishGuide englishGuide = new EnglishGuide();

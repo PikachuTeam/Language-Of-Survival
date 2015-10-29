@@ -14,10 +14,10 @@
     <string name="title_activity_base">BaseActivity</string>
     <string name="Learn">Learn</string>
     <string name="title_activity_detail">DetailActivity</string>
-    <string name="feed_back">Feed back</string>
+    <string name="feed_back">Feedback</string>
     <string name="remove_ad">Remove Ad</string>
 
-    <string name="recent">Recent</string>
+    <string name="More_apps">More apps</string>
     <string name="meeting">Meeting</string>
     <string name="restaurant">Restaurant</string>
     <string name="direction">Direction</string>

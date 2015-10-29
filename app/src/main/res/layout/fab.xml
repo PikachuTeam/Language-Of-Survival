@@ -38,7 +38,7 @@
         fab:fab_colorPressed="@color/colorAccent"
         fab:fab_icon="@drawable/ic_shop_white_24dp"
         fab:fab_size="mini"
-        fab:fab_title="@string/recent" />
+        fab:fab_title="@string/More_apps" />
 
 
 </com.getbase.floatingactionbutton.FloatingActionsMenu>
