@@ -59,10 +59,15 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     protected abstract BaseFragment getFragmentContent();
 
     private void addFragmentContent() {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        BaseFragment fragment = getFragmentContent();
-        transaction.add(R.id.container, fragment, fragment.getClass().getName());
-        transaction.commit();
+        FragmentManager fragmentManager = getFragmentManager();
+        if (fragmentManager.getBackStackEntryCount() == 0) {
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            BaseFragment fragment = getFragmentContent();
+            transaction.add(R.id.container, fragment, fragment.getClass().getName());
+            transaction.commit();
+        } else {
+            fragmentManager.popBackStack(0, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        }
     }
 
     public void setFabMenu() {

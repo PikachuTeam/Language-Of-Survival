@@ -1,7 +1,6 @@
 package com.tateam.languageofsurvival.fragment;
 
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
 import android.support.design.widget.FloatingActionButton;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
@@ -10,24 +9,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.tateam.languageofsurvival.R;
-import com.tateam.languageofsurvival.app.BaseActivity;
 import com.tateam.languageofsurvival.app.BaseFragment;
-
-import java.util.Locale;
 
 import tatteam.com.app_common.util.AppSpeaker;
 
-//import com.getbase.floatingactionbutton.FloatingActionButton;
-
-
-public class ViewdetailFragment extends BaseFragment implements
-        TextToSpeech.OnInitListener {
+public class ViewdetailFragment extends BaseFragment {
 
     private TextView tvfrench, tvenglish;
     private FloatingActionButton btPlay;
     private String InfoDetail;
     public String[] inforTransfer;
-    private TextToSpeech textToSpeech;
     private String title;
 
     @Override
@@ -49,19 +40,9 @@ public class ViewdetailFragment extends BaseFragment implements
         btPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (textToSpeech != null) {
-                    textToSpeech.speak(inforTransfer[1], TextToSpeech.QUEUE_FLUSH, null);
-                }
             }
         });
         getData();
-//        getBaseActivity().getToolbar().findViewById(R.id.action_speak).setVisibility(View.VISIBLE);
-//        getBaseActivity().getToolbar().findViewById(R.id.action_speak).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                AppSpeaker.getInstance().speak(InfoDetail);
-//            }
-//        });
 
         return v;
 
@@ -79,7 +60,7 @@ public class ViewdetailFragment extends BaseFragment implements
 
     public void getData() {
         Bundle bundle = this.getArguments();
-        title=bundle.getString("Title");
+        title = bundle.getString("Title");
         inforTransfer = bundle.getStringArray("KEYDETAIL");
         tvenglish.setText(inforTransfer[0]);
         tvfrench.setText(inforTransfer[1]);
@@ -87,9 +68,9 @@ public class ViewdetailFragment extends BaseFragment implements
     }
 
     @Override
-    protected void onBackPressed() {
+    public void onStop() {
+        super.onStop();
         AppSpeaker.getInstance().stop();
-        super.onBackPressed();
     }
 
     @Override
@@ -100,24 +81,11 @@ public class ViewdetailFragment extends BaseFragment implements
     @Override
     public void onResume() {
         super.onResume();
-        textToSpeech = new TextToSpeech(getBaseActivity().getApplicationContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status != TextToSpeech.ERROR) {
-                    textToSpeech.setLanguage(Locale.FRANCE);
-                    textToSpeech.setSpeechRate(0.8f);
-                }
-            }
-        });
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        if (textToSpeech != null) {
-            textToSpeech.stop();
-            textToSpeech.shutdown();
-        }
     }
 
     protected boolean enableBackButton() {
@@ -132,22 +100,5 @@ public class ViewdetailFragment extends BaseFragment implements
         return true;
     }
 
-    @Override
-    public void onInit(int status) {
-        /*
-        if(status==TextToSpeech.ERROR){
-            getBaseActivity().getToolbar().findViewById(R.id.action_speak).setVisibility(View.INVISIBLE);
-
-        }
-        */
-        int result = textToSpeech.setLanguage(new Locale("sp"));
-
-        if (result == TextToSpeech.LANG_MISSING_DATA
-                || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-            getBaseActivity().getToolbar().findViewById(R.id.action_speak).setVisibility(View.INVISIBLE);
-
-        }
-
-    }
 
 }

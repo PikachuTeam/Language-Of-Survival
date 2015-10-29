@@ -8,62 +8,62 @@
     </facet>
     <facet type="android" name="Android">
       <configuration>
-        <option name="SELECTED_BUILD_VARIANT" value="frenchDebug" />
+        <option name="SELECTED_BUILD_VARIANT" value="italianDebug" />
         <option name="SELECTED_TEST_ARTIFACT" value="_android_test_" />
-        <option name="ASSEMBLE_TASK_NAME" value="assembleFrenchDebug" />
-        <option name="COMPILE_JAVA_TASK_NAME" value="compileFrenchDebugSources" />
-        <option name="ASSEMBLE_TEST_TASK_NAME" value="assembleFrenchDebugAndroidTest" />
-        <option name="COMPILE_JAVA_TEST_TASK_NAME" value="compileFrenchDebugAndroidTestSources" />
+        <option name="ASSEMBLE_TASK_NAME" value="assembleItalianDebug" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compileItalianDebugSources" />
+        <option name="ASSEMBLE_TEST_TASK_NAME" value="assembleItalianDebugAndroidTest" />
+        <option name="COMPILE_JAVA_TEST_TASK_NAME" value="compileItalianDebugAndroidTestSources" />
         <afterSyncTasks>
-          <task>generateFrenchDebugAndroidTestSources</task>
-          <task>generateFrenchDebugSources</task>
+          <task>generateItalianDebugAndroidTestSources</task>
+          <task>generateItalianDebugSources</task>
         </afterSyncTasks>
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
-        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res;file://$MODULE_DIR$/src/french/res" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res;file://$MODULE_DIR$/src/italian/res" />
         <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7" inherit-compiler-output="false">
-    <output url="file://$MODULE_DIR$/build/intermediates/classes/french/debug" />
-    <output-test url="file://$MODULE_DIR$/build/intermediates/classes/androidTest/french/debug" />
+    <output url="file://$MODULE_DIR$/build/intermediates/classes/italian/debug" />
+    <output-test url="file://$MODULE_DIR$/build/intermediates/classes/androidTest/italian/debug" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/french/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/french/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/french/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/french/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/french/debug" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/french/debug" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/frenchDebug/res" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/frenchDebug/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/frenchDebug/assets" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/frenchDebug/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/frenchDebug/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/frenchDebug/jni" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/frenchDebug/rs" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/french/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/french/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/french/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/french/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/french/debug" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/french/debug" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/french/res" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/french/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/french/assets" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/french/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/french/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/french/jni" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/french/rs" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFrench/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFrench/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFrench/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFrench/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFrench/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFrench/jni" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFrench/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/italian/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/italian/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/italian/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/italian/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/italian/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/italian/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/italianDebug/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/italianDebug/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/italianDebug/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/italianDebug/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/italianDebug/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/italianDebug/jni" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/italianDebug/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/italian/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/italian/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/italian/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/italian/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/italian/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/italian/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/italian/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/italian/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/italian/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/italian/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/italian/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/italian/jni" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/italian/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestItalian/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestItalian/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestItalian/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestItalian/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestItalian/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestItalian/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestItalian/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/assets" type="java-resource" />

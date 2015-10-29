@@ -71,7 +71,7 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
     }
 
     private void LoadDataGuide() {
-        DataSource.getInstance().init(getActivity().getApplicationContext());
+        DataSource.getInstance().initIfNeeded(getActivity().getApplicationContext());
         DataSource.getInstance().createDatabaseIfNeed();
         Bundle bundle = this.getArguments();
         inforDetail = bundle.getString("item");
