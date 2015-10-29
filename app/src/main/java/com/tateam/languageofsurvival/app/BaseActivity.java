@@ -43,14 +43,18 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onBackPressed() {
-        FragmentManager manager = getFragmentManager();
-        if (getFragmentManager() != null) {
-            if (getFragmentManager().getBackStackEntryCount() <= 0) {
+        if(floatingActionsMenu.isExpanded()){
+            floatingActionsMenu.collapse();
+            return;
+        }
+        FragmentManager fragmentManager = getFragmentManager();
+        if (fragmentManager!= null) {
+            if (fragmentManager.getBackStackEntryCount() <= 0) {
               //  super.onBackPressed();
                 closeAppHandler.handlerKeyBack(this);
 
             } else {
-                BaseFragment currentFragment = (BaseFragment) getFragmentManager().findFragmentById(R.id.container);
+                BaseFragment currentFragment = (BaseFragment) fragmentManager.findFragmentById(R.id.container);
                 currentFragment.onBackPressed();
             }
         }
