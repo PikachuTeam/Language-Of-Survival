@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-
 import com.tateam.languageofsurvival.R;
 import com.tateam.languageofsurvival.app.BaseFragment;
 import com.tateam.languageofsurvival.entity.ListTopic;

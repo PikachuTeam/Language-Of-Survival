@@ -7,13 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
+import com.tateam.languageofsurvival.R;
 import com.tateam.languageofsurvival.app.BaseActivity;
+import com.tateam.languageofsurvival.entity.EnglishGuide;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.tateam.languageofsurvival.R;
-import com.tateam.languageofsurvival.entity.EnglishGuide;
 
 import tatteam.com.app_common.ui.drawable.FlatEffectDrawable;
 
@@ -32,6 +31,7 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
         this.listEnglishguide = new ArrayList<>();
         this.listEnglishguide = listEnglishguide;
     }
+
     public GuideAdapter(BaseActivity activity, List<EnglishGuide> listEnglishguide) {
 
         super();
@@ -40,6 +40,7 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
         this.listEnglishguide = new ArrayList<>();
         this.listEnglishguide = listEnglishguide;
     }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
@@ -92,7 +93,7 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
             tvEnglish = (TextView) itemView.findViewById(R.id.textEnglish);
             bgEnglish = (CardView) itemView.findViewById(R.id.bg_phrase);
             tvEnglish.setOnClickListener(this);
-          //  flatEffectDrawable= (FlatEffectDrawable) itemView.findViewById(R.id.flatButton);
+            //  flatEffectDrawable= (FlatEffectDrawable) itemView.findViewById(R.id.flatButton);
         }
 
 

@@ -79,7 +79,7 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
         switch (inforDetail) {
             case "meeting":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(1);
-                for (EnglishGuide e:englishGuideArrayList) {
+                for (EnglishGuide e : englishGuideArrayList) {
                     e.setEnglishSentence(e.getEnglishSentence().trim());
                     e.setFrenchSentence(e.getFrenchSentence().trim());
                 }
@@ -87,7 +87,7 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
                 break;
             case "restaurant":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(2);
-                for (EnglishGuide e:englishGuideArrayList) {
+                for (EnglishGuide e : englishGuideArrayList) {
                     e.setEnglishSentence(e.getEnglishSentence().trim());
                     e.setFrenchSentence(e.getFrenchSentence().trim());
                 }
@@ -95,7 +95,7 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
                 break;
             case "daily":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(3);
-                for (EnglishGuide e:englishGuideArrayList) {
+                for (EnglishGuide e : englishGuideArrayList) {
                     e.setEnglishSentence(e.getEnglishSentence().trim());
                     e.setFrenchSentence(e.getFrenchSentence().trim());
                 }
@@ -103,7 +103,7 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
                 break;
             case "socializing":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(4);
-                for (EnglishGuide e:englishGuideArrayList) {
+                for (EnglishGuide e : englishGuideArrayList) {
                     e.setEnglishSentence(e.getEnglishSentence().trim());
                     e.setFrenchSentence(e.getFrenchSentence().trim());
                 }
@@ -111,7 +111,7 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
                 break;
             case "shopping":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(5);
-                for (EnglishGuide e:englishGuideArrayList) {
+                for (EnglishGuide e : englishGuideArrayList) {
                     e.setEnglishSentence(e.getEnglishSentence().trim());
                     e.setFrenchSentence(e.getFrenchSentence().trim());
                 }
@@ -119,7 +119,7 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
                 break;
             case "hotel":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(6);
-                for (EnglishGuide e:englishGuideArrayList) {
+                for (EnglishGuide e : englishGuideArrayList) {
                     e.setEnglishSentence(e.getEnglishSentence().trim());
                     e.setFrenchSentence(e.getFrenchSentence().trim());
                 }
@@ -127,7 +127,7 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
                 break;
             case "direction":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(7);
-                for (EnglishGuide e:englishGuideArrayList) {
+                for (EnglishGuide e : englishGuideArrayList) {
                     e.setEnglishSentence(e.getEnglishSentence().trim());
                     e.setFrenchSentence(e.getFrenchSentence().trim());
                 }
@@ -135,7 +135,7 @@ public class ListFragment extends BaseFragment implements GuideAdapter.clickList
                 break;
             case "weather":
                 englishGuideArrayList = DataSource.getInstance().getListLesson(8);
-                for (EnglishGuide e:englishGuideArrayList) {
+                for (EnglishGuide e : englishGuideArrayList) {
                     e.setEnglishSentence(e.getEnglishSentence().trim());
                     e.setFrenchSentence(e.getFrenchSentence().trim());
                 }

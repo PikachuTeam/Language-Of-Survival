@@ -21,36 +21,40 @@ public class RecentFragment extends BaseFragment implements GuideAdapter.clickLi
 
     private ListView lv;
     private ListGuideAdapter meetingAdapter;
-    private ArrayList<EnglishGuide> englishGuideArrayList =new ArrayList<>();
-    public static final String KEY_DETAIL="KEYDETAIL";
+    private ArrayList<EnglishGuide> englishGuideArrayList = new ArrayList<>();
+    public static final String KEY_DETAIL = "KEYDETAIL";
     public View view;
-    public int position=2;
+    public int position = 2;
     public String[] inforTransfer;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView recyclerView;
     private GuideAdapter guideAdapter;
+
     protected boolean enableBackButton() {
         return true;
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     }
+
     public boolean enablefloatButton() {
         return true;
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_recent, container, false);
-        recyclerView= (RecyclerView) view.findViewById(R.id.recycler_english_recent);
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_english_recent);
         layoutManager = new LinearLayoutManager(getBaseActivity());
         recyclerView.setLayoutManager(layoutManager);
 
         LoadDataGuide();
 
-        guideAdapter=new GuideAdapter(getBaseActivity(),englishGuideArrayList);
+        guideAdapter = new GuideAdapter(getBaseActivity(), englishGuideArrayList);
         recyclerView.setAdapter(guideAdapter);
         guideAdapter.setmListener(this);
 
@@ -63,10 +67,11 @@ public class RecentFragment extends BaseFragment implements GuideAdapter.clickLi
         DataSource.getInstance().createDatabaseIfNeed();
         englishGuideArrayList = DataSource.getInstance().getListRecent();
     }
+
     @Override
     public void onPhraseClick(int position) {
         Bundle bundle = new Bundle();
-        inforTransfer=new String[]{englishGuideArrayList.get(position).getEnglishSentence(),
+        inforTransfer = new String[]{englishGuideArrayList.get(position).getEnglishSentence(),
                 englishGuideArrayList.get(position).getFrenchSentence()
         };
         bundle.putStringArray(KEY_DETAIL, inforTransfer);
