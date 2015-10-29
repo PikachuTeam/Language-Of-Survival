@@ -16,7 +16,6 @@ import tatteam.com.app_common.util.AppSpeaker;
 public class ViewdetailFragment extends BaseFragment {
 
     private TextView tvfrench, tvenglish;
-    private FloatingActionButton btPlay;
     private String InfoDetail, StringTrim1,StringTrim2;
     public String[] inforTransfer;
     private String title;
@@ -35,13 +34,6 @@ public class ViewdetailFragment extends BaseFragment {
         tvenglish = (TextView) v.findViewById(R.id.tvEnglish);
         tvfrench.setMovementMethod(new ScrollingMovementMethod());
         tvenglish.setMovementMethod(new ScrollingMovementMethod());
-
-        btPlay = (FloatingActionButton) v.findViewById(R.id.fab_speak);
-        btPlay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
         getData();
 
         return v;

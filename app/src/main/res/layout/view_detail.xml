@@ -82,18 +82,7 @@
     </LinearLayout>
 
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_speak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_gravity="center|right"
-        android:layout_marginBottom="@dimen/float_button_margin_bottom"
-        android:layout_marginRight="@dimen/float_button_margin_right"
-        android:src="@drawable/speaker_icon_mini"
-        android:visibility="gone" />
+
 
 </com.tateam.languageofsurvival.app.FractionFrameLayout>
 
