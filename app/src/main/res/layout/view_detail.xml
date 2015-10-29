@@ -87,6 +87,7 @@
                                                   android:textStyle="italic"
                                                   android:scrollbars = "vertical"
                                                   android:scrollbarAlwaysDrawVerticalTrack="true"
+                                                  android:scrollbarThumbVertical="@drawable/scrollbar"
                                                   />
 
                                         </LinearLayout>
@@ -140,6 +141,8 @@
                                     android:textSize="@dimen/text_size_23"
                                     android:scrollbars = "vertical"
                                     android:scrollbarAlwaysDrawVerticalTrack="true"
+                                    android:scrollbarThumbVertical="@drawable/scrollbar"
+
                                     />
                             </RelativeLayout>
                         </android.support.v7.widget.CardView>
