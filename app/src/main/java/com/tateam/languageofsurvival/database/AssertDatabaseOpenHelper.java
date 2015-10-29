@@ -12,7 +12,7 @@ import java.io.OutputStream;
 /**
  * Created by VULAN on 9/27/2015.
  */
-public class AssertDatabaseOpenHelper  {
+public class AssertDatabaseOpenHelper {
     private static final String DB_NAME = "survivalguide.db";
 
     private Context context;

@@ -43,14 +43,14 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onBackPressed() {
-        if(floatingActionsMenu.isExpanded()){
+        if (floatingActionsMenu.isExpanded()) {
             floatingActionsMenu.collapse();
             return;
         }
         FragmentManager fragmentManager = getFragmentManager();
-        if (fragmentManager!= null) {
+        if (fragmentManager != null) {
             if (fragmentManager.getBackStackEntryCount() <= 0) {
-              //  super.onBackPressed();
+                //  super.onBackPressed();
                 closeAppHandler.handlerKeyBack(this);
 
             } else {
@@ -143,11 +143,13 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     public void onRateAppDialogClose() {
         finish();
     }
+
     @Override
     public void onTryToCloseApp() {
         Toast.makeText(this, R.string.please_click_back_again_to_exit, Toast.LENGTH_SHORT).show();
 
     }
+
     @Override
     public void onReallyWantToCloseApp() {
         finish();

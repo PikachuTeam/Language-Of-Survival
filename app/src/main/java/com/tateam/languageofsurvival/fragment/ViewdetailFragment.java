@@ -1,7 +1,6 @@
 package com.tateam.languageofsurvival.fragment;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +15,7 @@ import tatteam.com.app_common.util.AppSpeaker;
 public class ViewdetailFragment extends BaseFragment {
 
     private TextView tvfrench, tvenglish;
-    private String InfoDetail, StringTrim1,StringTrim2;
+    private String InfoDetail, StringTrim1, StringTrim2;
     public String[] inforTransfer;
     private String title;
 
@@ -54,8 +53,8 @@ public class ViewdetailFragment extends BaseFragment {
         Bundle bundle = this.getArguments();
         title = bundle.getString("Title");
         inforTransfer = bundle.getStringArray("KEYDETAIL");
-        StringTrim1=inforTransfer[0].trim();
-        StringTrim2=inforTransfer[1].trim();
+        StringTrim1 = inforTransfer[0].trim();
+        StringTrim2 = inforTransfer[1].trim();
         tvenglish.setText(StringTrim1);
         tvfrench.setText(StringTrim2);
         InfoDetail = inforTransfer[1];

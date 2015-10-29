@@ -8,17 +8,20 @@ public class EnglishGuide {
     private String type;
     private int typeno;
     private int recent;
-    public EnglishGuide(String englishSentence, String frenchSentence, String type,int typeno,int recent){
+
+    public EnglishGuide(String englishSentence, String frenchSentence, String type, int typeno, int recent) {
         this.setEnglishSentence(englishSentence);
         this.setFrenchSentence(frenchSentence);
         this.setType(type);
         this.setTypeno(typeno);
         this.setRecent(recent);
     }
-    public EnglishGuide(){
+
+    public EnglishGuide() {
 
 
     }
+
     public String getEnglishSentence() {
         return englishSentence;
     }
