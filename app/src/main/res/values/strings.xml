@@ -2,7 +2,7 @@
     <string name="app_name">French Survival Phrases</string>
     <string name="action_settings">Settings</string>
     <string name="action_recent">Recent</string>
-    <string name="subject_mail_feedback">[French] Survival Guide feedback</string>
+    <string name="subject_mail_feedback">Survival Guide feedback</string>
     <string name="speaker">Speak</string>
 
     <string name="hello_world">Hello world!</string>
@@ -17,14 +17,14 @@
     <string name="feed_back">Feedback</string>
     <string name="remove_ad">Remove Ad</string>
 
-    <string name="More_apps">More apps</string>
+    <string name="more_apps">More apps</string>
     <string name="meeting">Meeting</string>
     <string name="restaurant">Restaurant</string>
     <string name="direction">Direction</string>
     <string name="shopping">Shopping</string>
     <string name="weather">Weather</string>
     <string name="socializing">Socializing</string>
-    <string name="hotel">Hotel  </string>
+    <string name="hotel">Hotel</string>
     <string name="daily">Daily</string>
     <string name="please_click_back_again_to_exit">Press once again to exit !</string>
     <string name="no_recent">No recent list found</string>
@@ -32,5 +32,6 @@
 
     <string-array name="tabs">
         <item>All</item>
-        <item>Recent</item>    </string-array>
+        <item>Recent</item>
+    </string-array>
 </resources>
