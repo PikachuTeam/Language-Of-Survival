@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Spanish Survival Phrases</string>
+    <string name="subject_mail_feedback">Spanish Survival Guide Feedback</string>
+
 </resources>
