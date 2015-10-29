@@ -17,7 +17,7 @@ public class ViewdetailFragment extends BaseFragment {
 
     private TextView tvfrench, tvenglish;
     private FloatingActionButton btPlay;
-    private String InfoDetail;
+    private String InfoDetail, StringTrim1,StringTrim2;
     public String[] inforTransfer;
     private String title;
 
@@ -62,8 +62,10 @@ public class ViewdetailFragment extends BaseFragment {
         Bundle bundle = this.getArguments();
         title = bundle.getString("Title");
         inforTransfer = bundle.getStringArray("KEYDETAIL");
-        tvenglish.setText(inforTransfer[0]);
-        tvfrench.setText(inforTransfer[1]);
+        StringTrim1=inforTransfer[0].trim();
+        StringTrim2=inforTransfer[1].trim();
+        tvenglish.setText(StringTrim1);
+        tvfrench.setText(StringTrim2);
         InfoDetail = inforTransfer[1];
     }
 
