@@ -17,89 +17,9 @@ import tatteam.com.app_common.util.AppSpeaker;
 //import java.util.logging.Handler;
 
 
-public class SplashActivity extends AppCompatActivity {
-    private static final long SPLASH_DURATION = 2000;
-    private android.os.Handler handler;
-    private boolean isDatabaseImported = false;
-    private boolean isWaitingInitData = false;
-
+public class SplashActivity extends BaseSplashActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-
-        initAppCommon();
-        initAppSpeaker();
-        // LocalSharedPreferManager.getInstance().init(getApplicationContext());
-        DataSource.getInstance().init(getApplicationContext());
-        importDatabase();
-
-        handler = new android.os.Handler(new android.os.Handler.Callback() {
-            @Override
-            public boolean handleMessage(Message msg) {
-                if (isDatabaseImported) {
-                    isDatabaseImported = false;
-                    switchToMainActivity();
-                } else {
-                    isWaitingInitData = true;
-                }
-                return false;
-            }
-        });
-        handler.sendEmptyMessageDelayed(0, SPLASH_DURATION);
-
+    protected Locale getLocale() {
+        return new Locale("spa", "ESP");
     }
-
-    private void initAppCommon() {
-        AppCommon.getInstance().initIfNeeded(getApplicationContext());
-        AppCommon.getInstance().increaseLaunchTime();
-    }
-
-    private void initAppSpeaker() {
-        AppSpeaker.getInstance().initIfNeeded(getApplicationContext(), new Locale("spa", "ESP"));
-    }
-
-    @Override
-    public void onBackPressed() {
-//        super.onBackPressed();
-    }
-
-    private void importDatabase() {
-        AsyncTask task = new AsyncTask() {
-            @Override
-            protected Object doInBackground(Object[] params) {
-                DataSource.getInstance().createDatabaseIfNeed();
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(Object o) {
-                isDatabaseImported = true;
-                if (isWaitingInitData) {
-                    switchToMainActivity();
-                }
-            }
-        };
-        task.execute();
-    }
-
-    private void switchToMainActivity() {
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        }, 2000);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-    }
-
-
 }

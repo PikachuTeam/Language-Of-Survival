@@ -16,6 +16,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AppCommon.getInstance().initIfNeeded(getApplicationContext());
+        DataSource.getInstance().initIfNeeded(getApplicationContext());
     }
     @Override
     protected BaseFragment getFragmentContent() {
@@ -24,8 +25,7 @@ public class MainActivity extends BaseActivity {
     }
     @Override
     protected void onDestroy() {
-        DataSource.getInstance().destroy();
-
+//        DataSource.getInstance().destroy();
         super.onDestroy();
     }
 }

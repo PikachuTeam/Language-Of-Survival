@@ -27,8 +27,10 @@ public class DataSource {
         return instance;
     }
 
-    public void init(Context context) {
-        this.context = context;
+    public void initIfNeeded(Context context) {
+        if (this.context == null) {
+            this.context = context;
+        }
     }
 
     private void openConnection() {

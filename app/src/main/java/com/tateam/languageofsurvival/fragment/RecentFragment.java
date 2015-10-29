@@ -59,7 +59,7 @@ public class RecentFragment extends BaseFragment implements GuideAdapter.clickLi
     }
 
     private void LoadDataGuide() {
-        DataSource.getInstance().init(getActivity().getApplicationContext());
+        DataSource.getInstance().initIfNeeded(getActivity().getApplicationContext());
         DataSource.getInstance().createDatabaseIfNeed();
         englishGuideArrayList = DataSource.getInstance().getListRecent();
     }
