@@ -11,9 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/Size_70"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/margin_0"
+        android:layout_marginTop="@dimen/margin_1"
+        card_view:cardUseCompatPadding="true"
         card_view:cardCornerRadius="@dimen/card_view_corner_radius"
-        card_view:cardElevation="@dimen/card_view_elevation">
+        card_view:cardElevation="@dimen/card_view_elevation"
+        android:background="@color/back_ground"
+        >
 
         <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
             android:layout_width="wrap_content"
@@ -23,10 +26,13 @@
                 android:id="@+id/textEnglish"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center|start"
-                android:layout_marginLeft="@dimen/margin_5"
+
                 android:ellipsize="end"
-                android:gravity="center|start"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:layout_marginRight="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_2"
+                android:layout_marginBottom="@dimen/margin_2"
+
                 android:maxLines="1"
                 android:text="A"
                 android:textColor="@color/colorPrimaryDark"

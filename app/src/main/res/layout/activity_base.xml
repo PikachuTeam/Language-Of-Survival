@@ -1,29 +1,31 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
 
     tools:context="com.example.vulan.survivalguideversion2.app.BaseActivity">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar"
-            />
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/container"
-            android:layout_below="@id/toolbar"
-            >
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
-        </FrameLayout>
-        <include
-            android:id="@+id/fablisten"
-            layout="@layout/fablisten" />
-        <include
-            android:id="@+id/floatButton"
-            layout="@layout/fab"
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
 
-            ></include>
+    </FrameLayout>
+
+    <include
+        android:id="@+id/fablisten"
+        layout="@layout/fablisten" />
+
+    <include
+        android:id="@+id/floatButton"
+        layout="@layout/fab"
+
+        ></include>
 
 
 </RelativeLayout>
