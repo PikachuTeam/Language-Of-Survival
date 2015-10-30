@@ -111,5 +111,6 @@
     <dimen name="Size_80">150.4dp</dimen>
     <dimen name="Size_90">169.2dp</dimen>
 
+    <dimen name="fab_size">376dp</dimen>
 
 </resources>
