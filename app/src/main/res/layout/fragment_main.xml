@@ -26,30 +26,38 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
 
-                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/buttonMeeting"
-                            android:layout_width="@dimen/home_screen_button_width"
-                            android:layout_height="@dimen/home_screen_button_height"
-                            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
-                            card_view:cardElevation="@dimen/card_view_elevation"
-                            card_view:cardUseCompatPadding="true"
-                            >
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonMeeting"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_5"
+                        android:gravity="center"
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        card_view:cardUseCompatPadding="true">
+
+                        <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
+                            android:id="@+id/flatMeeting"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center">
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
                                 android:layout_gravity="center"
+                                android:gravity="center"
                                 android:orientation="vertical">
 
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="@dimen/height_row"
                                     android:layout_gravity="center"
-                                    android:src="@drawable/chat_version2" />
+                                    android:src="@drawable/chat_version2"
+
+                                    />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -60,28 +68,33 @@
                                     android:textColor="@color/colorPrimaryDark"
                                     android:textSize="@dimen/text_size" />
                             </LinearLayout>
-                        </android.support.v7.widget.CardView>
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
+                        </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
+
+                    </android.support.v7.widget.CardView>
 
 
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/margin_15">
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonRestaurant"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+                        android:layout_marginRight="@dimen/margin_5"
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        card_view:cardUseCompatPadding="true">
 
-                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/buttonRestaurant"
-                            android:layout_width="@dimen/home_screen_button_width"
-                            android:layout_height="@dimen/home_screen_button_height"
-                            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
-                            card_view:cardElevation="@dimen/card_view_elevation"
-                            card_view:cardUseCompatPadding="true"
-                            >
+                        <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
+                            android:id="@+id/flatRestaurant"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/margin_15"
+                            android:gravity="center">
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
                                 android:layout_gravity="center"
+                                android:gravity="center"
                                 android:orientation="vertical">
 
                                 <ImageView
@@ -99,9 +112,9 @@
                                     android:textColor="@color/colorPrimaryDark"
                                     android:textSize="@dimen/text_size" />
                             </LinearLayout>
+                        </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
 
-                        </android.support.v7.widget.CardView>
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
+                    </android.support.v7.widget.CardView>
 
 
                 </LinearLayout>
@@ -113,24 +126,29 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
 
-                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/buttonDaily"
-                            android:layout_width="@dimen/home_screen_button_width"
-                            android:layout_height="@dimen/home_screen_button_height"
-                            android:layout_below="@+id/buttonMeeting"
-                            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
-                            card_view:cardElevation="@dimen/card_view_elevation"
-                            card_view:cardUseCompatPadding="true"
-                            >
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonDaily"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+                        android:layout_below="@+id/buttonMeeting"
+                        android:layout_marginLeft="@dimen/margin_5"
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        card_view:cardUseCompatPadding="true">
+
+                        <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
+                            android:id="@+id/flatDaily"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center">
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
                                 android:layout_gravity="center"
+                                android:gravity="center"
                                 android:orientation="vertical">
 
                                 <ImageView
@@ -148,28 +166,32 @@
                                     android:textColor="@color/colorPrimaryDark"
                                     android:textSize="@dimen/text_size" />
                             </LinearLayout>
-                        </android.support.v7.widget.CardView>
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
+                        </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
+                    </android.support.v7.widget.CardView>
 
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/margin_15">
 
-                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/buttonSocializing"
-                            android:layout_width="@dimen/home_screen_button_width"
-                            android:layout_height="@dimen/home_screen_button_height"
-                            android:layout_below="@+id/buttonMeeting"
-                            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
-                            card_view:cardElevation="@dimen/card_view_elevation"
-                            card_view:cardUseCompatPadding="true"
-                            >
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonSocializing"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+                        android:layout_below="@+id/buttonMeeting"
+                        android:layout_marginRight="@dimen/margin_5"
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        card_view:cardUseCompatPadding="true">
+
+                        <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
+                            android:id="@+id/flatSocializing"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center">
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
                                 android:layout_gravity="center"
+                                android:gravity="center"
                                 android:orientation="vertical">
 
                                 <ImageView
@@ -187,9 +209,10 @@
                                     android:textColor="@color/colorPrimaryDark"
                                     android:textSize="@dimen/text_size" />
                             </LinearLayout>
+                        </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
 
-                        </android.support.v7.widget.CardView>
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
+
+                    </android.support.v7.widget.CardView>
 
 
                 </LinearLayout>
@@ -202,27 +225,30 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
 
-                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/buttonShopping"
-                            android:layout_width="@dimen/home_screen_button_width"
-                            android:layout_height="@dimen/home_screen_button_height"
-                            android:layout_below="@+id/buttonDaily"
-                            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
-                            card_view:cardElevation="@dimen/card_view_elevation"
-                            card_view:cardUseCompatPadding="true"
-                            >
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonShopping"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+                        android:layout_below="@+id/buttonDaily"
+                        android:layout_marginLeft="@dimen/margin_5"
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        card_view:cardUseCompatPadding="true">
+
+                        <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
+                            android:id="@+id/flatShopping"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center">
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
                                 android:layout_gravity="center"
-                                android:orientation="vertical"
-
-                                >
+                                android:gravity="center"
+                                android:orientation="vertical">
 
                                 <ImageView
                                     android:layout_width="match_parent"
@@ -240,34 +266,33 @@
                                     android:textSize="@dimen/text_size" />
 
                             </LinearLayout>
-                        </android.support.v7.widget.CardView>
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
+                        </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
 
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/margin_15"
+                    </android.support.v7.widget.CardView>
 
-                        >
 
-                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/buttonHotel"
-                            android:layout_width="@dimen/home_screen_button_width"
-                            android:layout_height="@dimen/home_screen_button_height"
-                            android:layout_below="@+id/buttonDaily"
-                            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
-                            card_view:cardElevation="@dimen/card_view_elevation"
-                            card_view:cardUseCompatPadding="true"
-                            >
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonHotel"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+                        android:layout_below="@+id/buttonDaily"
+                        android:layout_marginRight="@dimen/margin_5"
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        card_view:cardUseCompatPadding="true">
+
+                        <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
+                            android:id="@+id/flatHotel"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center">
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
                                 android:layout_gravity="center"
-                                android:orientation="vertical"
-
-                                >
+                                android:gravity="center"
+                                android:orientation="vertical">
 
                                 <ImageView
                                     android:layout_width="match_parent"
@@ -284,9 +309,10 @@
                                     android:textColor="@color/colorPrimaryDark"
                                     android:textSize="@dimen/text_size" />
                             </LinearLayout>
+                        </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
 
-                        </android.support.v7.widget.CardView>
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
+
+                    </android.support.v7.widget.CardView>
 
                 </LinearLayout>
 
@@ -298,27 +324,29 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
 
-                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/buttonDirection"
-                            android:layout_width="@dimen/home_screen_button_width"
-                            android:layout_height="@dimen/home_screen_button_height"
-                            android:layout_below="@+id/buttonShopping"
-                            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
-                            card_view:cardElevation="@dimen/card_view_elevation"
-                            card_view:cardUseCompatPadding="true"
-                            >
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonDirection"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+                        android:layout_below="@+id/buttonShopping"
+                        android:layout_marginLeft="@dimen/margin_5"
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        card_view:cardUseCompatPadding="true">
+
+                        <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
+                            android:id="@+id/flatDirection"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center">
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
                                 android:layout_gravity="center"
-                                android:orientation="vertical"
-
-                                >
+                                android:gravity="center"
+                                android:orientation="vertical">
 
                                 <ImageView
                                     android:layout_width="match_parent"
@@ -336,31 +364,33 @@
                                     android:textSize="@dimen/text_size" />
                             </LinearLayout>
 
-                        </android.support.v7.widget.CardView>
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
+                        </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
 
-                    <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/margin_15">
+                    </android.support.v7.widget.CardView>
 
-                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/buttonWeather"
-                            android:layout_width="@dimen/home_screen_button_width"
-                            android:layout_height="@dimen/home_screen_button_height"
-                            android:layout_below="@+id/buttonShopping"
-                            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
-                            card_view:cardElevation="@dimen/card_view_elevation"
-                            card_view:cardUseCompatPadding="true"
-                            >
+
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/buttonWeather"
+                        android:layout_width="@dimen/home_screen_button_width"
+                        android:layout_height="@dimen/home_screen_button_height"
+                        android:layout_below="@+id/buttonShopping"
+                        android:layout_marginRight="@dimen/margin_5"
+                        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                        card_view:cardElevation="@dimen/card_view_elevation"
+                        card_view:cardUseCompatPadding="true">
+
+                        <tatteam.com.app_common.ui.drawable.FlatEffectDrawable
+                            android:id="@+id/flatWeather"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center">
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
                                 android:layout_gravity="center"
-                                android:orientation="vertical"
-
-                                >
+                                android:gravity="center"
+                                android:orientation="vertical">
 
                                 <ImageView
                                     android:layout_width="match_parent"
@@ -377,9 +407,9 @@
                                     android:textColor="@color/colorPrimaryDark"
                                     android:textSize="@dimen/text_size" />
                             </LinearLayout>
-                        </android.support.v7.widget.CardView>
+                        </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
 
-                    </tatteam.com.app_common.ui.drawable.FlatEffectDrawable>
+                    </android.support.v7.widget.CardView>
 
 
                 </LinearLayout>

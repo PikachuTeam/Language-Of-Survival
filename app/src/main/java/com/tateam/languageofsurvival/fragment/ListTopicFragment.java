@@ -14,12 +14,15 @@ import com.tateam.languageofsurvival.entity.ListTopic;
 
 import java.util.ArrayList;
 
+import tatteam.com.app_common.ui.drawable.FlatEffectDrawable;
+
 
 public class ListTopicFragment extends BaseFragment {
 
     private ArrayList<ListTopic> topicArrayList =new ArrayList<>();
     private CardView btnMeeting,btnDaily,btnDirection, btnHotel, btnRestaurant, btnShopping,btnSocializing;
     private CardView btnWeather;
+    private FlatEffectDrawable flatMeeting , flatDaily,flatDirection,flatHotel,flatRestaurant,flatShopping,flatSocialzing, flatWeather;
     public static final String ITEMSTRING="item";
 
     @Override
@@ -49,29 +52,27 @@ public class ListTopicFragment extends BaseFragment {
         btnHotel=(CardView) view.findViewById(R.id.buttonHotel);
         btnSocializing=(CardView) view.findViewById(R.id.buttonSocializing);
         btnWeather=(CardView) view.findViewById(R.id.buttonWeather);
-        btnMeeting.setOnClickListener(new View.OnClickListener() {
+
+        flatMeeting= (FlatEffectDrawable) view.findViewById(R.id.flatMeeting);
+        flatSocialzing=(FlatEffectDrawable) view.findViewById(R.id.flatSocializing);
+        flatShopping=(FlatEffectDrawable) view.findViewById(R.id.flatShopping);
+        flatRestaurant=(FlatEffectDrawable) view.findViewById(R.id.flatRestaurant);
+        flatDirection=(FlatEffectDrawable) view.findViewById(R.id.flatDirection);
+        flatDaily=(FlatEffectDrawable) view.findViewById(R.id.flatDaily);
+        flatWeather=(FlatEffectDrawable) view.findViewById(R.id.flatWeather);
+        flatHotel=(FlatEffectDrawable) view.findViewById(R.id.flatHotel);
+
+        flatMeeting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle=new Bundle();
                 bundle.putString(ITEMSTRING, "meeting");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-                replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
+                replaceFragment(getActivity().getFragmentManager(), listFragment, "", "");
             }
         });
-
-        btnDaily.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bundle bundle=new Bundle();
-                bundle.putString(ITEMSTRING, "daily");
-                ListFragment listFragment = new ListFragment();
-                listFragment.setArguments(bundle);
-                replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
-            }
-        });
-
-        btnRestaurant.setOnClickListener(new View.OnClickListener() {
+        flatRestaurant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle=new Bundle();
@@ -81,8 +82,17 @@ public class ListTopicFragment extends BaseFragment {
                 replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
             }
         });
-
-        btnDirection.setOnClickListener(new View.OnClickListener() {
+        flatDaily.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle=new Bundle();
+                bundle.putString(ITEMSTRING, "daily");
+                ListFragment listFragment = new ListFragment();
+                listFragment.setArguments(bundle);
+                replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
+            }
+        });
+        flatDirection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle=new Bundle();
@@ -92,8 +102,7 @@ public class ListTopicFragment extends BaseFragment {
                 replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
             }
         });
-
-        btnShopping.setOnClickListener(new View.OnClickListener() {
+        flatShopping.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle=new Bundle();
@@ -103,19 +112,7 @@ public class ListTopicFragment extends BaseFragment {
                 replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
             }
         });
-
-        btnHotel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bundle bundle=new Bundle();
-                bundle.putString(ITEMSTRING, "hotel");
-                ListFragment listFragment = new ListFragment();
-                listFragment.setArguments(bundle);
-                replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
-            }
-        });
-
-        btnSocializing.setOnClickListener(new View.OnClickListener() {
+        flatSocialzing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
@@ -126,8 +123,7 @@ public class ListTopicFragment extends BaseFragment {
 
             }
         });
-
-        btnWeather.setOnClickListener(new View.OnClickListener() {
+        flatWeather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
@@ -137,6 +133,16 @@ public class ListTopicFragment extends BaseFragment {
                 replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
             }
         });
+         flatHotel.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Bundle bundle=new Bundle();
+                 bundle.putString(ITEMSTRING, "hotel");
+                 ListFragment listFragment = new ListFragment();
+                 listFragment.setArguments(bundle);
+                 replaceFragment(getActivity().getFragmentManager(), listFragment, "","");
+             }
+         });
 
         return view;
     }
