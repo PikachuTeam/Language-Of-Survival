@@ -53,27 +53,6 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         viewHolder.tvEnglish.setText(listEnglishguide.get(i).getEnglishSentence());
         viewHolder.bgEnglish.setCardBackgroundColor(activity.getResources().getColor(R.color.white));
-
-/*
-        switch (type) {
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
-            case 8:
-                break;
-        }
-        */
     }
 
     @Override
@@ -85,7 +64,6 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView tvEnglish;
         public CardView bgEnglish;
-        public FlatEffectDrawable flatEffectDrawable;
 
         public ViewHolder(View itemView) {
             super(itemView);
