@@ -16,17 +16,11 @@ import java.util.ArrayList;
 
 
 public class ListTopicFragment extends BaseFragment {
-    private ListView lv;
-    private ListGuideAdapter adapter;
-    private FloatingActionButton floatingActionButton;
+
     private ArrayList<ListTopic> topicArrayList =new ArrayList<>();
     private CardView btnMeeting,btnDaily,btnDirection, btnHotel, btnRestaurant, btnShopping,btnSocializing;
     private CardView btnWeather;
-    public static final String MEETING="Meeting people - Rencontrer d'autres personnes";
-    public static final String RESTAURANT="Restaurant";
-    public static final String DAILYROUTINE="Daily routine - La routine quotidienne";
     public static final String ITEMSTRING="item";
-   // public Bundle bundle =new Bundle();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
