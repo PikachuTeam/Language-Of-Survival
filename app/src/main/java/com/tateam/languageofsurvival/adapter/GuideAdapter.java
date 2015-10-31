@@ -14,8 +14,6 @@ import com.tateam.languageofsurvival.entity.EnglishGuide;
 import java.util.ArrayList;
 import java.util.List;
 
-import tatteam.com.app_common.ui.drawable.FlatEffectDrawable;
-
 public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> {
 
     private clickListener mlisListener;

@@ -2,8 +2,6 @@ package com.tateam.languageofsurvival;
 
 import android.app.Application;
 
-import com.tateam.languageofsurvival.database.DataSource;
-
 import tatteam.com.app_common.AppCommon;
 import tatteam.com.app_common.util.AppSpeaker;
 
