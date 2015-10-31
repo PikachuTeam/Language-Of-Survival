@@ -10,12 +10,17 @@
         layout="@layout/toolbar" />
 
     <FrameLayout
+        android:id="@+id/ads_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"></FrameLayout>
+
+    <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar">
-
-    </FrameLayout>
+        android:layout_above="@id/ads_container"
+        android:layout_below="@id/toolbar"></FrameLayout>
 
     <include
         android:id="@+id/fablisten"
@@ -23,9 +28,7 @@
 
     <include
         android:id="@+id/floatButton"
-        layout="@layout/fab"
-
-        ></include>
+        layout="@layout/fab"></include>
 
 
 </RelativeLayout>
