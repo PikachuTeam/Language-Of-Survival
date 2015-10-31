@@ -22,7 +22,9 @@ import tatteam.com.app_common.util.CloseAppHandler;
 //import com.example.vulan.survivalguideversion3.R;
 
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener, CloseAppHandler.OnCloseAppListener {
-    public FloatingActionButton fbFeeback, fbRecent;
+    private static final boolean ADS_ENABLE = true;
+
+    public FloatingActionButton fbFeedback, fbRecent;
     private Toolbar toolbar;
     private FloatingActionsMenu floatingActionsMenu;
     private RelativeLayout fabListen;
@@ -40,9 +42,11 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         closeAppHandler = new CloseAppHandler(this);
         closeAppHandler.setListener(this);
 
-        FrameLayout adsContainer = (FrameLayout) findViewById(R.id.ads_container);
-        adsHandler = new AdsSmallBannerHandler(this, adsContainer);
-        adsHandler.setup();
+        if(ADS_ENABLE) {
+            FrameLayout adsContainer = (FrameLayout) findViewById(R.id.ads_container);
+            adsHandler = new AdsSmallBannerHandler(this, adsContainer);
+            adsHandler.setup();
+        }
     }
 
     @Override
@@ -81,7 +85,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     public void setFabMenu() {
         floatingActionsMenu = (FloatingActionsMenu) findViewById(R.id.floatButton);
         fbRecent = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_recent);
-        fbFeeback = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_feedback);
+        fbFeedback = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_feedback);
 
         fbRecent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +96,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
         });
 
-        fbFeeback.setOnClickListener(new View.OnClickListener() {
+        fbFeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 floatingActionsMenu.collapse();
