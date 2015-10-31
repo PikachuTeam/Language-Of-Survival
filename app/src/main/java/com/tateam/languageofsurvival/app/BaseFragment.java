@@ -137,7 +137,7 @@ public class BaseFragment extends Fragment {
                 onSpeakPressed();
                 break;
             case android.R.id.home:
-                onBackPressed();
+                getActivity().onBackPressed();
                 break;
         }
         return super.onOptionsItemSelected(item);

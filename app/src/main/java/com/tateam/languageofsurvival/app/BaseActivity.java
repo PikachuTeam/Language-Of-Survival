@@ -24,8 +24,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     private Toolbar toolbar;
     private FloatingActionsMenu floatingActionsMenu;
     public FloatingActionButton fbFeeback, fbRecent;
-    private TextToSpeech textToSpeech;
-    private boolean isAdLoadingFine = false;
     private RelativeLayout fabListen;
     private CloseAppHandler closeAppHandler;
 
