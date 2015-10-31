@@ -12,6 +12,7 @@ import com.tateam.languageofsurvival.database.DataSource;
 import java.util.Locale;
 
 import tatteam.com.app_common.AppCommon;
+import tatteam.com.app_common.util.AppConstant;
 import tatteam.com.app_common.util.AppSpeaker;
 
 /**
@@ -53,6 +54,7 @@ public abstract  class BaseSplashActivity extends AppCompatActivity {
     private void initAppCommon() {
         AppCommon.getInstance().initIfNeeded(getApplicationContext());
         AppCommon.getInstance().increaseLaunchTime();
+        AppCommon.getInstance().syncAdsSmallBannerIfNeeded(AppConstant.AdsType.SMALL_BANNER_LANGUAGE_LEARNING);
     }
 
     private void initAppSpeaker() {

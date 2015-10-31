@@ -7,6 +7,7 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ import com.tateam.languageofsurvival.R;
 import com.tateam.languageofsurvival.utility.ShareUtil;
 
 import tatteam.com.app_common.AppCommon;
+import tatteam.com.app_common.ads.AdsSmallBannerHandler;
 import tatteam.com.app_common.util.CloseAppHandler;
 
 //import com.example.vulan.survivalguideversion3.R;
@@ -26,6 +28,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     public FloatingActionButton fbFeeback, fbRecent;
     private RelativeLayout fabListen;
     private CloseAppHandler closeAppHandler;
+    private AdsSmallBannerHandler adsHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,10 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         setSupportActionBar(toolbar);
         closeAppHandler = new CloseAppHandler(this);
         closeAppHandler.setListener(this);
+
+        FrameLayout adsContainer = (FrameLayout) findViewById(R.id.ads_container);
+        adsHandler = new AdsSmallBannerHandler(this,adsContainer);
+        adsHandler.setup();
     }
 
     @Override
