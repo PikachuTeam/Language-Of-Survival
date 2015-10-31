@@ -9,7 +9,7 @@ import tatteam.com.app_common.util.AppSpeaker;
  * Created by VULAN on 10/24/2015.
  */
 public class ClientApp extends Application {
-   @Override
+    @Override
     public void onCreate() {
         super.onCreate();
 

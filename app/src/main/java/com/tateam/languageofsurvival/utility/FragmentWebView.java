@@ -15,13 +15,14 @@ public class FragmentWebView extends BaseFragment {
 
     public WebView mWebView;
     public String inforDetail;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-       // WebSettings webSettings = mWebView.getSettings();
+        // WebSettings webSettings = mWebView.getSettings();
         //webSettings.setJavaScriptEnabled(false);
-       // mWebView.loadUrl("http://beta.html5test.com/");
+        // mWebView.loadUrl("http://beta.html5test.com/");
     }
 
     @Override
@@ -33,15 +34,16 @@ public class FragmentWebView extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_web_view, container, false);
+        View view = inflater.inflate(R.layout.fragment_web_view, container, false);
         mWebView = (WebView) view.findViewById(R.id.activity_main_webview);
         Bundle bundle = this.getArguments();
         inforDetail = bundle.getString("inforWeb");
         setUpWebView();
-       // mWebView.getSettings().setJavaScriptEnabled(true);
-       // mWebView.loadUrl("http://translate.google.com/");
+        // mWebView.getSettings().setJavaScriptEnabled(true);
+        // mWebView.loadUrl("http://translate.google.com/");
         return view;
     }
+
     public void setUpWebView() {
         MyWebViewClient myBrowser = new MyWebViewClient();
         mWebView.setWebViewClient(myBrowser);

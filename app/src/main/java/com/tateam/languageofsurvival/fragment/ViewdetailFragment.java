@@ -14,9 +14,9 @@ import tatteam.com.app_common.util.AppSpeaker;
 
 public class ViewdetailFragment extends BaseFragment {
 
+    public String[] inforTransfer;
     private TextView tvfrench, tvenglish;
     private String InfoDetail, StringTrim1, StringTrim2;
-    public String[] inforTransfer;
     private String title;
 
     @Override

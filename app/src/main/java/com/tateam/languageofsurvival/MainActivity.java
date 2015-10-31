@@ -18,11 +18,13 @@ public class MainActivity extends BaseActivity {
         AppCommon.getInstance().initIfNeeded(getApplicationContext());
         DataSource.getInstance().initIfNeeded(getApplicationContext());
     }
+
     @Override
     protected BaseFragment getFragmentContent() {
         return new ListTopicFragment();
 
     }
+
     @Override
     protected void onDestroy() {
 //        DataSource.getInstance().destroy();

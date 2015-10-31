@@ -74,7 +74,7 @@
     <dimen name="text_size_mini">18sp</dimen>
     <dimen name="margin_top_row">0dp</dimen>
     <dimen name="image_height">45dp</dimen>
-<dimen name="float_button_margin_bottom_version1">22.5dp</dimen>
+    <dimen name="float_button_margin_bottom_version1">22.5dp</dimen>
     <dimen name="float_button_margin_bottom_version2">45dp</dimen>
     <dimen name="toolbar_button_width">45dp</dimen>
     <dimen name="toolbar_elevation">4.5dp</dimen>
@@ -104,7 +104,7 @@
     <dimen name="toolbar_height">32.4dp</dimen>
     <dimen name="dp5">4.05dp</dimen>
 
-  <dimen name="Size_40">36dp</dimen>
+    <dimen name="Size_40">36dp</dimen>
     <dimen name="Size_50">45dp</dimen>
     <dimen name="Size_60">54dp</dimen>
     <dimen name="Size_70">63dp</dimen>

@@ -8,6 +8,6 @@ import java.util.Locale;
 public class SplashActivity extends BaseSplashActivity {
     @Override
     protected Locale getLocale() {
-        return  Locale.ITALY;
+        return Locale.ITALY;
     }
 }

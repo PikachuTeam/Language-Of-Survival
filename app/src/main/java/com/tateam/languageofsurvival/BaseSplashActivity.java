@@ -18,7 +18,7 @@ import tatteam.com.app_common.util.AppSpeaker;
 /**
  * Created by ThanhNH-Mac on 10/29/15.
  */
-public abstract  class BaseSplashActivity extends AppCompatActivity {
+public abstract class BaseSplashActivity extends AppCompatActivity {
     private static final long SPLASH_DURATION = 2000;
     private android.os.Handler handler;
     private boolean isDatabaseImported = false;

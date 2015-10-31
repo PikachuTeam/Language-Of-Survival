@@ -22,9 +22,9 @@ import tatteam.com.app_common.util.CloseAppHandler;
 //import com.example.vulan.survivalguideversion3.R;
 
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener, CloseAppHandler.OnCloseAppListener {
+    public FloatingActionButton fbFeeback, fbRecent;
     private Toolbar toolbar;
     private FloatingActionsMenu floatingActionsMenu;
-    public FloatingActionButton fbFeeback, fbRecent;
     private RelativeLayout fabListen;
     private CloseAppHandler closeAppHandler;
     private AdsSmallBannerHandler adsHandler;
@@ -41,7 +41,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         closeAppHandler.setListener(this);
 
         FrameLayout adsContainer = (FrameLayout) findViewById(R.id.ads_container);
-        adsHandler = new AdsSmallBannerHandler(this,adsContainer);
+        adsHandler = new AdsSmallBannerHandler(this, adsContainer);
         adsHandler.setup();
     }
 

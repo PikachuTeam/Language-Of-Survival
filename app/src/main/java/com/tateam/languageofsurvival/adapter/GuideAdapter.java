@@ -59,6 +59,15 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
         return listEnglishguide.size();
     }
 
+    public void setmListener(clickListener mlisListener) {
+        this.mlisListener = mlisListener;
+    }
+
+    public interface clickListener {
+        public void onPhraseClick(int position);
+
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView tvEnglish;
         public CardView bgEnglish;
@@ -78,14 +87,5 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
             if (mlisListener != null)
                 mlisListener.onPhraseClick(getAdapterPosition());
         }
-    }
-
-    public interface clickListener {
-        public void onPhraseClick(int position);
-
-    }
-
-    public void setmListener(clickListener mlisListener) {
-        this.mlisListener = mlisListener;
     }
 }

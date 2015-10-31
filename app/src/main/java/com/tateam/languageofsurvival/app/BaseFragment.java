@@ -29,6 +29,25 @@ public class BaseFragment extends Fragment {
 
     public int position = 0;
 
+    public static void replaceFragment(FragmentManager fragmentManager, BaseFragment newFragment, String fragmentTag,
+                                       String transactionName) {
+
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.setCustomAnimations(R.anim.fragment_slide_right_enter, R.anim.fragment_slide_left_exit,
+                R.anim.fragment_slide_left_enter, R.anim.fragment_slide_right_exit);
+        transaction.replace(R.id.container, newFragment, fragmentTag);
+        transaction.addToBackStack(transactionName);
+        transaction.commit();
+    }
+
+    //get instance
+    public static BaseFragment getInstance(int position) {
+        BaseFragment baseFragment = new BaseFragment();
+        Bundle arg = new Bundle();
+        arg.putInt("position", position);
+        baseFragment.setArguments(arg);
+        return baseFragment;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -89,7 +108,6 @@ public class BaseFragment extends Fragment {
         return false;
     }
 
-
     public BaseActivity getBaseActivity() {
         return (BaseActivity) getActivity();
     }
@@ -100,27 +118,6 @@ public class BaseFragment extends Fragment {
 
     public void replaceFragment(BaseFragment newFragment, String fragmentTag, String transactionName) {
         replaceFragment(getFragmentManager(), newFragment, fragmentTag, transactionName);
-    }
-
-
-    public static void replaceFragment(FragmentManager fragmentManager, BaseFragment newFragment, String fragmentTag,
-                                       String transactionName) {
-
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.setCustomAnimations(R.anim.fragment_slide_right_enter, R.anim.fragment_slide_left_exit,
-                R.anim.fragment_slide_left_enter, R.anim.fragment_slide_right_exit);
-        transaction.replace(R.id.container, newFragment, fragmentTag);
-        transaction.addToBackStack(transactionName);
-        transaction.commit();
-    }
-
-    //get instance
-    public static BaseFragment getInstance(int position) {
-        BaseFragment baseFragment = new BaseFragment();
-        Bundle arg = new Bundle();
-        arg.putInt("position", position);
-        baseFragment.setArguments(arg);
-        return baseFragment;
     }
 
     @Override

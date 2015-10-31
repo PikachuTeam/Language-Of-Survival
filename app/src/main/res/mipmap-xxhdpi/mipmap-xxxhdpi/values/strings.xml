@@ -24,7 +24,7 @@
     <string name="shopping">Shopping</string>
     <string name="weather">Weather</string>
     <string name="socializing">Socializing</string>
-    <string name="hotel">Hotel  </string>
+    <string name="hotel">Hotel</string>
     <string name="daily">Daily</string>
 
     <string name="no_recent">No recent list found</string>
@@ -32,5 +32,6 @@
 
     <string-array name="tabs">
         <item>All</item>
-        <item>Recent</item>    </string-array>
+        <item>Recent</item>
+    </string-array>
 </resources>

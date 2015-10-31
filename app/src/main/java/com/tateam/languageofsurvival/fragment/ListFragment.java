@@ -18,13 +18,13 @@ import java.util.ArrayList;
 
 
 public class ListFragment extends BaseFragment implements GuideAdapter.clickListener {
-    private ListView lv;
-    private ListGuideAdapter meetingAdapter;
-    private ArrayList<EnglishGuide> englishGuideArrayList = new ArrayList<>();
     public static final String KEY_DETAIL = "KEYDETAIL";
     public View view;
     public String inforDetail;
     public String[] inforTransfer;
+    private ListView lv;
+    private ListGuideAdapter meetingAdapter;
+    private ArrayList<EnglishGuide> englishGuideArrayList = new ArrayList<>();
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView recyclerView;
     private GuideAdapter guideAdapter;

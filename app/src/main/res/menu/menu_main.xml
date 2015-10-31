@@ -2,10 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/action_speak"
+    <item
+        android:id="@+id/action_speak"
         android:icon="@drawable/ic_volume_up_white_24dp"
-        android:title="@string/speaker"
-        app:showAsAction="ifRoom"
+        android:menuCategory="secondary"
         android:orderInCategory="1"
-        android:menuCategory="secondary"/>
+        android:title="@string/speaker"
+        app:showAsAction="ifRoom" />
 </menu>
