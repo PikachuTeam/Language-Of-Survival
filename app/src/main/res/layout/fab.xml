@@ -13,8 +13,7 @@
     app:fab_addButtonSize="normal"
     fab:fab_addButtonColorNormal="@color/colorAccent"
     fab:fab_addButtonColorPressed="@color/colorPrimaryDark"
-    fab:fab_labelStyle="@style/menu_labels_style"
-   >
+    fab:fab_labelStyle="@style/menu_labels_style">
 
 
     <com.getbase.floatingactionbutton.FloatingActionButton
@@ -24,9 +23,8 @@
         fab:fab_colorNormal="@color/colorAccent"
         fab:fab_colorPressed="@color/colorAccent"
         fab:fab_icon="@drawable/ic_mail_white_24dp"
-        fab:fab_size="normal"
+        fab:fab_size="mini"
         fab:fab_title="@string/feed_back"
-
         />
 
 
@@ -37,7 +35,7 @@
         fab:fab_colorNormal="@color/colorAccent"
         fab:fab_colorPressed="@color/colorAccent"
         fab:fab_icon="@drawable/ic_shop_white_24dp"
-        fab:fab_size="normal"
+        fab:fab_size="mini"
         fab:fab_title="@string/more_apps" />
 
 
