@@ -31,7 +31,7 @@ public abstract class BaseSplashActivity extends AppCompatActivity {
 
         initAppCommon();
         initAppSpeaker();
-        // LocalSharedPreferManager.getInstance().initIfNeeded(getApplicationContext());
+        // LocalSharedPreferManager.getInstance().initIfNeeded(getApplicationContext();
         DataSource.getInstance().initIfNeeded(getApplicationContext());
         importDatabase();
 
@@ -48,13 +48,13 @@ public abstract class BaseSplashActivity extends AppCompatActivity {
             }
         });
         handler.sendEmptyMessageDelayed(0, SPLASH_DURATION);
-
     }
 
     private void initAppCommon() {
         AppCommon.getInstance().initIfNeeded(getApplicationContext());
         AppCommon.getInstance().increaseLaunchTime();
-        AppCommon.getInstance().syncAdsSmallBannerIfNeeded(AppConstant.AdsType.SMALL_BANNER_LANGUAGE_LEARNING);
+
+       // AppCommon.getInstance().syncAdsSmallBannerIfNeeded(AppConstant.AdsType.SMALL_BANNER_LANGUAGE_LEARNING);
     }
 
     private void initAppSpeaker() {

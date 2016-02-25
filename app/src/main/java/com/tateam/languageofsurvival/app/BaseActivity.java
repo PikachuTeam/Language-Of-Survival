@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -22,7 +21,7 @@ import tatteam.com.app_common.util.CloseAppHandler;
 //import com.example.vulan.survivalguideversion3.R;
 
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener, CloseAppHandler.OnCloseAppListener {
-    private static final boolean ADS_ENABLE = true;
+    private static final boolean ADS_ENABLE = false;
 
     public FloatingActionButton fbFeedback, fbRecent;
     private Toolbar toolbar;
@@ -41,12 +40,13 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         setSupportActionBar(toolbar);
         closeAppHandler = new CloseAppHandler(this);
         closeAppHandler.setListener(this);
-
+/*
         if(ADS_ENABLE) {
             FrameLayout adsContainer = (FrameLayout) findViewById(R.id.ads_container);
             adsHandler = new AdsSmallBannerHandler(this, adsContainer);
             adsHandler.setup();
         }
+        */
     }
 
     @Override
@@ -59,7 +59,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         if (fragmentManager != null) {
             if (fragmentManager.getBackStackEntryCount() <= 0) {
                 //  super.onBackPressed();
-                closeAppHandler.handlerKeyBack(this);
+              //  closeAppHandler.handlerKeyBack(this);
 
             } else {
                 BaseFragment currentFragment = (BaseFragment) fragmentManager.findFragmentById(R.id.container);

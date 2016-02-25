@@ -22,7 +22,6 @@ public class MainActivity extends BaseActivity {
     @Override
     protected BaseFragment getFragmentContent() {
         return new ListTopicFragment();
-
     }
 
     @Override

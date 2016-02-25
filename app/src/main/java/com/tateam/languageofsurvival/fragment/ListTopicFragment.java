@@ -68,7 +68,7 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "meeting");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-                replaceFragment(getActivity().getFragmentManager(), listFragment, "", "");
+                replaceFragment(listFragment);
             }
         });
         flatRestaurant.setOnClickListener(new View.OnClickListener() {
@@ -78,7 +78,7 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "restaurant");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-                replaceFragment(getActivity().getFragmentManager(), listFragment, "", "");
+                replaceFragment(listFragment);
             }
         });
         flatDaily.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +88,7 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "daily");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-                replaceFragment(getActivity().getFragmentManager(), listFragment, "", "");
+                replaceFragment(listFragment);
             }
         });
         flatDirection.setOnClickListener(new View.OnClickListener() {
@@ -98,7 +98,7 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "direction");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-                replaceFragment(getActivity().getFragmentManager(), listFragment, "", "");
+                replaceFragment(listFragment);
             }
         });
         flatShopping.setOnClickListener(new View.OnClickListener() {
@@ -108,7 +108,7 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "shopping");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-                replaceFragment(getActivity().getFragmentManager(), listFragment, "", "");
+                replaceFragment(listFragment);
             }
         });
         flatSocialzing.setOnClickListener(new View.OnClickListener() {
@@ -118,7 +118,7 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "socializing");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-                replaceFragment(getActivity().getFragmentManager(), listFragment, "", "");
+                replaceFragment(listFragment);
 
             }
         });
@@ -129,7 +129,7 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "weather");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-                replaceFragment(getActivity().getFragmentManager(), listFragment, "", "");
+                replaceFragment(listFragment);
             }
         });
         flatHotel.setOnClickListener(new View.OnClickListener() {
@@ -139,10 +139,9 @@ public class ListTopicFragment extends BaseFragment {
                 bundle.putString(ITEMSTRING, "hotel");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setArguments(bundle);
-                replaceFragment(getActivity().getFragmentManager(), listFragment, "", "");
+                replaceFragment(listFragment);
             }
         });
-
         return view;
     }
 
